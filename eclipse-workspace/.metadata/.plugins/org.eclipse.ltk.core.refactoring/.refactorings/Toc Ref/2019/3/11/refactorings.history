@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Toc Ref/test-output/emailable-report.html&apos; to &apos;(Reference 80)emailable-report.html&apos;" description="Rename resource &apos;emailable-report.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="test-output/emailable-report.html" name="(Reference 80)emailable-report.html" stamp="1552393850189" updateReferences="true"/>
+</session>

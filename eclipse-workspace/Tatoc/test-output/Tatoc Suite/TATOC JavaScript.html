@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>TestNG:  TATOC JavaScript</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>TATOC JavaScript</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Mar 13 16:45:06 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4378 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='JavaScript.Test.TestTatoc.CookieHandling()'><b>CookieHandling</b><br>Test class: JavaScript.Test.TestTatoc<br/>
+<a href="#Output-2034450993" onClick='toggleBox("Output-2034450993", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2034450993" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2034450993">
+Assertion Passed: Page get redirects to Error Page without setting the cookie and clicks Proceed link<br/>
+Assertion Passed: Page get redirects to Error Page without generating the Token and clicks Proceed link<br/>
+Assertion Passed: Page gets redirects to next page after setting cookie and clicks on Proceed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>JavaScript.Test.TestTatoc@33065d67</td></tr>
+<tr>
+<td title='JavaScript.Test.TestTatoc.DragDrop()'><b>DragDrop</b><br>Test class: JavaScript.Test.TestTatoc<br/>
+<a href="#Output-988126318" onClick='toggleBox("Output-988126318", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-988126318" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-988126318">
+Assertion Passed: Drag Me link is diplayed<br/>
+Assertion Passed: Page redirects to Error page after clicking Proceed without performing dragging action correctly<br/>
+Assertion Passed: Page redirects to next Page after performing Drag Me action correctly and clicking Proceed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>JavaScript.Test.TestTatoc@33065d67</td></tr>
+<tr>
+<td title='JavaScript.Test.TestTatoc.Frame()'><b>Frame</b><br>Test class: JavaScript.Test.TestTatoc<br/>
+<a href="#Output-2053478932" onClick='toggleBox("Output-2053478932", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2053478932" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2053478932">
+Assertion Passed: Box 1 is diplayed on the screen<br/>
+Assertion Passed: Box 2 is diplayed on the screen<br/>
+Assertion Passed: Color of Box 1 and Box 2 are not same and Page gets redirects to the Error Page<br/>
+Assertion Passed: Color of Box 1 and Box 2 are same and Page gets redirects to the next Page<br/>
+</div>
+</td>
+<td></td>
+<td>1</td>
+<td>JavaScript.Test.TestTatoc@33065d67</td></tr>
+<tr>
+<td title='JavaScript.Test.TestTatoc.Grid()'><b>Grid</b><br>Test class: JavaScript.Test.TestTatoc<br/>
+<a href="#Output-80357916" onClick='toggleBox("Output-80357916", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-80357916" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-80357916">
+Assertion Passed: Page redirects to error page after clicking Red Box<br/>
+Assertion Passed: Page redirects to next page after clicking Green Box<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>JavaScript.Test.TestTatoc@33065d67</td></tr>
+<tr>
+<td title='JavaScript.Test.TestTatoc.WindowPopup()'><b>WindowPopup</b><br>Test class: JavaScript.Test.TestTatoc<br/>
+<a href="#Output-1009882390" onClick='toggleBox("Output-1009882390", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1009882390" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1009882390">
+Assertion Passed: Launch Popup Window link is displayed<br/>
+Assertion Passed: Proceed link is displayed<br/>
+Assertion Passed: Text Box Name is diplayed<br/>
+Assertion Passed: Submit Button is diplayed<br/>
+Assertion Passed: Page redirects to Error Page without launching Popup Window<br/>
+Assertion Passed: Page redirects to Error Page without inserting name in Text Box<br/>
+Assertion Passed: Page redirects to next page after submitting name in the Text Box and click Proceed<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>JavaScript.Test.TestTatoc@33065d67</td></tr>
+</table><p>
+</body>
+</html>

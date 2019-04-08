@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ACS Literatum/PageBuilder - TestNG Report</title>
+<style type="text/css">
+table {table-layout: fixed; margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<h1><center>ACS Literatum/PageBuilder - Automation Report On <a target="_blank" href="http://master-pubstest.acs.org">Master-Pubstest</a> Environment</center></h1>
+<table align="center" cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Tests Passed</th><th>Tests Skipped</th><th>Tests Failed</th><th>Total<br/>Tests</th><th>Total<br/>Time</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">DOI Article Metadata Testing</a></td><td style="background-color:#0A0">2</td><td style="background-color:#CCC">0</td><td class="numi_attn">3</td><td class="numi">5</td><td class="numi">249.4 seconds</td></tr>
+</table>
+<table align="center" cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th>Error Message</th><th style="max-width:90px">Start Time</th><th>Total Time<br/>(sec)</th></tr>
+<tr id="t1"><th colspan="5">DOI Article Metadata Testing &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="3">DOIContent</td><td><a href="#m1"><b>Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</b>  </a></td><td><b>@URL: <a target="_blank" href="https://achs-stag.literatumonline.com/doi/10.1021/acsabm.8b00510">https://achs-stag.literatumonline.com/doi/10.1021/acsabm.8b00510</a></b><br><br>org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null</td><td style="max-width:90px">Mar 12 2019</br>11:06:23 IST</td><td class="numi">31</td></tr><tr class="failedodd"><td><a href="#m2"><b>Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</b>  </a></td><td><b>@URL: <a target="_blank" href="Unable to capture failure URL : unable to load page">Unable to capture failure URL : unable to load page</a></b><br><br>org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null</td><td style="max-width:90px">Mar 12 2019</br>11:06:23 IST</td><td class="numi">31</td></tr><tr class="failedodd"><td><a href="#m3"><b>Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</b>  </a></td><td><b>@URL: <a target="_blank" href="Unable to capture failure URL : unable to load page">Unable to capture failure URL : unable to load page</a></b><br><br>org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null</td><td style="max-width:90px">Mar 12 2019</br>11:06:24 IST</td><td class="numi">31</td></tr>
+<tr><th colspan="5">DOI Article Metadata Testing &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="2">DOIContent</td><td><a href="#m4"><b>Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</b>  </a></td><td></td><td style="max-width:90px">Mar 12 2019</br>11:06:22 IST</td><td class="numi">248</td></tr><tr class="passedodd"><td><a href="#m5"><b>Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</b>  </a></td><td></td><td style="max-width:90px">Mar 12 2019</br>11:06:22 IST</td><td class="numi">235</td></tr>
+</table>
+<h2 id="m1">DOIContent:Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</h2>
+<div>
+<h3>Test Messages</h3>
+The application url is :- https://achs-stag.literatumonline.com/doi/10.1021/acs.langmuir.8b04328<br/>
+The test browser is :- chrome
+<br/>
+<h3>Failure</h3>
+<div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=71.0.3578.137 (86ee722808adfe9e3c92e6e8ea746ade08423c7e),platform=Linux 4.15.0-46-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;ASDA1713PO02529&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.15.0-46-generic&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.137 (86ee722808ad..., userDataDir: /tmp/.com.google.Chrome.bz0xyZ}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:44677}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 6079f9c6c0dd4d94adbc3676b76f06f7
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:485)
+	at com.qait.automation.getpageobjects.BaseUi.scrollDownRefstag(BaseUi.java:321)
+	at com.qait.acs.keywords.ArticleLandingPageActions.verifyReferenceSection(ArticleLandingPageActions.java:798)
+	at com.qait.acs.tests.DOIContent.Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page(DOIContent.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 14 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">DOIContent:Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</h2>
+<div>
+<h3>Test Messages</h3>
+The application url is :- https://achs-stag.literatumonline.com/doi/10.1021/acs.nanolett.8b03734<br/>
+The test browser is :- chrome
+<br/>
+<h3>Failure</h3>
+<div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=71.0.3578.137 (86ee722808adfe9e3c92e6e8ea746ade08423c7e),platform=Linux 4.15.0-46-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;ASDA1713PO02529&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.15.0-46-generic&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.137 (86ee722808ad..., userDataDir: /tmp/.com.google.Chrome.kZvofn}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:46269}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: a95c5f20e61fe75a6e799899389486b9
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:485)
+	at com.qait.automation.getpageobjects.BaseUi.scrollDownRefstag(BaseUi.java:321)
+	at com.qait.acs.keywords.ArticleLandingPageActions.verifyReferenceSection(ArticleLandingPageActions.java:798)
+	at com.qait.acs.tests.DOIContent.Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page(DOIContent.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 14 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">DOIContent:Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</h2>
+<div>
+<h3>Test Messages</h3>
+The application url is :- https://achs-stag.literatumonline.com/doi/10.1021/acs.nanolett.8b03839<br/>
+The test browser is :- chrome
+<br/>
+<h3>Failure</h3>
+<div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: Cannot read property &apos;scrollIntoView&apos; of null
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=71.0.3578.137 (86ee722808adfe9e3c92e6e8ea746ade08423c7e),platform=Linux 4.15.0-46-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.14.0&apos;, revision: &apos;aacccce0&apos;, time: &apos;2018-08-02T20:19:58.91Z&apos;
+System info: host: &apos;ASDA1713PO02529&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;4.15.0-46-generic&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.137 (86ee722808ad..., userDataDir: /tmp/.com.google.Chrome.O4M9YU}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:35487}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 72.0.3626.121, webStorageEnabled: true}
+Session ID: 37fad556bd831dc64da0be8bc9267f8a
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:485)
+	at com.qait.automation.getpageobjects.BaseUi.scrollDownRefstag(BaseUi.java:321)
+	at com.qait.acs.keywords.ArticleLandingPageActions.verifyReferenceSection(ArticleLandingPageActions.java:798)
+	at com.qait.acs.tests.DOIContent.Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page(DOIContent.java:82)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 14 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">DOIContent:Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</h2>
+<div>
+The application url is :- https://achs-stag.literatumonline.com/doi/10.1021/acs.nanolett.8b03513<br/>
+The test browser is :- chrome
+<br/>
+Assertion Passed: Reference section is present<br/>
+Assertion PASSED: element link_refrnceSectionNum is displayed.<br/>
+Assertion PASSED: element block_CiteBy is displayed.<br/>
+INFO: CiteBy Section is present<br/>
+Assertion Passed: CiteBy no content message is present<br/>
+The application url is :- https://pubs.acs.org/doi/10.1021/acs.nanolett.8b03513<br/>
+The test browser is :- chrome
+<br/>
+Assertion Passed: Reference section is present<br/>
+Assertion PASSED: element link_refrnceSectionNum is displayed.<br/>
+Assertion Passed: Total Reference Count on Stag and Pubs are same<br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">DOIContent:Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page</h2>
+<div>
+The application url is :- https://achs-stag.literatumonline.com/doi/10.1021/acs.nanolett.8b03879<br/>
+The test browser is :- chrome
+<br/>
+Assertion Passed: Reference section is present<br/>
+Assertion PASSED: element link_refrnceSectionNum is displayed.<br/>
+Assertion PASSED: element block_CiteBy is displayed.<br/>
+INFO: CiteBy Section is present<br/>
+Assertion Passed: CiteBy no content message is present<br/>
+The application url is :- https://pubs.acs.org/doi/10.1021/acs.nanolett.8b03879<br/>
+The test browser is :- chrome
+<br/>
+Assertion Passed: Reference section is present<br/>
+Assertion PASSED: element link_refrnceSectionNum is displayed.<br/>
+Assertion Passed: Total Reference Count on Stag and Pubs are same<br/>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<center> Report customized by QAIT Automation team </center>
+</body></html>

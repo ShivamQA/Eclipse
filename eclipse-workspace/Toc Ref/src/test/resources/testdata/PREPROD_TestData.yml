@@ -1,0 +1,160 @@
+baseUrl: https://achs-prod.literatumonline.com/
+
+users:
+  user1:
+     username: acstest_prod11
+     password: password
+     FirstName: Swadha
+     Fullname: Swadha Makholia
+  user2:
+     username: acstest_prod22
+     password: password
+     FirstName: Sunena
+     Fullname: Sunena Singh        
+  invaliduser:
+     username: test_123
+     password: PASSWORD
+  mendeley:
+     email: swadhamakholia1234@acs.org
+     password: password
+     randomEmail: sunena1234@acs.org
+  
+HomePage:
+ HamburgerMenu:
+   Option1: MULTIMEDIA
+   Option2: USER RESOURCES
+   Option3: SUPPORT
+   Option4: ABOUT US
+   Heading1:
+     link1: Video
+     link2: Podcasts
+     link3: Apps & Mobile
+   Heading2:
+     link1: Authors & Reviewers
+     link2: Librarians & Account Managers
+     link3: ACS Members
+   Heading3:
+     link1: Website Demos
+     link2: Live Chat
+     link3: Get Help
+     link4: For Advertisers
+     link5: Institutional Sales
+   Heading4:
+     link1: Overview
+     link2: ACS & Open Access
+     link3: Partners
+ InformationFor:
+     Link1: Authors & Reviewers
+     Link2: Librarians & Account Managers
+     Link3: ACS Members
+
+BrowsePublications:
+ tabList:
+   tab1: Grid View
+   tab2: List View
+   tab3: Browse By Subject
+ Tabs: 
+   JournalCoverCount: 54
+   ListCount : 79
+   
+Footer:
+ Partners:
+   link1: Atypon
+   link2: Chorus
+   link3: Cope
+   link4: Counter
+   link5: Crossref
+   link6: Crosscheck
+   link7: Orcid
+   link8: Portico
+ Copyright:
+    text: Copyright © 2018 American Chemical Society
+ FollowIcons:
+   icon1: envelope
+   icon2: facebook	
+   icon3: twitter
+   icon4: youtube
+   icon5: rss
+    
+Search:
+ SearchDOI: "10.1021/acs.accounts.8b00245"
+ SearchVol: 50
+ SearchPage: 50
+ SearchJournal: "Accounts of Chemical Research"
+ booleanSearchTerm1: "Cell"
+ booleanSearchTerm2: "Molecule"
+ booleanSearchTerm3: "Hydrogen"
+ booleanSearchTerm4: "Desorption"
+ authorName1: "Joshua"
+ authorName2: "Kyle"
+ authorName3: "john"
+ authorName4: "james"
+ authorName5: "Nicholas J. Papadopoulos"
+ authorName6: "John McCracken"
+ authorName7: "Carmen"
+ authorName8: McCracken
+ authorName: james
+ searchAuthor: "Sharon"
+  
+Publications:
+ ContentTypes:
+  Type1: All Types
+  Type2: Journals
+  Type3: Books and Reference
+  Type4: News
+ Journals:
+  Link1: "Accounts of Chemical Research"
+  Code1: "achre4"
+  jourJACS: "Journal of the American Chemical Society"
+  jourCatalysis: "ACS Catalysis"
+  jourCentralScience: "ACS Central Science"
+  URLCorrection: https://achs-prod.literatumonline.com/doi/10.1021/jacs.8b06634
+  URLRetraction: https://achs-prod.literatumonline.com/doi/10.1021/jacs.5b01990
+  URLNonFree: https://achs-prod.literatumonline.com/doi/full/10.1021/acs.biomac.8b00519
+   
+JournalHomePage:
+ BlueNavigationBar:
+  link1: List of Issues
+  link2: Submission & Review
+  link3: Open Access
+  link4: About the Journal
+
+Collections:
+  MostRead:
+    Text1Month: "Most Read articles are refreshed daily and are based on full text downloads (PDF and HTML) from the previous 30 days and previous 12 months. Below are the journal’s Top 20 most downloaded articles for the previous 30 days."
+    Text12Month: "Most Read articles are refreshed daily and are based on full text downloads (PDF and HTML) from the previous 30 days and previous 12 months. Below are the journal’s Top 20 most downloaded articles for the previous 12 months."
+  
+  
+BookHeaderListTitle:
+  For Authors, Reviewers & Editors:
+     subtitle1: Publishing Resource Center
+     subtitle2: eBooks Online Submission
+     subtitle3: eBooks Staff
+  
+  For Librarians & Account Managers:
+     subtitle1: Accessing MARC records
+     subtitle2: ACS Publications Help Desk
+     subtitle3: Subscription Information
+     subtitle4: eBooks by Nobel Laureates    
+
+userProfile:
+    membershipBenefitsLinkAssociatedText: "View your current publication access balance and history."
+    eMailAlertsLinkAssociatedText: "Sign up for and manage your Journal TOC, article, and Citation E-Mail Alerts."
+    savedSearchesLinkAssociatedText: "Access and manage the searches you have saved on the ACS Publications website."
+    favoriteContentLinkAssociatedText: "View and modify your list of favorite content."
+    accessTokensLinkAssociatedText: "Activate access tokens for sponsored access to content."
+    editProfileLinkAssociatedText: "Edit your personal profile information, including your e-mail and password."
+  
+memberBenefits:
+    accessTypes:
+        noContentMessage: "No products available at this time."
+    accessHistory:
+        noContentMessage: "No content accessed." 
+ 
+emailAlertsPage:
+    citationAlertInstructionMsg: "You are currently receiving e-mail alerts whenever the following articles are cited by newly published content:"
+    noCitationsMsg: "You are not yet tracking any articles."
+    
+advancedSearchPage:
+ errorOnBlankSubmit: "Please enter search terms before running your search."
+    

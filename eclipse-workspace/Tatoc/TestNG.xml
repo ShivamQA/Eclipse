@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+<suite thread-count= "50" verbose="10" name="Tatoc Suite" parallel="tests">
+         
+  <test name="TATOC Driver" parallel="methods" thread-count="6" verbose="1" >
+	 <classes>
+	   <class name="Test.TestTatoc"/>
+	    
+	 </classes>
+    </test>
+   <!--  <test name="TATOC JavaScript" parallel="methods" thread-count="6" verbose="1" >
+	 <classes>
+	   <class name="JavaScript.Test.TestTatoc"/>
+	    
+	 </classes>
+   </test> -->
+    
+
+</suite>

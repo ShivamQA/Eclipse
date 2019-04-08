@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="DOI Article Metadata Testing" verbose="1" data-provider-thread-count="1" thread-count="5" parallel="tests">
+	<listeners>
+		<listener class-name='com.qait.acs.tests.CustomReportCreator' />
+	</listeners>
+	<test name="DOI Article Metadata Testing" thread-count="5" parallel="instances">
+		<classes>
+			<class name="com.qait.acs.tests.DOIContent" />
+		</classes>
+	</test>
+</suite>
+
+ 

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Test.TestTatoc">
+              <span class="suite-name border-passed">Test.TestTatoc</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Test.TestTatoc">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Test.TestTatoc">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Test.TestTatoc">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Test.TestTatoc">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Test.TestTatoc">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Test.TestTatoc">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Test.TestTatoc">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">5 methods,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Test.TestTatoc" class="hide-methods passed suite-Test.TestTatoc"> (hide)</a> <!-- hide-methods passed suite-Test.TestTatoc -->
+                      <a href="#" panel-name="suite-Test.TestTatoc" class="show-methods passed suite-Test.TestTatoc"> (show)</a> <!-- show-methods passed suite-Test.TestTatoc -->
+                    </span>
+                    <div class="method-list-content passed suite-Test.TestTatoc">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test.TestTatoc" title="Test.TestTatoc" hash-for-method="CookieHandling">CookieHandling</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test.TestTatoc" title="Test.TestTatoc" hash-for-method="DragDrop">DragDrop</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test.TestTatoc" title="Test.TestTatoc" hash-for-method="Frame">Frame</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test.TestTatoc" title="Test.TestTatoc" hash-for-method="Grid">Grid</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Test.TestTatoc" title="Test.TestTatoc" hash-for-method="WindowPopup">WindowPopup</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Test.TestTatoc -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Test.TestTatoc" class="panel Test.TestTatoc">
+          <div class="suite-Test.TestTatoc-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">Test.TestTatoc</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CookieHandling">
+                  </a> <!-- CookieHandling -->
+                  <span class="method-name">CookieHandling</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="DragDrop">
+                  </a> <!-- DragDrop -->
+                  <span class="method-name">DragDrop</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Frame">
+                  </a> <!-- Frame -->
+                  <span class="method-name">Frame</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Grid">
+                  </a> <!-- Grid -->
+                  <span class="method-name">Grid</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="WindowPopup">
+                  </a> <!-- WindowPopup -->
+                  <span class="method-name">WindowPopup</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Test.TestTatoc-class-passed -->
+        </div> <!-- panel Test.TestTatoc -->
+        <div panel-name="test-xml-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;Test.TestTatoc&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Command line test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;Test.TestTatoc&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test --&gt;
+&lt;/suite&gt; &lt;!-- Test.TestTatoc --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Test.TestTatoc</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Command line test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Test.TestTatoc</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Test.TestTatoc</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Test.TestTatoc');
+function tableData_Test.TestTatoc() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(5);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'Frame')
+data.setCell(0, 2, 'Test.TestTatoc')
+data.setCell(0, 3, 4222);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'WindowPopup')
+data.setCell(1, 2, 'Test.TestTatoc')
+data.setCell(1, 3, 939);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'CookieHandling')
+data.setCell(2, 2, 'Test.TestTatoc')
+data.setCell(2, 3, 478);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'DragDrop')
+data.setCell(3, 2, 'Test.TestTatoc')
+data.setCell(3, 3, 392);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Grid')
+data.setCell(4, 2, 'Test.TestTatoc')
+data.setCell(4, 3, 322);
+window.suiteTableData['Test.TestTatoc']= { tableData: data, tableDiv: 'times-div-Test.TestTatoc'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <div id="times-div-Test.TestTatoc">
+              </div> <!-- times-div-Test.TestTatoc -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Test.TestTatoc</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">CookieHandling</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Assertion Passed: Page get redirects to Error Page without setting the cookie and clicks Proceed link</span>
+                <span class="reporter-method-output">Assertion Passed: Page get redirects to Error Page without generating the Token and clicks Proceed link</span>
+                <span class="reporter-method-output">Assertion Passed: Page gets redirects to next page after setting cookie and clicks on Proceed</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">WindowPopup</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Assertion Passed: Launch Popup Window link is displayed</span>
+                <span class="reporter-method-output">Assertion Passed: Proceed link is displayed</span>
+                <span class="reporter-method-output">Assertion Passed: Text Box Name is diplayed</span>
+                <span class="reporter-method-output">Assertion Passed: Submit Button is diplayed</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to Error Page without launching Popup Window</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to Error Page without inserting name in Text Box</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to next page after submitting name in the Text Box and click Proceed</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">DragDrop</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Assertion Passed: Drag Me link is diplayed</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to Error page after clicking Proceed without performing dragging action correctly</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to next Page after performing Drag Me action correctly and clicking Proceed</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">Grid</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Assertion Passed: Page redirects to error page after clicking Red Box</span>
+                <span class="reporter-method-output">Assertion Passed: Page redirects to next page after clicking Green Box</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">Frame</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">Assertion Passed: Box 1 is diplayed on the screen</span>
+                <span class="reporter-method-output">Assertion Passed: Box 2 is diplayed on the screen</span>
+                <span class="reporter-method-output">Assertion Passed: Color of Box 1 and Box 2 are not same and Page gets redirects to the Error Page</span>
+                <span class="reporter-method-output">Assertion Passed: Color of Box 1 and Box 2 are same and Page gets redirects to the next Page</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Test.TestTatoc" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">Test.TestTatoc</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">Grid</span>
+                <span class="method-start">779 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Frame</span>
+                <span class="method-start">1102 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">DragDrop</span>
+                <span class="method-start">5325 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">WindowPopup</span>
+                <span class="method-start">5717 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">CookieHandling</span>
+                <span class="method-start">6656 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeSetup</span>
+                <span class="method-start">7135 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

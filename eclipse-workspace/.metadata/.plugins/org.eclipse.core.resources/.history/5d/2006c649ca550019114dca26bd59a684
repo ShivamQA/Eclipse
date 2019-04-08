@@ -1,0 +1,1537 @@
+package com.qait.acs.keywords;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+
+import com.qait.automation.getpageobjects.GetPage;
+import static com.qait.automation.utils.YamlReader.getYamlValue;
+import static com.qait.automation.utils.YamlReader.getYamlValues;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import com.qait.automation.utils.SeleniumWait;
+
+public class homePageActions extends GetPage {
+
+	WebDriver driver;
+	private static String pagename = "homePage";
+	String content[] = {"1,300,000 Research Articles","100,000 News Stories","35,000 Book Chapters","1,000 References & Standards"};
+	Set<String> connectSocial = new HashSet<>(Arrays.asList("e-Alerts", "Facebook", "Twitter", "WeChat"));
+	Set<String> connectApp = new HashSet<>(Arrays.asList("Google Play", "App Store"));
+	Set<String> itemHeader = new HashSet<>(Arrays.asList("researchers", "authors", "reviewers", "librarians"));
+	String[] itemLinks = { "ACS Axial", "ACS Publishing Center", "ACS Reviewer Lab", "ACS InfoCentral" };
+	HttpURLConnection huc = null;
+	
+	public homePageActions(WebDriver driver) {
+		super(driver, pagename);
+		this.driver = driver;
+	}
+
+	public void clickOnPublicationLink() {
+		scrollToTop();
+		wait.hardWait(2);
+		clickOnElement("btn_publication");
+	}
+
+	public void clickOnPubModalLink(String link) {
+		hardWait(2);
+		clickOnElement("lnk_pubmodal", link);
+		verifyTypeIsSelected(link);
+
+	}
+
+	public void verifyPubModelContent(String title) {
+		assertTrue(isElementDisplayed(true, "pubmodelContent", title),
+				"Assertion passed: Title on PubModel content is displayed for: " + title);
+		logMessage("Assertion Passed: Title on PubModel content is displayed for: " + title);
+	}
+
+	public void clickOnPubModelContent(String title) {
+		verifyPubModelContent(title);
+		clickOnElement("pubmodelContent", title);
+		wait.waitForPageToLoadCompletely();
+	}
+
+	public void navigateToHomePage() {
+		driver.get(getYamlValue("baseUrl"));
+		wait.waitForPageToLoadCompletely();
+	}
+	public void clickAnywhere() {
+		
+		clickOnElement("click_anywhere");
+		
+	}
+	public void verifyExistenceAndNavigationOfTopLeftCornerLinks(String[] links) {
+		isElementDisplayed(true, "lnk_topLeftCornerLinks", links[0]);
+		clickOnElement("lnk_topLeftCornerLinks", links[0]);
+		logMessage("User clicked on ACS link");
+		verifyUserIsOnACSPage();
+		navigateToPreviousPage();
+
+		isElementDisplayed(true, "lnk_topLeftCornerLinks", links[1]);
+		clickOnElement("lnk_topLeftCornerLinks", links[1]);
+		logMessage("User clicked on ACS Publications link");
+		verifyUserIsOnACSPubHomePage();
+		wait.waitForPageToLoadCompletely();
+
+		isElementDisplayed(true, "lnk_topLeftCornerLinks", links[2]);
+		clickOnElement("lnk_topLeftCornerLinks", links[2]);
+		logMessage("User clicked on C&EN link");
+		verifyUserIsOnCENPage();
+		navigateToPreviousPage();
+
+		isElementDisplayed(true, "lnk_topLeftCornerLinks", links[3]);
+		clickOnElement("lnk_topLeftCornerLinks", links[3]);
+		logMessage("User clicked on CAS link");
+		verifyUserIsOnCASPage();
+
+	}
+
+	public void verifyUserIsOnACSPubHomePage() {
+		wait.waitForPageToLoadCompletely();
+		isElementDisplayed(true, "Img_homePage");
+		logMessage("Verified: User is on  Home page of the application!!!");
+
+	}
+
+	public void verifyUserIsOnACSPage() {
+		hardWait(1);
+		assertTrue(getCurrentURL().contains("acs.org"));
+		isElementDisplayed(true, "logo_acs");
+		logMessage("Verified: User is on ACS Page");
+
+	}
+	
+	public void verifyUserIsOnimgLink() {
+		hardWait(5);
+		String url = getCurrentURL();
+		String[] urlName = url.split("/");
+		assertTrue(getCurrentURL().contains(urlName[5].split("\\.")[0]), "Assertion failed: Not navigated to correct page.");
+		isElementDisplayed(true, "logo_url");
+		logMessage("Verification Passed: User is on"+ urlName[5].split("\\.")[0] + " Page");
+	}
+	
+	public void verifyUserIsOnCENPage() {
+		hardWait(5);
+		assertTrue(getCurrentURL().contains("cen.acs.org"), "Assertion failed: Not navigated to correct page.");
+		scrollDownMid();
+		isElementDisplayed(true, "logo_C&EN");
+		logMessage("Verification Passed: User is on C&EN Page");
+		
+	}
+	public void verifyUserIsOnEditorsPage() {
+		hardWait(5);
+		assertTrue(getCurrentURL().contains("editorschoice"),"Assertion Failed: User does not navigates to Editor's Choice Page");
+		isStringMatching(elements("Page_EditorsChoice").get(0).getText(), "ACS Editors’ Choice");
+		logMessage("Verification Passed: User is on ACS Editor's Page");
+		
+	}
+
+	public void verifyUserIsOnCASPage() {
+		isElementDisplayed(true, "logo_CAS");
+		logMessage("Verification Passed: User is on CAS Page");
+
+	}
+	
+	public void verifyUserNavigateToRespectiveHamburgerLink(String subLink) {
+		
+		if(subLink.equals("Authors & Reviewers"))
+		{
+			assertTrue(getCurrentURL().contains("publish"), "Assertion failed: Not navigated to correct page.");
+			isStringMatching(element("txt_Heading").getText(),"ACS Publishing Center");
+			logMessage("Verification Passed: User is on Authors and Reviewers Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+			
+		}
+		
+		if(subLink.equals("Librarians & Account Managers"))
+		{
+			assertTrue(getCurrentURL().contains("librarians"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "librarian_img");
+			logMessage("Verification Passed: User is on Librarians & Account Managers Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("ACS Members"))
+		{
+			assertTrue(getCurrentURL().contains("membership"), "Assertion failed: Not navigated to correct page.");
+			isStringMatching(element("members_Heading").getText(),"Publications Discounts");
+			logMessage("Verification Passed: User is on ACS Members Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("Mobile & Apps"))
+		{
+			assertTrue(getCurrentURL().contains("mobile"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "mobile_logo");
+			logMessage("Verification Passed: User is on Mobile and Apps Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("ACS Publications Website Knowledgebase"))
+		{
+			assertTrue(getCurrentURL().contains("helpfaqs"), "Assertion failed: Not navigated to correct page.");
+			isStringMatching(element("knowledge_heading").getText(),"ACS KNOWLEDGEBASE");
+			logMessage("Verification Passed: User is on ACS Publications Website Knowledgebase Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		if(subLink.equals("Live Chat with Agent"))
+		{
+			switchToFrame(element("live_chat_box").getAttribute("id"));
+//			isElementDisplayed(true,"live_chat_box");
+			isStringMatching(element("live_chat_text").getText(),"Chat With Us");
+			clickOnElement("live_chat_close");
+			logMessage("Verified: Live Chat Box is closed");
+			switchToDefaultContent();
+		}
+		if(subLink.equals("For Advertisers"))
+		{
+			assertTrue(getCurrentURL().contains("acsmediakit"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "advertiser_img");
+			logMessage("Verification Passed: User is on For Advertisers Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("For Librarians & Account Managers"))
+		{
+			assertTrue(getCurrentURL().contains("librarians"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "librarian_img");
+			logMessage("Verification Passed: User is on For Librarians & Account Managers Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("Device Pairing"))
+		{
+			assertTrue(getCurrentURL().contains("devicePairing"), "Assertion failed: Not navigated to correct page.");
+			isStringMatching(element("device_pairing_heading").getText(),"Pair Device");
+			logMessage("Verification Passed: User is on Device Pairing Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("Overview"))
+		{
+			assertTrue(getCurrentURL().contains("about-us"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "overview_img");
+			logMessage("Verification Passed: User is on Overview Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("ACS & Open Access"))
+		{
+			assertTrue(getCurrentURL().contains("acsopenaccess"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "open_access_img");
+			logMessage("Verification Passed: User is on ACS & Open Access Page");
+			navigateToPreviousPage();
+			clickOnHamburgerIcon();
+		}
+		
+		if(subLink.equals("Partners"))
+		{
+			int differenceTop=0;
+			assertTrue(getCurrentURL().contains("partners"), "Assertion failed: Not navigated to correct page.");
+			String top = verifyScrolledPosition(element("Img_SiteHeaderLogo"), "Site header logo").split("\\.")[0];
+			System.out.println(top);
+			differenceTop = verifyPagePositionbyId("Partners",Integer.parseInt(top));
+			logMessage("Clicking on link Partners available under Hamburger Menu");
+			//navigateToPreviousPage();
+		}
+		
+		if(subLink.equals("Events"))
+		{
+			assertTrue(getCurrentURL().contains("acsoncampus"), "Assertion failed: Not navigated to correct page.");
+			isElementDisplayed(true, "events_img");
+			logMessage("Verification Passed: User is on Events Page");
+			navigateToPreviousPage();
+		}
+		
+		
+	}
+	private int verifyPagePositionbyId(String link, int top ) {
+		String topValue = (verifyScrolledPosition(element("heading_Section", link), link)).split("\\.")[0];
+		System.out.println(topValue);
+		int difference= Integer.parseInt(topValue)-top;
+		System.out.println(difference);
+		scrollUp();
+		if(difference>0)
+			return difference;
+		return 0;
+	}
+	public void VerifyAndClickOnLoginLinkAtTopRight() {
+		isElementDisplayed(true, "txt_toprightcorner");
+		logMessage("Verification Passed: Access provided byACHS Two-Factor Institution is displayed on top right corner.");
+		isElementDisplayed(true, "link_LogIn");
+		clickOnElement("link_LogIn");
+	}
+
+	public void verifyMyActivityButtonIsDisplayed() {
+		isElementDisplayed(true, "btn_MyActivity");
+	}
+
+	public void clickOnLogoutLink() {
+		elements("links_loggedIn").get(1).click();
+		logMessage("Info: User clicked on Logout link.");
+		wait.waitForPageToLoadCompletely();
+		isElementDisplayed(true, "link_LogIn");
+		logMessage("Info: Successfully logged out.");
+
+	}
+
+	public void verifyUserLoggedIn(String Name) {
+		String TextExpected = "Welcome:" + Name + "|Logout";
+
+		isElementDisplayed(true, "Text_LoggedInfo");
+		assertTrue(element("Text_LoggedInfo").getText().equals(TextExpected),
+				"Assertion failed: Expected Welcome Text not displayed after login.");
+		logMessage("Verified: Welcome text is displayed on top right after user has logged in.");
+
+		assertTrue(elements("links_loggedIn").get(0).getText().equals(Name));
+		assertTrue(elements("links_loggedIn").get(1).getText().equals("Logout"));
+
+		logMessage("Verified: User is able to log in successfully.");
+	}
+
+	public void userclickedOnLoggedIn() {
+		hardWait(1);
+		elements("links_loggedIn").get(0).click();
+		logMessage("Verified: User is able to log in successfully.");
+	}
+
+	public void verifyPubsLogoIsDisplayed() {
+		isElementDisplayed(true, "Img_homePage");
+		logMessage("Verified: Pubs Logo displayed on the main navigation panel.");
+	}
+
+	public void verifySearchBoxIsDisplayed() {
+		isElementDisplayed(true, "box_search");
+		logMessage("Verified: Search box is displayed on the main navigation panel.");
+	}
+	
+	public void verifySearchBoxHomepageIsDisplayed() {
+		isElementDisplayed(true, "homePage_box_search");
+		logMessage("Verified: Search box is displayed on the main navigation panel.");
+	}
+
+	public void verifyPublicationsButtonIsDisplayed() {
+		isElementDisplayed(true, "btn_publication");
+		logMessage("Verified: Publications button is displayed on the main navigation panel.");
+	}
+
+	public void verifyHamburgerMenuIconIsDisplayed() {
+		isElementDisplayed(true, "Icon_Hamburger");
+		logMessage("Verified: Hamburger menu icon is displayed on the main navigation panel.");
+	}
+	public void verifyContentbelowSearchBoxisDisplayed() {		
+		isElementDisplayed(true,"journal_info_display");
+		int journalInfo = elements("journal_info").size();
+		for(int i=0; i < journalInfo; i++) 
+			isStringMatching(elements("journal_info").get(i).getText(),content[i]);
+		logMessage("Verified: Contetnt below Search Box is displayed");
+		
+	}
+	public void clickOnPubsLogoAndVerify(String URL) {
+		clickOnElement("Img_homePage");
+		wait.waitForPageToLoadCompletely();
+		assertTrue(getCurrentURL().equals(URL),"Assertion failed: Page is not refreshed.");
+		isElementDisplayed(true, "Img_homePage");
+		logMessage("Verfied: Clicking on Pubs logo refreshes the page (links to Pubs homepage)");
+
+	}
+
+	public void verifyElementsOnSearchBox() {
+		isElementDisplayed(true, "input_SearchBox");
+		logMessage("Verified: Search textbox is displayed for search box. ");
+		isElementDisplayed(true, "iconSearch_SearchBox");
+		logMessage("Verified: Search icon is displayed for search box.");
+	}
+	
+	public void verifyElementsOnSearchBoxHomePage() {
+		isElementDisplayed(true, "homePage_input_SearchBox");
+		logMessage("Verified: Search textbox is displayed for search box. ");
+		isElementDisplayed(true, "hP_iconSearch_SearchBox");
+		logMessage("Verified: Search icon is displayed for search box.");
+	}
+	public void verifySearchBoxInnerText() {
+		
+		isStringMatching(element("search_box_innertext","AllField").getAttribute("placeholder"),"Search publications / articles / authors / dois / keywords / etc");
+		isStringMatching(element("search_box_innertext","Volume").getAttribute("placeholder"),"Volume");
+		isStringMatching(element("search_box_innertext","Page").getAttribute("placeholder"),"Page");
+		
+	}
+	public void ClickAnywhereInSearchBox() {
+		clickOnElement("input_SearchBox");
+	}
+	
+	public void ClickAnywhereInHomePageSearchBox() {
+		clickOnElement("homePage_input_SearchBox");
+	}
+	public void verifyCitationsSearchBoxIsNotYetVisible() {
+		isElementDisplayed(false, "Searchbox_Citations");
+		logMessage("Verified: Citations search box is not displayed. Only default search box is displayed.");
+	}
+	public void verifyCitationsSearchBoxHomePageIsNotYetVisible() {
+		isElementDisplayed(false, "homePage_searchBox_citation");
+		logMessage("Verified: Citations search box is not displayed. Only default search box is displayed.");
+	}
+
+	public void verifyExpandedCitationSearchBoxIsDisplayed() {
+		isElementDisplayed(true, "Searchbox_Citations");
+		logMessage("Verified: Clicking anywhere in the search show expanded citation search box.");
+	}
+	public void verifyExpandedCitationSearchBoxhomePageIsDisplayed() {
+		isElementDisplayed(true, "homePage_searchBox_citation");
+		logMessage("Verified: Clicking anywhere in the search show expanded citation search box.");
+	}
+	public void verifyOptionsOnExpandedCitationsSearchBox() {
+		isStringMatching(element("header_Citations").getText(), "OR SEARCH CITATIONS");
+
+		isElementDisplayed(true, "dropdown_JournalsSearchBox");
+		assertEquals(element("dropdown_JournalsSearchBox").getText(), "Journals");
+		logMessage("Verified: Journals dropdown is displayed on expanded citation search box.");
+
+		isElementDisplayed(true, "input_OptionsSearchBox", "Vol");
+		isElementDisplayed(true, "input_OptionsSearchBox", "Page");
+		logMessage("Verified: Volume and Page textbox is displayed on expanded citation search box. ");
+
+		isElementDisplayed(true, "iconSearch_Citation");
+		logMessage("Verified: Citation search icon is displayed on expanded citation search box. ");
+
+	}
+	
+	public void verifyOptionsOnExpandedCitationsHomePageSearchBox() {
+		isStringMatching(element("homePage_header_Citations").getText(), "OR SEARCH CITATIONS");
+
+		isElementDisplayed(true, "hP_dropdown_JournalsSearchBox");
+		assertEquals(element("hP_dropdown_JournalsSearchBox").getText(), "Journals");
+		logMessage("Verified: Journals dropdown is displayed on expanded citation search box.");
+
+		isElementDisplayed(true, "hP_input_OptionsSearchBox", "Volume");
+		isElementDisplayed(true, "hP_input_OptionsSearchBox", "Page");
+		logMessage("Verified: Volume and Page textbox is displayed on expanded citation search box. ");
+
+		isElementDisplayed(true, "homePage_iconSearch_Citation");
+		logMessage("Verified: Citation search icon is displayed on expanded citation search box. ");
+
+	}
+
+	public void verifyPublicationsModalIsDisplayed() {
+		isElementDisplayed(true, "modal_Publications");
+		assertTrue(elements("ContentTypes_Modal").size() == 4,
+				"Assertion Failed: 4 content types are not displayed.");
+		logMessage("Verified: The Publications are divided into 4 types based on 'Content Types'");
+
+	}
+
+	public void clickOnHamburgerIcon() {
+		clickOnElement("Icon_Hamburger");
+	}
+
+	public void verifyMenuOptionsDisplayedForHamburger(String[] menuOptions) {
+		isElementDisplayed(true, "Menu_Hamburger");
+		int OptionsCount = elements("MenuHeadings_Hamburger").size();
+		assertTrue(OptionsCount == 3, "Assertion failed: 3 menu option headings are not displayed.");
+		logMessage("Verified: 3 menu option headings are displayed.");
+
+		for (int i = 0; i < OptionsCount; i++) {
+			isStringMatching(elements("MenuHeadings_Hamburger").get(i).getText(), menuOptions[i]);
+		}
+		logMessage("Verified: Clicking on hamburger menu icon displays the correct menu options");
+
+	}
+
+	public void verifyMenuOptionsDisplayedForHamburgerOnStickyHeader() {
+		isElementDisplayed(true, "Menu_Hamburger");
+		int OptionsCount = elements("MenuHeadings_Hamburger").size();
+		assertTrue(OptionsCount == 4, "Assertion failed: 4 menu option headings.");
+		logMessage("Verified: 4 menu option headings are displayed.");
+		isElementDisplayed(true, "PubButton_Hamburger");
+		logMessage("Verified: Publications button is displayed inside the Hamburger menu.");
+
+	}
+
+	public void verifyContentTypesDisplayedOnModal(String[] contentTypes) {
+		int i = 0;
+		verifyTypeIsSelected(contentTypes[0]);
+
+		for (WebElement ContentTypeActual : elements("ContentTypes_Modal")) {
+			isStringMatching(ContentTypeActual.getText(), contentTypes[i]);
+			i++;
+		}
+		logMessage("Verified: Different content types are available on Publications modal");
+	}
+
+	public void verifyTypeIsSelected(String ContentType) {
+		hardWait(2);
+		assertTrue(element("ContentType_Selected", ContentType).getAttribute("class").contains("active"));
+		logMessage("Verified: " + ContentType + " is selected.");
+	}
+
+	public void verifyAllTypesOfContentIsDisplayedUnderAllTypes() {
+		int size = elements("links_PubsContent").size();
+		logMessage("Number of links displayed for 'All Types': " + size);
+
+		for (WebElement ContentDisplayed : elements("links_PubsContent")) {
+			String Type = ContentDisplayed.getAttribute("class");
+			assertTrue(Type.contains("journals") || Type.contains("books") || Type.contains("news"));
+		}
+		logMessage("Verified: Links displayed for 'All types' content type fall under journals, books or news");
+	}
+
+	public void verifyOnlyJournalsAreDisplayedUnderJournalsContentType() {
+		int size = elements("links_PubsContent").size();
+		logMessage("Number of links displayed for 'Journals' Type: " + size);
+
+		for (WebElement ContentDisplayed : elements("links_PubsContent")) {
+			String Type = ContentDisplayed.getAttribute("class");
+			assertTrue(Type.contains("journals"));
+		}
+		logMessage("Verified: Links displayed for 'Journals' content type fall under Journals");
+	}
+
+	public void verifyOnlyBooksAreDisplayedUnderBooksContentType() {
+		int size = elements("links_PubsContent").size();
+		logMessage("Number of links displayed for 'Books' Type: " + size);
+
+		for (WebElement ContentDisplayed : elements("links_PubsContent")) {
+			String Type = ContentDisplayed.getAttribute("class");
+			assertTrue(Type.contains("books"));
+		}
+		logMessage("Verified: Links displayed for 'Books' content type fall under Books");
+
+	}
+
+	public void verifyOnlyNewsAreDisplayedUnderNewsContentType() {
+		int size = elements("links_PubsContent").size();
+		logMessage("Number of links displayed for 'News' Type: " + size);
+
+		for (WebElement ContentDisplayed : elements("links_PubsContent")) {
+			String Type = ContentDisplayed.getAttribute("class");
+			assertTrue(Type.contains("news"));
+		}
+		logMessage("Verified: Links displayed for 'News' content type fall under News");
+
+	}
+
+	public void ClickOnAnyLinkAndVerifyNavigationToCorrectPage() {
+		int LinksSize = elements("links_PubsContent").size();
+		Random random = new Random();
+		int randomIndex = random.nextInt(LinksSize);
+		String type = elements("links_PubsContent").get(randomIndex).getAttribute("class");
+		String a = elements("links_PubsContent").get(randomIndex).getAttribute("href");
+		String hrefComponent = a.substring(a.lastIndexOf('/') + 1);
+		elements("links_PubsContent").get(randomIndex).click();
+		if (type.contains("journals")) 
+			logMessage("Info: Clicked on a random link for 'Journal'");
+		
+		else if (type.contains("books")) 
+			logMessage("Info: Clicked on random link for 'Books'"); 
+		
+		else 
+			logMessage("Info: Clicked on random link for 'News'");
+		
+		wait.waitForPageToLoadCompletely();
+		assertTrue(getCurrentURL().contains(hrefComponent));
+		logMessage("Verified: Correct Navigation of clicking on any link");
+		
+
+	}
+	
+	
+
+	public void verifySubjectsSectionDisplayed() {
+		isElementDisplayed(true, "Section_Subjects");
+		isElementDisplayed(true, "header_Subjects");
+		isStringMatching(element("header_Subjects").getText(), "SUBJECTS");
+
+		assertTrue(elements("CheckBoxes_Subjects").size() == 7);
+		logMessage("Verified: 7 subjects present under Subject section.");
+	}
+
+	public void verifySubjectSectionIsNotDisplayedForBooksAndNewsType() {
+		clickOnPubModalLink("Books and Reference");
+		verifySubjectSectionIsNotDisplayed();
+		clickOnPubModalLink("News");
+		verifySubjectSectionIsNotDisplayed();
+	}
+
+	public void verifySubjectSectionIsNotDisplayed() {
+		isElementDisplayed(false, "Section_Subjects");
+	}
+
+	public void verifyLetterHeadingsDisplayed() {
+
+		logMessage("Info: " + elements("headings_Alphabets").size() + " letter headings are displayed.");
+		for (WebElement letterHeadings : elements("headings_Alphabets")) {
+			verifyFormat(letterHeadings.getText(), "[A-Z]");
+		}
+	}
+
+	public void verifyLetterHeadingsNotDisplayedForBooksAndNewsType() {
+		clickOnPubModalLink("Books and Reference");
+		verifyLetterHeadingsAreNotDisplayed();
+		clickOnPubModalLink("News");
+		verifyLetterHeadingsAreNotDisplayed();
+	}
+
+	public void verifyLetterHeadingsAreNotDisplayed() {
+		isElementDisplayed(false, "headings_Alphabets");
+	}
+
+	public void enterSearchTermAndClickOnSearchIcon(String SearchTerm) {
+		sendKeys(SearchTerm, "input_SearchBox");
+		clickOnElement("iconSearch_SearchBox");
+		wait.waitForPageToLoadCompletely();
+	}
+	
+	public void enterSearchTermAndClickOnhomePageSearchIcon(String SearchTerm) {
+		sendKeys(SearchTerm, "homePage_input_SearchBox");
+		clickOnElement("hP_iconSearch_SearchBox");
+		wait.waitForPageToLoadCompletely();
+	}
+
+	public String enterSearchDetailsInCitationSearchBox(String searchTerm, String journal, String vol, String page) {
+		clickOnElement("dropdown_JournalsSearchBox");
+		hardWait(2);
+		clickOnElement("DD_SearchJournals", journal);
+
+		String selectedJournal = element("selectedJournal_Search").getText();
+		System.out.println(selectedJournal);
+		sendKeys(vol, "input_OptionsSearchBox", "Vol");
+		sendKeys(page, "input_OptionsSearchBox", "Page");
+		clickOnElement("iconSearch_Citation");
+		return selectedJournal;
+
+	}
+	
+	public String enterSearchDetailsInCitationhomePageSearchBox(String searchTerm, String journal, String vol, String page) {
+		clickOnElement("hP_dropdown_JournalsSearchBox");
+		hardWait(2);
+		clickOnElement("DD_SearchJournals", journal);
+
+		String selectedJournal = element("hP_selectedJournal_Search").getText();
+		System.out.println(selectedJournal);
+		sendKeys(vol, "hP_input_OptionsSearchBox", "Volume");
+		sendKeys(page, "hP_input_OptionsSearchBox", "Page");
+		clickOnElement("homePage_iconSearch_Citation");
+		return selectedJournal;
+
+	}
+
+	public void verifySublinksUnderOptions(String heading, Map<String, Object> links) {
+		assertTrue(elements("subLinks_Hamburger", heading).size() == links.size());
+		logMessage("Info: " + links.size() + " links displayed under " + heading.toUpperCase()
+				+ " section on hamburger menu.");
+		int i = 0;
+
+		for (String expectedLink : links.keySet()) {
+			isStringMatching(elements("subLinks_Hamburger", heading).get(i).getText(),
+					links.get(expectedLink).toString());
+			i++;
+		}
+		logMessage("Verified: All sublinks are displayed for " + heading + " option on hamburger.");
+		i=0;
+		for (String expectedLink2 : links.keySet()) {
+			//clickOnElement("subLinks_Hamburger",heading);
+			//clickOnHamburgerIcon();
+			String link = elements("subLinks_Hamburger", heading).get(i).getText();
+			elements("subLinks_Hamburger", heading).get(i).click();
+			verifyUserNavigateToRespectiveHamburgerLink(link);
+			i++;
+		}
+	}
+
+	public void verifyEditorsChoiceSection() {
+		
+		scrollToEditorChoice();
+		isStringMatching(elements("heading_EditorsChoice").get(0).getText(), "ACS Editors' Choice");
+		isStringMatching(elements("text_EditorsChoice").get(0).getText(), "Based on recommendations from the scientific editors of ACS Journals. See all articles.");
+		
+		clickOnElement("url_EditorsChoice");
+		logMessage("User clicked on See all articles link");
+		verifyUserIsOnEditorsPage();
+		navigateToPreviousPage();
+		scrollToEditorChoice();
+		assertTrue(elementsinDom("images_EditorsChoice").size() < 8);
+		logMessage("Verified: "+elementsinDom("images_EditorsChoice").size()+" corresponding images present in DOM.");
+
+		assertTrue(elementsinDom("Titles_EditorsChoice").size() == 8);
+		logMessage("Verified: 8 corresponding titles present in DOM.");
+
+		assertTrue(elementsinDom("authors_EditorsChoice").size() == 8);
+		logMessage("Verified: 8 corresponding author names present in DOM.");
+
+		assertTrue(elementsinDom("radioButton_Slides").size() == 8);
+		logMessage("Verified: 8 radio buttons for navigation are displayed.");
+
+		assertTrue(elementsinDom("buttons_SlideNavigation").size() == 2);
+		logMessage("Verified: 2 buttons for navigation are displayed.");
+		
+		assertTrue(element("advertisement_editorsChoice").getText().equals("ADVERTISEMENT"),"Assertion Failed: Second Slide is not advertisement in Editor's Choice Section");
+		logMessage("Verified: Second Slide is of Advertisement in Editors' Choice Section.");
+		
+		verifyAdvertisementisDisplayed();
+	}
+	public void verifyAdvertisementisDisplayed() {
+		
+		switchToFrame(element("advertisement_img").getAttribute("id"));
+		isElementDisplayed(true,"ad_img_editorsChoice");
+		switchToDefaultContent();
+		
+	}
+	public void clickOnNavigationArrowAndVerifySlideHasChanged() {
+		
+		scrollToTop();
+		Map<Integer,String> SlideTitles = getSlideTitle();
+		navigateToSlideAtIndex(2);
+		navigateToSlideAtIndex(1);
+		
+		while(!element("last_radio_button").getAttribute("class").contains("active")) {
+
+			int CurrentSlide = getCurrentSlideNumber();
+			verifySlideTitle(CurrentSlide,SlideTitles);
+			NumberOfSlideDisplayed(CurrentSlide);
+			navigateToNextSlide();
+			if(element("last_radio_button").getAttribute("class").contains("active")) {
+				NumberOfSlideDisplayed(CurrentSlide);
+				verifySlideTitle(CurrentSlide+1,SlideTitles);
+			}
+				
+		}
+		logMessage("Verified: Successful slide navigation by forward arrow button.");
+		
+		do {
+			int CurrentSlide = getCurrentSlideNumber();
+			verifySlideTitle(CurrentSlide,SlideTitles);
+			NumberOfSlideDisplayed(CurrentSlide);
+			navigateToPreviousSlide();
+			
+		}while(!element("first_radio_button").getAttribute("class").contains("active"));
+		
+		
+		
+	}
+	public String getCurrentSlideTitle(int slide) {
+		if(slide == 2)
+			return element("advertisement_editorsChoice").getText();
+		else
+			return element("title_selectedSlide").getAttribute("title");
+	}
+	
+	public void verifySlideTitle(int slide,Map<Integer,String> SlideTitles) {
+		
+		
+		String titleOfCurrentSlide = getCurrentSlideTitle(slide);
+		System.out.println(titleOfCurrentSlide);
+		//assertTrue(titleOfCurrentSlide.equals(SlideTitles.get(slide)),"Assertion Failed: Slider not worked properly.");
+		isStringMatching(titleOfCurrentSlide,SlideTitles.get(slide));
+		logMessage("Verified: Slider is working accordingly");
+	}
+	public Map<Integer,String> getSlideTitle() {
+		
+		Map<Integer,String> title = new HashMap<Integer,String>(); 
+		int j=0;
+		for(int i = 0 ; i<elementsinDom("elements_EditorsChoice").size();i++) {
+			if(i == 1)
+				title.put(i+1,element("advertisement_editorsChoice").getText());
+			else {
+				title.put(i+1,elementsinDom("Titles_EditorsChoice").get(j).getAttribute("title"));
+				j++;
+			}
+			
+		}
+		return title;
+	}
+	public void navigateToNextSlide() {
+		try {
+			elements("buttons_SlideNavigation").get(1).click();
+		} catch (StaleElementReferenceException e) {
+			elements("buttons_SlideNavigation").get(1).click();
+		}
+		logMessage("Clicked on next arrow button.");
+		wait.waitForPageToLoadCompletely();
+	}
+	public void navigateToPreviousSlide() {
+		try {
+			elements("buttons_SlideNavigation").get(0).click();
+		} catch (StaleElementReferenceException e) {
+			elements("buttons_SlideNavigation").get(0).click();
+		}
+		logMessage("Clicked on next arrow button.");
+		wait.waitForPageToLoadCompletely();
+	}
+
+	public int getCurrentSlideNumber() {
+		int highlightSlideNumber;
+		highlightSlideNumber = Integer.parseInt(element("slide_selected").getAttribute("title").split(": ")[1]);
+		return (highlightSlideNumber);
+	}
+
+	public void navigateToSlideAtIndex(Integer index) {
+		--index;
+		try {
+			elements("radioButton_Slides").get(index).click();
+		} catch (StaleElementReferenceException e) {
+			elements("radioButton_Slides").get(index).click();
+		}
+		logMessage("Clicked 'Slide Navigation' button at index " + (index + 1));
+	}
+
+	public void clickOnRadioButtonAndVerifySlideHasChanged() {
+		Map<Integer,String> SlideTitles = getSlideTitle();
+		int CurrentSlide = getCurrentSlideNumber();
+		logMessage("Current slide:" + CurrentSlide);
+		Random random = new Random();
+		int SlideSelected = random.nextInt(8);
+		if (SlideSelected == 0)
+			SlideSelected++; 
+		if(SlideSelected == 1) {
+			navigateToSlideAtIndex(2);
+			navigateToSlideAtIndex(1);
+		}
+		System.out.println("random: " + SlideSelected);
+		navigateToSlideAtIndex(SlideSelected);
+		NumberOfSlideDisplayed(SlideSelected);
+		verifySlideTitle(SlideSelected,SlideTitles);
+//		int NewSelectedSlide = getCurrentSlideNumber();
+//		System.out.println("selected:" + NewSelectedSlide);
+//		assertTrue(SlideSelected == NewSelectedSlide);
+		logMessage("Verified: Successful slide navigation by radio button.");
+	}
+	public void NumberOfSlideDisplayed(int SlideSelected) {
+		
+		if(SlideSelected == 8) {
+			assertTrue(elements("slide_displayed").size()==2,"Assertion Failed: Last slider has more than 2 slides");			
+		}
+		logMessage("Verified "+ elements("slide_displayed").size()+" slides are displayed");
+		
+		
+	}
+	public String clickOnSlideAndVerifyNavigation() {
+		String ArticleTitle = element("title_selectedSlide").getAttribute("title");
+		clickOnElement("title_selectedSlide");
+		wait.waitForPageToLoadCompletely();
+		return ArticleTitle;
+	}
+
+	public void verifyInformationForSectionOnRight(Map<String, Object> links) {
+		isElementDisplayed(true, "h2_Section", "Information For");
+		assertTrue(elements("links_InformationSection").size() == links.size());
+		logMessage("Info: " + links.size() + " links displayed under Information For section on right of homepage.");
+		int i = 0;
+
+		for (String expectedLink : links.keySet()) {
+			isStringMatching(elements("links_InformationSection").get(i).getAttribute("title"),
+					links.get(expectedLink).toString());
+			i++;
+		}
+		logMessage("Verified: All links are displayed under Information For section.");
+
+	}
+
+	public void verifyNavigationOfLinksUnderInformationForSection() {
+		scrollToTop();
+		String linkName = "";
+		int size = elements("links_InformationSection").size();
+		for (int i = 0; i < size; i++) {
+			linkName = elements("links_InformationSection").get(i).getAttribute("title");
+			elements("links_InformationSection").get(i).click();
+			logMessage("Info: User clicked on link: '" + linkName + "'.");
+			VerifyLandingPageOfInformationLinks(linkName);
+			navigateToPreviousPage();
+		}
+
+	}
+
+	private void VerifyLandingPageOfInformationLinks(String linkName) {
+		String PageUrl = getCurrentURL();
+		Map<String, Object> links = getYamlValues("HomePage.InformationFor");
+
+		if (linkName.equals(links.get("link1"))) {
+			isElementDisplayed(true, "h1_AuthorReviewerPage");
+			assertTrue(PageUrl.contains("publish"));
+		}
+
+		if (linkName.equals(links.get("link2"))) {
+			isElementDisplayed(true, "img_LibrariansPage");
+			isElementDisplayed(true, "login_LibrariansPage");
+			assertTrue(PageUrl.contains("librarians"));
+		}
+
+		if (linkName.equals(links.get("link3"))) {
+			isElementDisplayed(true, "tab_MembersPage");
+			assertTrue(PageUrl.contains("member-benefits"));
+		}
+
+		logMessage("Verified: Navigation to '" + linkName + "' landing page.");
+
+	}
+
+	public void verifySignUpForEmailSectionOnRight() {
+		isElementDisplayed(true, "h2_Section", "Sign Up for Email");
+		isElementDisplayed(true, "description_Section", "Sign Up for Email");
+		isElementDisplayed(true, "btn_eAlerts");
+		logMessage("Verified: Sign Up for Email section.");
+	}
+
+	public void clickOnEAlertsButtonAndVerifyNavigation() {
+		scrollToTop();
+		scrollVertical(200);
+		clickOnElement("btn_eAlerts");
+		wait.waitForPageToLoadCompletely();
+		isElementDisplayed(true, "h1_LoginPromptPage");
+		isElementDisplayed(true, "btn_LoginOrRegister");
+		logMessage("Verified: Navigation for eAlerts button.");
+	}
+
+	public void clickOnLoginOrRegisterButton() {
+		clickOnElement("btn_LoginOrRegister");
+		wait.waitForPageToLoadCompletely();
+
+	}
+
+	public void verifyAboutACSSectionOnRight() {
+		isElementDisplayed(true, "h2_Section", "About ACS");
+		isElementDisplayed(true, "description_Section", "About ACS");
+		logMessage("Verified: About ACS section.");
+	}
+
+	public void verifyBrowsePublicationsSection(Map<String, Object> tabList) {
+		int i = 0;
+		String tabName;
+		for (String expectedTab : tabList.keySet()) {
+			tabName = tabList.get(expectedTab).toString();
+			isElementDisplayed(true, "tabs_BrowsePublications", tabName);
+			logMessage("Info: '" + tabName + "' displayed.");
+			if (i == 0) {
+				assertTrue(
+						element("tabs_BrowsePublications", tabName).getAttribute("aria-expanded").equals("true"));
+				logMessage("Info: '" + tabName + "' is selected by default.");
+			}
+			i++;
+		}
+		logMessage("Verified: All tabs are displayed under Browse Publications section.");
+
+	}
+
+	public void verifyGridViewSectionForJournals(String journalCount) {
+		assertTrue(elementsinDom("imgs_JournalCoverArt").size() == Integer.parseInt(journalCount));
+		logMessage("Verified: " + journalCount + " journal art covers displayed under Cover Art Section.");
+	}
+
+	public void clickOnJournalCoverArtAndVerifyNavigation(String journalCount) {
+		Random random = new Random();
+		int coverArtIndex = random.nextInt(Integer.parseInt(journalCount));
+		String a = elements("imgs_JournalCoverArt").get(coverArtIndex).getAttribute("href");
+		String hrefComponent = a.substring(a.lastIndexOf('/') + 1);
+
+		elementsinDom("imgs_JournalCoverArt").get(coverArtIndex).click();
+		logMessage("Info: User clicked on journal cover art at index: " + coverArtIndex);
+		wait.waitForPageToLoadCompletely();
+
+		assertTrue(getCurrentURL().contains(hrefComponent));
+		logMessage("Verified: Navigation upon clicking on journal cover art.");
+
+	}
+
+	public void clickOnTabUnderBrowsePublicationsSection(String tabName) {
+		scrollToTop();
+		//scrollVertical(650);
+		clickOnElement("tabs_BrowsePublications", tabName);
+		
+
+	}
+
+	public void verifyListViewSectionForJournals(String listCount) {
+		assertTrue(elements("links_ListView").size() == Integer.parseInt(listCount));
+		logMessage("Verified: " + listCount + " links displayed under List view Section.");
+	}
+
+	public void verifyLetterHeadingsDisplayedForListView() {
+		logMessage("Info: " + elements("ListHeadings_Alphabets").size() + " letter headings are displayed.");
+		for (WebElement letterHeadings : elements("ListHeadings_Alphabets")) {
+			verifyFormat(letterHeadings.getText(), "[A-Z]");
+		}
+	}
+
+	public void ClickOnAnyLinkUnderListViewAndVerifyNavigationToCorrectPage(String listCount) {
+		Random random = new Random();
+		int randomIndex = random.nextInt(Integer.parseInt(listCount));
+
+		String type = elements("links_ListView").get(randomIndex).getAttribute("class");
+		String a = elements("links_ListView").get(randomIndex).getAttribute("href");
+		String hrefComponent = a.substring(a.lastIndexOf('/') + 1);
+
+		elements("links_ListView").get(randomIndex).click();
+		if (type.contains("journals"))
+			logMessage("Info: Clicked on a random link for 'Journal'");
+		else if (type.contains("books"))
+			logMessage("Info: Clicked on random link for 'Books'");
+		else
+			logMessage("Info: Clicked on random link for 'News'");
+
+		wait.waitForPageToLoadCompletely();
+
+		assertTrue(getCurrentURL().contains(hrefComponent));
+		logMessage("Verified: Correct Navigation of clicking on any link");
+	}
+
+	public void verifyCoverArtOverlaysUponHover() {
+		scrollVertical(800);
+		Point style = elements("imgs_JournalCoverArt").get(2).getLocation();
+		System.out.println(style);
+		hover(elements("imgs_JournalCoverArt").get(2));
+		hardWait(2);
+		style = elements("imgs_JournalCoverArt").get(2).getLocation();
+		System.out.println(style);
+	}
+
+	public void verifyPartnersAndTheirNavigation(Map<String, Object> partners) {
+		int i = 0;
+		String PartnerName;
+		for (String Partner : partners.keySet()) {
+			PartnerName = partners.get(Partner).toString();
+			assertTrue(elements("imgs_partners").get(i).getAttribute("src").contains(PartnerName.toLowerCase()));
+			logMessage("Info: Partner '" + PartnerName + "' displayed.");
+
+			String expectedURL = elements("links_partners").get(i).getAttribute("href").replaceAll("http", "https");
+			if (expectedURL.contains("crosscheck"))
+				expectedURL = "https://www.crossref.org/services/similarity-check/";
+			if (expectedURL.contains("orcid"))
+				expectedURL = expectedURL.split("www.")[1];
+			System.out.println(expectedURL);
+
+			scrollDown();
+			elements("links_partners").get(i).click();
+			logMessage("User clicked on partner:" + PartnerName + "' .");
+			wait.waitForPageToLoadCompletely();
+
+			assertTrue(getCurrentURL().contains(expectedURL),
+					"Assertion failed: Incorrect landing page for partner: " + PartnerName);
+			logMessage("Verified: Landing page for partner: " + PartnerName);
+			navigateToPreviousPage();
+			i++;
+		}
+		logMessage("Verified: All Partners are displayed in footer section and navigate to correct pages.");
+
+	}
+
+	public void verifyCopyrightSectionDisplayedAtFooter(String CopyRightText) {
+		scrollDown();
+		isElementDisplayed(true, "link_Copyright");
+		isStringMatching(element("link_Copyright").getText().trim(), CopyRightText.replaceAll("Â", ""));
+	}
+
+	public void clickOnCopyrightLinkAndVerifyLandingPage() {
+		clickOnElement("link_Copyright");
+		wait.waitForPageToLoadCompletely();
+		assertTrue(getCurrentURL().contains("copyright"), "Assertion failed: Incorrect landing page.");
+		isStringMatching(element("h1_Copyright").getText(), "ACS Copyright Information");
+		logMessage("Verified: Navigation of copyright link at footer.");
+	}
+
+	public void VerifyPolicyLinkAtFooter() {
+		scrollDown();
+		isElementDisplayed(true, "link_PrivacyPolicy");
+	}
+	
+	public void CLickOnPrivacyPolicyLinkAndVerifyLandingPage() {
+		clickOnElement("link_PrivacyPolicy");
+		wait.waitForPageToLoadCompletely();
+		assertTrue(getCurrentURL().contains("privacy"),
+				"Assertion failed: Not navigated to Privacy policy page.");
+		isElementDisplayed(true, "h1_PrivacyPolicy");
+		logMessage("Verified: Navigated to Privacy Policy page.");
+
+	}
+
+	public void verifyFollowIconsDisplayedAtFooter(Map<String, Object> icons) {
+		String IconName;
+		scrollDown();
+		for (String index : icons.keySet()) {
+			IconName = icons.get(index).toString();
+			isElementDisplayed(true, "icons_Follow", IconName);
+			logMessage("Info: '" + IconName + "' share icon is displayed.");
+		}
+		logMessage("Verified: All follow icons are displayed in footer.");
+
+	}
+
+	public void clickOnEachIconAndVerifyLandingPage() {
+		/*
+		 * Update when fixed.
+		 */
+	}
+
+	public void ClickOnEachSubjectCheckBoxAndVerifyJournalListDisplayed() {
+		List<String> JournalList1 = new ArrayList<String>();
+		List<String> JournalList2 = new ArrayList<String>();
+
+		elements("CheckBoxes_Subjects").get(0).click();
+		hardWait(1);
+		logMessage("Info: Clicked on checkbox for Subject: " + elements("text_Subjects").get(0).getText());
+		logMessage("Info: " + elements("links_PubsContent_subjects").size()+" journals are displayed corresponding to the selected subject.");
+
+		for (WebElement JournalTitle : elements("links_PubsContent_subjects")) {
+			String JournalsTitles = JournalTitle.getText().trim();
+			JournalList1.add(JournalsTitles);
+		}
+		elements("CheckBoxes_Subjects").get(0).click();
+		hardWait(1);
+
+		for (int i = 1; i < elements("CheckBoxes_Subjects").size(); i++) {
+			elements("CheckBoxes_Subjects").get(i).click();
+			hardWait(1);
+			logMessage("Info: Clicked on checkbox for Subject: " + elements("text_Subjects").get(i).getText());
+			logMessage("Info: " + elements("links_PubsContent_subjects").size()+ " journals are displayed corresponding to the selected subject.");
+
+			for (WebElement JournalTitle : elements("links_PubsContent_subjects")) {
+				String JournalsTitles = JournalTitle.getText().trim();
+				JournalList2.add(JournalsTitles);
+			}
+
+			Assert.assertNotEquals(JournalList1, JournalList2,"Assertion Failed: Journal list for two subjects do not differ.");
+			logMessage("Verified: Journals list differs as compared to previous subject selected.");
+
+			elements("CheckBoxes_Subjects").get(i).click();
+			hardWait(1);
+			JournalList1.clear();
+			JournalList1.addAll(JournalList2);
+		}
+
+	}
+
+	public void clickOnInputBoxOfSearchIcon() {
+		clickOnElement("input_SearchBox");
+	}
+
+	public void clickOnSearchIcon() {
+		clickOnElement("iconSearch_SearchBox");
+	}
+
+	public void selectJournal(String journalName) {
+		clickOnElement("PublicationsLink", journalName);
+		logMessage("Info: Clicked on journal link:" + journalName);
+	}
+	
+	public void clickOnEditorsChoiceHeadingLink() {
+		elements("texts_EditorsChoice").get(0).click();
+		logMessage("Info: Clicked on 'ACS Editors' Choice' heading link.");
+		hardWait(2);
+	}
+
+	public void clickOnViewAll1000ArticlesLink() {
+		elements("texts_EditorsChoice").get(1).click();
+		logMessage("Info: Clicked on 'View all 1,000+ Open Access Articles' heading link.");	
+		hardWait(2);
+	}
+	
+	public void VerifyBrowsePublicationSection() {
+		
+		isElementDisplayed(true, "browse_section");
+		logMessage("Verified: Browse Publication Section is displayed.");
+		
+	}
+	
+	public void VerifyShowMoreAndShowLessFunctionality(String view) {
+		
+		isElementDisplayed(true, "show_btn");
+		clickOnElement("show_btn");
+		isStringMatching(element("browse_publication_height").getAttribute("style"),"height: auto;");
+		assertTrue(element("show_btn").getText().contains("Show Less"), "Assertion failed: Show More button not worked.");
+		logMessage("Verified: Clicked on Show More button");
+		clickOnElement("show_btn");
+		if(view.equals("Grid View"))
+			isStringMatching(element("browse_publication_height").getAttribute("style"),"height: 679px;");
+		else
+			isStringMatching(element("browse_publication_height").getAttribute("style"),"height: 118px;");
+		assertTrue(element("show_btn").getText().contains("Show More"), "Assertion failed: Show Less button not worked.");
+		logMessage("Verified: Clicked on Show Less button");
+		logMessage("Show More button functions correctly.");
+	
+	}
+	public void clickOnShowMore() {
+		
+		clickOnElement("show_btn");
+		
+	}
+	public void VerifyContentAboveSearchBox() {
+		
+		isStringMatching(element("text_above_search_box").getAttribute("alt"),"Most Trusted. Most Cited. Most Read.");
+		logMessage("Verified: Correct content above search box is displayed");
+		
+	}
+	public void VerifyandNavigateToLinkOnLeftInSearchSection() {
+		Boolean journalVol = false;
+		Boolean flag = true;
+		isElementDisplayed(true, "img_link");
+		isStringMatching(element("journal_name_below_header").getText(),"J. Am. Chem. Soc.");
+		
+		int journalLink = elements("journal_below_header").size();
+		assertTrue(journalLink == 2, "Assertion Failed: More links are present on the right side of the Search Section.");
+		
+		journalVol = verifyJournalVolume(elements("journal_below_header").get(0).getText());
+		assertEquals(flag, journalVol,"Assertion Failed: Journal Volume is not in correct format.");
+		logMessage("Verified: Journal Volume is in correct format");
+		
+		isStringMatching(elements("journal_below_header").get(1).getText(),"Guo, Zhang, Zhu et al.");
+		
+		clickOnElement("img_link");
+		logMessage("User clicked on link below header");
+		verifyUserIsOnimgLink();
+		navigateToPreviousPage();
+		
+	}
+	public Boolean verifyJournalVolume(String exp) {
+		
+		final String regex = "\\s\\d{4},\\s\\d{3},\\s\\d{4}-\\d{4}";
+		
+		final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+		final Matcher matcher = pattern.matcher(exp);
+
+		if (matcher.find()) 
+		    return true;
+		    
+		return false;
+		
+	}
+	public void VerifyTrendingResearchSection() {
+		
+		isElementDisplayed(true, "trending_section");
+		isStringMatching(element("trending_heading").getText(),"Trending Research");
+		logMessage("Trending Research Section is displayed");
+		
+	}
+	
+	public void isElementPopover(long number_of_links,int i) {
+		List<String> ele = new ArrayList<String>();
+		hardWait(2);
+		for(int j = 0; j < number_of_links ; j++) {
+			
+			String style = elementsNotWait("trending_links_hover").get(j).getAttribute("style");
+			ele.add(style.split(";")[1].split(": ")[1]);
+			
+		}
+    	assertTrue(ele.contains("block"),"Assertion Failed: Metric "+(i+1)+" not get Popover after hovering on it.");
+		logMessage("Verified: Metric "+(i+1)+" get Popover after hovering on it.");
+		
+	}
+	public void ClickOnTrendingLinksAndVerifyNavigateToLandingPage() throws IOException {
+		scrollToTrendingSection();
+		long number_of_links = elements("trending_links").size();
+		logMessage("Verified : "+number_of_links + " Journal links are displayed under Trending Research Section");
+		for(int i = 0 ; i < number_of_links ; i++) {
+			assertEquals(true,isElementDisplayedByWebElement(elements("trending_links_date").get(i)),"Assertion Failed: Date is not Displayed for link "+i);
+			logMessage("Verified : Date is Displayed for link " + (i+1));
+			assertEquals(true,isElementDisplayedByWebElement(elements("trending_links_title").get(i)),"Assertion Failed: Journal URL is not Displayed for link "+i);
+			logMessage("Verfied : Journal URL is Displayed for link " + (i+1));
+			assertEquals(true,isElementDisplayedByWebElement(elements("trending_links_journal").get(i)),"Assertion Failed: Journal Name is not Displayed for link "+i);
+			logMessage("Verfied : Journal Name is Displayed for link " + (i+1));
+			assertEquals(true,isElementDisplayedByWebElement(elements("trending_links_metric").get(i)),"Assertion Failed: Metric Image is not Displayed for link "+i);
+			logMessage("Verified : Metric Image is Displayed for link " + (i+1));
+			
+		}
+		verifyNavigateCorrectURL(number_of_links);
+		verifyNavigateToCorrectMetricPage(number_of_links);
+		
+	}
+	
+	public void verifyNavigateCorrectURL(long number_of_links) {
+		
+		for(int i = 0; i < number_of_links ; i++) {	
+			if(i!=2) {
+			String title = elements("trending_links_title").get(i).getText();
+			elements("trending_links_URL").get(i).click();
+			logMessage("Verified : "+(i+1)+" URL is clicked");
+			verifyURLTitle(title,i);
+			}
+		}
+	}
+	
+	public void verifyNavigateToCorrectMetricPage(long number_of_links) {
+	
+		for(int i = 0; i < number_of_links ; i++) {
+			String title ="Altmetric – "+ elements("trending_links_title").get(i).getText();
+			hover(elements("trending_links_metric").get(i));
+			isElementPopover(number_of_links,i);
+			elements("trending_links_metric").get(i).click();
+			logMessage("Verified : "+(i+1)+" Metric link is clicked");
+			verifyMetricNavigation(title,i);
+			
+		}
+	}
+		
+	public void verifyMetricNavigation(String title,int i) {
+		
+		changeWindow(i+1);
+		assertTrue(getPageTitle().contains(title),"Assertion Failed : Metric Link "+(i+1)+" not navigates to correct URL");
+		logMessage("Verified: Metric Link "+(i+1)+" navigates to correct URL");
+		changeWindow(0);
+		
+	}
+	
+	public void verifyURLTitle(String title , int i) {
+		
+		assertTrue(getPageTitle().contains(title),"Assertion Failed : Link "+(i+1)+" not navigates to correct URL");
+		logMessage("Verified: Link "+(i+1)+" navigates to correct URL");
+		navigateToPreviousPage();
+		
+	}
+	
+	public void verifyContentBeloVideoAndNaviagteToLandingPage() {
+		
+		isElementDisplayed(true, "text_below_video");
+		isStringMatching(element("text_below_video").getText(),"More Stories Like This");
+		isElementDisplayed(true,"axial_img");
+		clickOnElement("axial_img");
+		assertTrue(getCurrentURL().contains("axial.acs.org"),"Assertion Failed: Axial link not navigates to landing Page");
+		logMessage("Verified : Axial link navigates to correct Page");
+		
+	}
+	
+	public void VerifyVideoSection() {
+		navigateToPreviousPage();
+		isElementDisplayed(true,"video_section");
+		Boolean expected=true;
+		Double startTime= videoCurrentTime();
+		videoPlay();
+		logMessage("Verified : User played the video.");
+		hardWait(3);
+		videoPause();
+		hardWait(1);
+		logMessage("Verified : User paused the video.");
+		Double endTime= videoCurrentTime();
+		Boolean flag= verifyVideoPaused();
+		assertEquals(flag, expected,"Assertion Failed: Video is not paused.");
+		logMessage("Verified: Video is paused.");
+		assertTrue(endTime >startTime, "Assertion Failed: Video did not play for any second.");
+		logMessage("Verified: Video paused at "+endTime+" seconds after playing.");
+
+	}
+	
+	public void VerifyVideoChangesOnClickingVideoLink() {
+		
+		List<String> videoPoster = new ArrayList<String>();
+		long number_of_videos = elements("other_video_links").size();
+		logMessage("Verified : "+number_of_videos + " Video links are displayed to be played");
+		for(int i = 0; i < number_of_videos ; i++) {
+			
+			elements("other_video_links").get(i).click();
+			videoPoster.add(element("video_change_poster").getAttribute("poster"));
+			
+		}	
+ 
+		assertTrue(distinctValues(videoPoster),"Assertion Failed: Vidoes are not changing on clicking the link");
+		logMessage("Verified : Videos get Changed on clicking the video links");
+
+	}
+	public boolean distinctValues(List<String> arr) {
+		
+	    for (int i = 0 ;i < arr.size()-1; i++) {
+	        for (int j = i+1; j < arr.size(); j++) {
+	             if (arr.get(i).equals(arr.get(j))) {
+	                 return false;
+	             }
+	        }
+	    }              
+	    return true;          
+	}
+	
+	public void verifyAboutUsMessage() {
+		
+		isElementDisplayed(true, "section_below_editor_choice");
+		isElementDisplayed(true, "content_below_editor_choice");
+		assertTrue(element("content_below_editor_choice").getText().contains("eBooks, scientific programs"), "Assertion Failed: Content is not displayed in the section below Editor Choice Section.");
+		logMessage("Verified: Content is displayed below Editor choice Section.");
+	}
+	
+	public void verifyStayConnectedText() {
+		
+		isElementDisplayed(true, "txt_StayConnected");
+		assertTrue(element("txt_StayConnected").getText().contains("Stay Connected"),
+				"Assertion Failed: Stay Connected text header is missing");
+		logMessage("Assertion Passed: Stay Connected text header is missing");
+	}
+
+	public void verifyStayConnectedMessage() {
+		System.out.println(element("txt_connectMessage").getText());
+		String message = "Connect with us! Keep current with the latest ASAPs via ACS Mobile app and e-alerts, and follow us for updates on conferences, research highlights, and more.";
+		isElementDisplayed(true, "txt_connectMessage");
+		assertTrue(element("txt_connectMessage").getText().replaceAll("\\r\\n. |\\r. |\\n", " ").contains(message),
+				"Assertion Failed: Stay Connected text header is missing");
+		logMessage("Assertion Passed: Stay Connected text header is missing");
+	}
+
+	public void verifyConnectSocialLink() {
+		for (WebElement social : elements("txt_connectSocialLink")) {
+			assertTrue(connectSocial.contains(social.getAttribute("alt")),
+					"Assertion Failed: Connect Social img is absent for: " + social.getAttribute("alt"));
+			logMessage("Assertion Passed: Connect Social img is present for: " + social.getAttribute("alt"));
+		}
+	}
+
+	public void verifyConnectSocialLinkNavigation() {
+		for (int counter = 0; counter < elements("txt_connectSocialLink").size(); counter++) {
+			String link = elements("txt_connectSocialLink").get(counter).getAttribute("alt");
+			System.out.println(link);
+			if (link.contains("e-Alerts"))
+				logMessage("INFO: Connect Social not linked to e-Alerts");
+			else {
+				element("lnk_connectSocialLink", link).click();
+				System.out.println(getPageTitle().toLowerCase());
+				assertTrue(getPageTitle().toLowerCase().contains(link.toLowerCase()),
+						"Assertion Failed: Connect Social navigated to wrong page for: " + link);
+				logMessage("Assertion Passed: Connect Social navigated to correct page for: " + link);
+
+				navigateToPreviousPage();
+			}
+		}
+	}
+
+	public void verifyConnectAppLinkImgAndNavigation() {
+		for (WebElement social : elements("txt_connectAppLink")) {
+			assertTrue(connectApp.contains(social.getAttribute("alt")),
+					"Assertion Failed: Connect App img is absent for: " + social.getAttribute("alt"));
+			logMessage("Assertion Passed: Connect App img is present for: " + social.getAttribute("alt"));
+		}
+
+		for (int counter = 0; counter < elements("txt_connectAppLink").size(); counter++) {
+			String link = elements("txt_connectAppLink").get(counter).getAttribute("alt");
+			System.out.println(link);
+			clickOnElement("lnk_connectAppLink", link);
+			String PageTitle = getPageTitle().replaceAll("[^A-Za-z ]", " ");
+			System.out.println(PageTitle);
+			assertTrue(PageTitle.trim().contains(link),
+					"Assertion Failed: Connect Social navigated to wrong page for: " + link);
+			logMessage("Assertion Passed: Connect Social navigated to correct page for: " + link);
+			navigateToPreviousPage();
+		}
+
+	}
+	
+	public void verifyResourceContainerAcsJoin() {
+		
+		String description = "Advance your career with professional development resources, educational tools, free access to 50 ACS journal articles, and more!";
+		isElementDisplayed(true, "img_resourceACSJoin");
+		assertTrue(element("img_resourceACSJoin").getAttribute("src").contains("acs-phoenix-sm-1552679657977.png"),
+				"Assertion Failed: ACS Join logo image is missing");
+		logMessage("Assertion Passed: ACS Join logo image is present");
+
+		isElementDisplayed(true, "txt_resourceACSJoin");
+		assertTrue(element("txt_resourceACSJoin").getText().contains(description),
+				"Assertion Failed: ACS Join Description text is missing");
+		logMessage("Assertion Passed: ACS Join Description text is present");
+
+		clickOnElement("btn_resourceACSJoin");
+		assertTrue(getPageTitle().contains("Discover ACS - American Chemical Society"),
+				"Assertion Failed: Join ACS navigated to wrong page");
+		logMessage("Assertion Passed: Join ACS navigated to correct page");
+		navigateToPreviousPage();
+
+	}
+
+	public void verifyResourceItemLinkDataAndNavigation() {
+		for (WebElement header : elements("header_resourcesItem")) {
+			assertTrue(itemHeader.contains(header.getText().toLowerCase()),
+					"Assertion Failed: Resource item Header is absent for: " + header.getText());
+			logMessage("Assertion Passed: Resource item Header is present for: " + header.getText());
+		}
+
+		for (String item : itemLinks) {
+			isElementDisplayed(true, "txt_resourceItem", item);
+
+			if (item.contains("ACS Axial")) {
+				assertTrue(
+						element("txt_resourceItem", item).getText().trim()
+								.contains("Discover our blog, and stay current with your field."),
+						"Assertion Failed: Description for ACS Axial is displayed incorrectly");
+				logMessage("Assertion Passed: Description for ACS Axial is displayed correctly");
+			}
+
+			if (item.contains("ACS Publishing Center")) {
+				assertTrue(
+						element("txt_resourceItem", item).getText().trim()
+								.contains("Everything you need to prepare and track your manuscript."),
+						"Assertion Failed: Description for ACS Publishing Center is displayed incorrectly");
+				logMessage("Assertion Passed: Description for ACS Publishing Center is displayed correctly");
+			}
+
+			if (item.contains("ACS Reviewer Lab")) {
+				assertTrue(
+						element("txt_resourceItem", item).getText().trim()
+								.contains("A free peer-review training course from ACS experts."),
+						"Assertion Failed: Description for ACS Reviewer Lab is displayed incorrectly");
+				logMessage("Assertion Passed: Description for ACS Reviewer Lab is displayed correctly");
+			}
+
+			if (item.contains("ACS InfoCentral")) {
+				assertTrue(
+						element("txt_resourceItem", item).getText().trim()
+								.contains("Institutional information about ACS products and services."),
+						"Assertion Failed: Description for ACS InfoCentral is displayed incorrectly");
+				logMessage("Assertion Passed: Description for ACS InfoCentral is displayed correctly");
+			}
+		}
+
+		for (int counter = 0; counter < elements("lnk_resourceItem").size(); counter++) {
+			elements("lnk_resourceItem").get(counter).click();
+			String actualTitle = getPageTitle().replaceAll("[^A-Za-z ]", " ");
+			String expectedTitle = itemLinks[counter];
+			System.out.println(actualTitle);
+			if (expectedTitle.contains("ACS InfoCentral"))
+				expectedTitle = expectedTitle.substring(4);
+			assertTrue(actualTitle.trim().contains(expectedTitle),
+					"Assertion Failed: Connect Social navigated to wrong page for: " + expectedTitle);
+			logMessage("Assertion Passed: Connect Social navigated to correct page for: " + expectedTitle);
+			navigateToPreviousPage();
+		}
+
+	}
+	
+	public void VerifySearchSectionBackgroundImage() throws IOException {
+		String url = getBackgroundURL().split("url")[1].split("\"")[1];
+		switchToNewTab();
+		driver.get(url);
+		assertTrue(url.contains("pb-assets/images/homepage/hp-hero-two-1552933738367"),"Assertion Failed: Background Image is not Correct");
+		hardWait(5);
+		huc = (HttpURLConnection)(new URL(url).openConnection());
+	    huc.connect();
+	    int respCode = huc.getResponseCode();
+	    System.out.println(respCode);
+	    assertTrue(respCode == 200 || respCode == 403,"Assertion Failed: Background Image is not displayed, Status Code - 200 not found");
+		logMessage("Verified: Background Image is displayed in Search Section.");
+		closeCurrentWindow();
+		changeWindow(0);
+	}
+
+}

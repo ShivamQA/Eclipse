@@ -1,0 +1,46 @@
+package com.test.Example;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadSpreadSheet {
+	
+	public static void main(String[] args) throws IOException
+	{
+		InputStream ExcelFileToRead = new FileInputStream("/home/qainfotech/RSS Feeds Validation.xlsx");
+		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
+		
+		XSSFWorkbook test = new XSSFWorkbook(); 
+		
+		XSSFSheet sheet = wb.getSheetAt(0);
+		XSSFRow row; 
+		XSSFCell cell;
+		java.util.Iterator<Row> rows = sheet.rowIterator();
+
+		for (int rowIndex = 0; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
+			  row = sheet.getRow(rowIndex);
+			  if (row != null) {
+				  
+				cell = row.getCell(0);
+			    if (cell != null) {
+			      // Found column and there is value in the cell.
+			      String cellValue = cell.getStringCellValue();
+			      System.out.println(cellValue);
+			    }
+			  }
+			}
+		
+	}
+	
+}

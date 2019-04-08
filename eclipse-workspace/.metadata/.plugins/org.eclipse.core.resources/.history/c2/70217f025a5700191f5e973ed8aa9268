@@ -1,0 +1,57 @@
+package com.test.Example;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadSpreadSheet {
+	
+	public static void main(String[] args) throws IOException
+	{
+		InputStream ExcelFileToRead = new FileInputStream("/home/qainfotech/RSS Feeds Validation.xlsx");
+		XSSFWorkbook  wb = new XSSFWorkbook(ExcelFileToRead);
+		
+		XSSFWorkbook test = new XSSFWorkbook(); 
+		
+		XSSFSheet sheet = wb.getSheetAt(0);
+		XSSFRow row; 
+		XSSFCell cell;
+
+		java.util.Iterator<Row> rows = sheet.rowIterator();
+
+		while (rows.hasNext())
+		{
+			row=(XSSFRow) rows.next();
+			java.util.Iterator<Cell> cells = row.cellIterator();
+			while (cells.hasNext())
+			{
+				cell=(XSSFCell) cells.next();
+		
+				if (cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
+				{
+					System.out.print(cell.getStringCellValue()+"/n");
+				}
+				else if(cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC)
+				{
+					System.out.print(cell.getNumericCellValue()+"/n");
+				}
+				else if(cell.getCellType() == XSSFCell.CELL_TYPE_BOOLEAN)
+				{
+					System.out.print(cell.getNumericCellValue()+"/n");
+				}
+			}
+//			System.out.println();
+		}
+	}
+	
+}

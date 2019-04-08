@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Box 1 is diplayed on the screen]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Box 2 is diplayed on the screen]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Color of Box 1 and Box 2 are not same and Page gets redirects to the Error Page]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Color of Box 1 and Box 2 are same and Page gets redirects to the next Page]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Drag Me link is diplayed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to Error page after clicking Proceed without performing dragging action correctly]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next Page after performing Drag Me action correctly and clicking Proceed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Launch Popup Window link is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Proceed link is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Text Box Name is diplayed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Submit Button is diplayed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to Error Page without launching Popup Window]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to Error Page without inserting name in Text Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next page after submitting name in the Text Box and click Proceed]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page get redirects to Error Page without setting the cookie and clicks Proceed link]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page get redirects to Error Page without generating the Token and clicks Proceed link]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page gets redirects to next page after setting cookie and clicks on Proceed]]>
+    </line>
+  </reporter-output>
+  <suite name="Test.TestTatoc" duration-ms="7206" started-at="2019-03-19T03:42:57Z" finished-at="2019-03-19T03:43:04Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="7206" started-at="2019-03-19T03:42:57Z" finished-at="2019-03-19T03:43:04Z">
+      <class name="Test.TestTatoc">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Test.TestTatoc@41fecb8b]" name="setup" is-config="true" duration-ms="775" started-at="2019-03-19T03:42:57Z" finished-at="2019-03-19T03:42:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Grid()[pri:0, instance:Test.TestTatoc@41fecb8b]" name="Grid" duration-ms="322" started-at="2019-03-19T03:42:58Z" finished-at="2019-03-19T03:42:58Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Grid -->
+        <test-method status="PASS" signature="Frame()[pri:1, instance:Test.TestTatoc@41fecb8b]" name="Frame" duration-ms="4222" started-at="2019-03-19T03:42:58Z" finished-at="2019-03-19T03:43:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Box 1 is diplayed on the screen]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Box 2 is diplayed on the screen]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Color of Box 1 and Box 2 are not same and Page gets redirects to the Error Page]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Color of Box 1 and Box 2 are same and Page gets redirects to the next Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Frame -->
+        <test-method status="PASS" signature="DragDrop()[pri:3, instance:Test.TestTatoc@41fecb8b]" name="DragDrop" duration-ms="392" started-at="2019-03-19T03:43:03Z" finished-at="2019-03-19T03:43:03Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Drag Me link is diplayed]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to Error page after clicking Proceed without performing dragging action correctly]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next Page after performing Drag Me action correctly and clicking Proceed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- DragDrop -->
+        <test-method status="PASS" signature="WindowPopup()[pri:4, instance:Test.TestTatoc@41fecb8b]" name="WindowPopup" duration-ms="939" started-at="2019-03-19T03:43:03Z" finished-at="2019-03-19T03:43:04Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Launch Popup Window link is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Proceed link is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Text Box Name is diplayed]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Submit Button is diplayed]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to Error Page without launching Popup Window]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to Error Page without inserting name in Text Box]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next page after submitting name in the Text Box and click Proceed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- WindowPopup -->
+        <test-method status="PASS" signature="CookieHandling()[pri:5, instance:Test.TestTatoc@41fecb8b]" name="CookieHandling" duration-ms="478" started-at="2019-03-19T03:43:04Z" finished-at="2019-03-19T03:43:04Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page get redirects to Error Page without setting the cookie and clicks Proceed link]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page get redirects to Error Page without generating the Token and clicks Proceed link]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page gets redirects to next page after setting cookie and clicks on Proceed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CookieHandling -->
+        <test-method status="PASS" signature="closeSetup()[pri:0, instance:Test.TestTatoc@41fecb8b]" name="closeSetup" is-config="true" duration-ms="66" started-at="2019-03-19T03:43:04Z" finished-at="2019-03-19T03:43:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeSetup -->
+      </class> <!-- Test.TestTatoc -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Test.TestTatoc -->
+</testng-results>

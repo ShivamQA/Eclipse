@@ -1,0 +1,70 @@
+package com.qait.acs.tests;
+
+import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.testng.annotations.Listeners;
+import static com.qait.automation.utils.YamlReader.getYamlValue;
+import static com.qait.automation.utils.YamlReader.getYamlValues;
+
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import java.io.IOException;
+import java.util.Map;
+
+@Listeners({ com.qait.acs.tests.CustomReportCreator.class })
+public class XMLDoi extends BaseTest {
+	
+	@Test
+    public void DOISize() throws Exception
+    {
+    	driver.get("https://achs-prod.literatumonline.com/toc/jacsat/current");
+    	ArrayList<String> DOI = new ArrayList<String>();
+    	int size = driver.findElements(By.cssSelector(".issue-item_title a[href*=\"doi\"]")).size();
+    	for(int i = 0; i < size; i++) {
+    		DOI.add(driver.findElements(By.cssSelector(".issue-item_title a[href*=\"doi\"]")).get(i).getAttribute("href").split("/",5)[4]);
+    	}
+    	System.out.println(DOI);
+		
+//		String DOI = "https://achs-prod.literatumonline.com/doi/10.1021/jacs.9b01585";
+//		System.out.println(DOI.split("/",5)[4]);
+       
+        List<String> list = new ArrayList<String>();
+    	String urlString = "http://stag-lnx-155.acs.org:8080/iapps/wld/rss/rss?coden=_jceda8&count=200";
+    	String file = "/home/qainfotech/DOI.xml";
+    	URL url = new URL(urlString);
+    	URLConnection conn = url.openConnection();
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder builder = factory.newDocumentBuilder();
+		Document doc = builder.parse(conn.getInputStream());
+		XPathFactory xPathfactory = XPathFactory.newInstance();
+		XPath xpath = xPathfactory.newXPath();
+		XPathExpression expr = xpath.compile("/rss/channel/item/description/text()");
+		NodeList nodes = (NodeList) expr.evaluate(doc, XPathConstants.NODESET);
+        for (int i = 0; i < nodes.getLength(); i++)
+            list.add(nodes.item(i).getNodeValue());
+    	System.out.println(list);
+    }
+}
+
+

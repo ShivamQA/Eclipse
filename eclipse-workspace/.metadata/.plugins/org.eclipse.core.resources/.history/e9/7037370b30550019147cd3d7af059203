@@ -1,0 +1,474 @@
+package com.qait.acs.tests;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.Listeners;
+import static com.qait.automation.utils.YamlReader.getYamlValue;
+import static com.qait.automation.utils.YamlReader.getYamlValues;
+
+import java.io.IOException;
+import java.util.Map;
+
+@Listeners({ com.qait.acs.tests.CustomReportCreator.class })
+public class NavigationAndDisplay_Test extends BaseTest {
+
+	@Test
+	public void Step01_ND_01_Verify_Existence_And_navigation_Of_TopLeftCorner_Links() {
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		String[] links = { "ACS", "ACS Publications", "C&EN","CAS" };
+		test.homePage.verifyExistenceAndNavigationOfTopLeftCornerLinks(links);
+	}
+
+	@Test
+	public void Step02_ND_02_Verify_Click_On_Login_Link_At_TopRight_Corner() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.VerifyAndClickOnLoginLinkAtTopRight();
+		test.loginPage.verifyNavigationToLoginPage();		
+	}
+
+	@Test
+	public void Step03_ND_03_Verify_Successful_User_Login() {
+		test.loginPage.EnterCredentials(getYamlValue("users.user1.username"),getYamlValue("users.user1.password"));
+		test.homePage.verifyUserLoggedIn(getYamlValue("users.user1.FirstName"));		
+	}
+
+
+	@Test
+	public void Step04_ND_04_Verify_My_Activity_Button_Displayed_Upon_Login() {
+		test.homePage.verifyMyActivityButtonIsDisplayed();
+		test.homePage.clickOnLogoutLink();		
+	}
+
+	@Test
+	public void Step05_ND_05_Verify_Main_Navigation_Panel() {
+		test.homePage.verifyPubsLogoIsDisplayed();
+		//Search Box is removed from Navigation Panel
+//		test.homePage.verifySearchBoxHomepageIsDisplayed();
+		test.homePage.verifyPublicationsButtonIsDisplayed();
+		test.homePage.verifyHamburgerMenuIconIsDisplayed();
+	}
+	
+	@Test
+	public void Step06_ND_06_Verify_Navigation_Of_Pubs_Logo_On_Main_Navigation_Panel() {
+		test.homePage.verifyPubsLogoIsDisplayed();
+		test.homePage.clickOnPubsLogoAndVerify(getYamlValue("baseUrl"));
+		test.homePage.navigateToPreviousPage();
+
+	}
+	
+	@Test
+	public void Step45_ND_Verify_Search_Section() throws IOException {
+		
+		test.homePage.navigateToHomePage();
+		test.homePage.VerifySearchSectionBackgroundImage();
+		test.homePage.VerifyContentAboveSearchBox();
+		test.homePage.verifySearchBoxHomepageIsDisplayed();
+		test.homePage.verifyContentbelowSearchBoxisDisplayed();
+		test.homePage.VerifyandNavigateToLinkOnLeftInSearchSection();
+		
+	}
+	
+	@Test
+	public void Step07_ND_07_Verify_Elements_Of_Search_Box_On_Main_Navigation_Panel() {
+		test.homePage.navigateToHomePage();		
+		test.homePage.verifyElementsOnSearchBoxHomePage();
+		test.homePage.verifyCitationsSearchBoxHomePageIsNotYetVisible();
+		test.homePage.ClickAnywhereInHomePageSearchBox();
+		test.homePage.verifyExpandedCitationSearchBoxhomePageIsDisplayed();
+		test.homePage.verifyOptionsOnExpandedCitationsHomePageSearchBox();
+	}
+
+	@Test
+	public void Step08_ND_08_Verify_Functionality_Of_Clicking_On_Publications_Button_On_Main_Navigation_Panel() {
+		test.homePage.navigateToHomePage();		
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+	}
+
+	@Test
+	public void Step09_ND_09_Verify_Functionality_Of_Clicking_On_Hamburger_Menu_Icon_On_Main_Navigation_Panel() {
+		String[] MenuOptions = { getYamlValue("HomePage.HamburgerMenu.Option1"), getYamlValue("HomePage.HamburgerMenu.Option2"),
+				getYamlValue("HomePage.HamburgerMenu.Option3")};
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnHamburgerIcon();
+		test.homePage.verifyMenuOptionsDisplayedForHamburger(MenuOptions);
+	}
+
+	@Test
+	public void Step10_ND_10_Verify_Content_Types_Displayed_On_Publications_Modal() {
+		String[] ContentTypes = { getYamlValue("Publications.ContentTypes.Type1"), getYamlValue("Publications.ContentTypes.Type2"),
+				getYamlValue("Publications.ContentTypes.Type3"), getYamlValue("Publications.ContentTypes.Type4")};
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.verifyContentTypesDisplayedOnModal(ContentTypes);
+	}
+
+	@Test
+	public void Step11_ND_11_Verify_Content_Displayed_Under_All_Types_Content_Type() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("All Types");
+		test.homePage.verifyAllTypesOfContentIsDisplayedUnderAllTypes();
+	}
+
+	@Test
+	public void Step12_ND_12_Verify_Navigation_of_Links_Under_All_Types_Content_Type() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("All Types");
+		test.homePage.ClickOnAnyLinkAndVerifyNavigationToCorrectPage();
+
+	}
+
+	@Test
+	public void Step13_ND_13_Verify_Content_Displayed_Under_Journals_Content_Type() {
+		test.homePage.navigateToHomePage();		
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("Journals");
+		test.homePage.verifyOnlyJournalsAreDisplayedUnderJournalsContentType();
+	}
+	
+	@Test
+	public void Step14_ND_14_Verify_Navigation_of_Links_Under_Journals_Content_Type() {
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("Journals");
+		test.homePage.ClickOnAnyLinkAndVerifyNavigationToCorrectPage();
+	}
+
+	@Test
+	public void Step15_ND_15_Verify_Content_Displayed_Under_Books_Content_Type() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("Books and Reference");
+		test.homePage.verifyOnlyBooksAreDisplayedUnderBooksContentType();
+	}
+	
+	@Test
+	public void Step16_ND_16_Verify_Navigation_of_Links_Under_Books_Content_Type() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("Books and Reference");
+		test.homePage.ClickOnAnyLinkAndVerifyNavigationToCorrectPage();
+	}
+
+	@Test
+	public void Step17_ND_17_Verify_Content_Displayed_Under_News_Content_Type() {
+		test.homePage.navigateToHomePage();		
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("News");
+		test.homePage.verifyOnlyNewsAreDisplayedUnderNewsContentType();
+	}
+	
+	@Test
+	public void Step18_ND_18_Verify_Navigation_of_Links_Under_News_Content_Type() {
+		test.homePage.navigateToHomePage();		
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.clickOnPubModalLink("News");
+		test.homePage.ClickOnAnyLinkAndVerifyNavigationToCorrectPage();
+	}
+	
+	@Test
+	public void Step19_ND_19_Verify_Subjects_Section_Is_Displayed_Only_For_AllTypes_And_Journals() {
+		test.homePage.navigateToHomePage();		
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.verifyTypeIsSelected("All Types");
+		test.homePage.verifySubjectsSectionDisplayed();
+		test.homePage.clickOnPubModalLink("Journals");
+		test.homePage.verifySubjectsSectionDisplayed();
+		test.homePage.verifySubjectSectionIsNotDisplayedForBooksAndNewsType();
+	}
+	
+	@Test
+	public void Step20_ND_20_Verify_Journal_List_Displayed_After_Selecting_Each_Subject() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.verifyTypeIsSelected("All Types");
+		test.homePage.verifySubjectsSectionDisplayed();
+		test.homePage.ClickOnEachSubjectCheckBoxAndVerifyJournalListDisplayed();
+	}
+	
+	
+	
+	@Test
+	public void Step21_ND_21_Verify_Letter_Headings_Are_Displayed_Only_For_AllTypes_And_Journals() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnPublicationLink();
+		test.homePage.verifyPublicationsModalIsDisplayed();
+		test.homePage.verifyTypeIsSelected("All Types");
+		test.homePage.verifyLetterHeadingsDisplayed();
+		test.homePage.clickOnPubModalLink("Journals");   
+		test.homePage.verifyLetterHeadingsDisplayed();
+		test.homePage.verifyLetterHeadingsNotDisplayedForBooksAndNewsType();
+		
+	}
+	
+	 // LITBETA-1929 (Navigates to different Vol/Issue LOI page
+	@Test
+	public void Step22_ND_22_Verify_User_Is_Able_To_Perform_Search_Successfully() {
+		String searchTerm= "Cell";
+		String searchDOI= getYamlValue("Search.SearchDOI");
+		
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyElementsOnSearchBoxHomePage();
+		test.homePage.ClickAnywhereInHomePageSearchBox();
+		test.homePage.verifySearchBoxInnerText();
+		test.homePage.enterSearchTermAndClickOnhomePageSearchIcon(searchTerm);
+		test.searchResultsPage.verifyNavigationToSearchResultsPage(searchTerm);
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.enterSearchTermAndClickOnhomePageSearchIcon(searchDOI);
+		test.searchResultsPage.verifyNavigationToSearchResultsPage(searchDOI);
+		test.homePage.ClickAnywhereInSearchBox();
+		String journal=test.homePage.enterSearchDetailsInCitationSearchBox(searchTerm, getYamlValue("Publications.Journals.Link1"), getYamlValue("Search.SearchVol"),getYamlValue("Search.SearchPage"));
+		test.loiPage.verifyNavigationToLOISearchResults(getYamlValue("Publications.Journals.Code1"));
+		//Showing wrong volume on Page
+		//test.loiPage.verifyNavigationToCorrectVolumeLOIResult(getYamlValue("Search.SearchVol"));
+	}
+	
+	
+	// Links are not linked to any page. Will update when fixed.
+	//@Test
+	public void Step23_ND_23_Verify_Navigation_Of_Links_Under_Multimedia_On_Hamburger_Menu() {
+		Map<String, Object> links = getYamlValues("HomePage.HamburgerMenu.Heading1");
+		test.homePage.navigateToHomePage();	
+		test.homePage.clickOnHamburgerIcon();
+		test.homePage.verifySublinksUnderOptions("multimedia",links);
+		
+		}
+	
+	@Test
+	public void Step24_ND_24_Verify_Navigation_Of_Links_Under_User_Resources_On_Hamburger_Menu() {
+		Map<String, Object> links = getYamlValues("HomePage.HamburgerMenu.Heading1");
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnHamburgerIcon();
+		test.homePage.verifySublinksUnderOptions("user resources",links);
+		
+		}
+	
+	@Test
+	public void Step25_ND_25_Verify_Navigation_Of_Links_Under_Support_On_Hamburger_Menu() {
+		Map<String, Object> links = getYamlValues("HomePage.HamburgerMenu.Heading2");
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnHamburgerIcon();
+		test.homePage.verifySublinksUnderOptions("support",links);
+		
+		}
+	
+	@Test
+	public void Step26_ND_26_Verify_Navigation_Of_Links_Under_About_Us_On_Hamburger_Menu() {
+		Map<String, Object> links = getYamlValues("HomePage.HamburgerMenu.Heading3");
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnHamburgerIcon();
+		test.homePage.verifySublinksUnderOptions("about us",links);
+		
+		}
+	
+	@Test
+	public void Step27_ND_27_Verify_ACS_Editors_Choice_Section() {
+		String Title;
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+//		test.homePage.verifyEditorsChoiceSection();
+		//test.homePage.verifyNumberoflinks();
+//		test.homePage.clickOnEditorsChoiceHeadingLink();
+//		test.collectionPage.verifyNavigationToCollectionLandingPage("Editors’ Choice");
+//		test.navigateBack();
+//		test.homePage.clickOnViewAll1000ArticlesLink();
+//		test.collectionPage.verifyNavigationToCollectionLandingPage("Editors’ Choice");
+//		test.navigateBack();
+//		test.homePage.clickOnNavigationArrowAndVerifySlideHasChanged();
+		test.homePage.clickOnRadioButtonAndVerifySlideHasChanged();
+//		Title=test.homePage.clickOnSlideAndVerifyNavigation();
+//		test.articlePage.verifyNavigationToArticleLandingPage(Title);
+	}
+		
+	//@Test
+	public void Step28_ND_28_Verify_Information_For_Section_On_Right_Of_HomePage() {
+		Map<String, Object> links = getYamlValues("HomePage.InformationFor");
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyInformationForSectionOnRight(links);
+		test.homePage.verifyNavigationOfLinksUnderInformationForSection();
+	}
+	
+	//@Test
+	public void Step29_ND_29_Verify_Sign_Up_For_Email_Section_On_Right_Of_HomePage() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.verifySignUpForEmailSectionOnRight();
+		test.homePage.clickOnEAlertsButtonAndVerifyNavigation();
+		test.homePage.clickOnLoginOrRegisterButton();
+		test.loginPage.EnterCredentials(getYamlValue("users.user1.username"),getYamlValue("users.user1.password"));
+		test.eMailAlertsHomePage.verifyNavigationToEmailAlertsPage();
+		test.homePage.clickOnLogoutLink();
+	}
+	
+	//@Test
+	public void Step30_ND_30_Verify_About_ACS_Section_On_Right_Of_HomePage() {
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyAboutACSSectionOnRight();
+	}
+	
+	@Test
+	public void Step31_ND_31_Verify_Browse_Publications_Section_On_HomePage() {
+		Map<String, Object> tabList = getYamlValues("BrowsePublications.tabList");
+		test.homePage.navigateToHomePage();	
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyBrowsePublicationsSection(tabList);
+	}
+	
+	@Test
+	public void Step32_ND_32_Verify_Grid_View_Tab_Under_Browse_Publications_Section_On_HomePage() {
+		String journalCount= getYamlValue("BrowsePublications.Tabs.JournalCoverCount");
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyGridViewSectionForJournals(journalCount);
+//		test.homePage.verifyCoverArtOverlaysUponHover();
+		test.homePage.VerifyShowMoreAndShowLessFunctionality("BrowsePublications.tabList.tab1");
+		test.homePage.clickOnShowMore();
+		test.homePage.clickOnJournalCoverArtAndVerifyNavigation(journalCount);
+	}
+	
+	@Test
+	public void Step33_ND_33_Verify_List_View_Tab_Under_Browse_Publications_Section_On_HomePage() {
+		String listCount= getYamlValue("BrowsePublications.Tabs.ListCount");
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.clickOnTabUnderBrowsePublicationsSection(getYamlValue("BrowsePublications.tabList.tab2"));
+		test.homePage.verifyListViewSectionForJournals(listCount);
+		test.homePage.verifyLetterHeadingsDisplayedForListView();
+		test.homePage.clickOnShowMore();
+		test.homePage.VerifyShowMoreAndShowLessFunctionality("BrowsePublications.tabList.tab2");
+		test.homePage.clickOnShowMore();
+		test.homePage.ClickOnAnyLinkUnderListViewAndVerifyNavigationToCorrectPage(listCount);
+	}
+	
+	
+	// Browse by subject filter is not displayed on the site
+	//@Test
+	public void Step34_ND_34_Verify_Browse_By_Subject_Tab_Under_Browse_Publications_Section_On_HomePage() {
+		test.homePage.navigateToHomePage();	
+		test.homePage.clickOnTabUnderBrowsePublicationsSection(getYamlValue("BrowsePublications.tabList.tab3"));
+	}
+	
+	
+	@Test
+	public void Step20_AJ_20_Verify_Resources_Container_Links_And_There_Navigations() {
+		test.homePage.navigateToHomePage();
+		test.homePage.verifyResourceContainerAcsJoin();
+		test.homePage.verifyResourceItemLinkDataAndNavigation();
+	}
+
+
+	//@Test
+	public void Step35_ND_35_Verify_Partners_Section_At_Footer_Of_HomePage() {
+		Map<String, Object> partners = getYamlValues("Footer.Partners");
+		test.homePage.navigateToHomePage();	
+		test.homePage.verifyPartnersAndTheirNavigation(partners);
+	}
+	
+	// Links for share icons are broken. Will update when fixed.
+	//@Test
+	public void Step36_ND_36_Verify_Follow_Icons_Section_At_Footer_Of_HomePage() {
+		Map<String, Object> followIcons = getYamlValues("Footer.FollowIcons");
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyFollowIconsDisplayedAtFooter(followIcons);
+		test.homePage.clickOnEachIconAndVerifyLandingPage();
+	}
+	
+	
+	//@Test
+	public void Step37_ND_37_Verify_Copyright_Section_At_Footer_Of_HomePage() {
+		String CopyRightText= getYamlValue("Footer.Copyright.text");
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyCopyrightSectionDisplayedAtFooter(CopyRightText);
+		test.homePage.clickOnCopyrightLinkAndVerifyLandingPage();
+	}
+	
+	//@Test
+	public void Step38_ND_38_Verify_Privacy_Policy_Section_At_Footer_Of_HomePage() {
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.VerifyPolicyLinkAtFooter();
+		test.homePage.CLickOnPrivacyPolicyLinkAndVerifyLandingPage();
+	}
+	
+	
+	
+	
+	@Test 
+	public void Step42_ND_Verify_Trending_Research_Section_On_Right_of_HomePage() throws IOException {
+		
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.VerifyTrendingResearchSection();
+		test.homePage.ClickOnTrendingLinksAndVerifyNavigateToLandingPage();
+		
+	}
+	
+	@Test
+	public void Step43_ND_Verify_Video_Section_On_Left_of_HomePage() {
+		
+		test.homePage.navigateToHomePage();
+		//test.homePage.clickAnywhere();
+		test.homePage.verifyContentBeloVideoAndNaviagteToLandingPage();
+		test.homePage.VerifyVideoSection();
+		test.homePage.VerifyVideoChangesOnClickingVideoLink();
+		
+		
+	}
+	
+	@Test
+	public void Step44_ND_Verify_Section_Below_Editor_Choice() {
+		
+		test.homePage.navigateToHomePage();
+		test.homePage.verifyContentOnSectionBelowEditorChoice();
+		
+	}
+	
+	@Test
+	public void Step19_AJ_19_Verify_Stay_Connected_Social_Links_And_There_Navigations() {
+		test.homePage.navigateToHomePage();
+		test.homePage.verifyStayConnectedText();
+		test.homePage.verifyStayConnectedMessage();
+		test.homePage.verifyConnectSocialLink();
+		test.homePage.verifyConnectSocialLinkNavigation();
+		test.homePage.verifyConnectAppLinkImgAndNavigation();
+	}
+
+
+}

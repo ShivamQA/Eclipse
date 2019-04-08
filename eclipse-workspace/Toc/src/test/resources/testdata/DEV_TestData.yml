@@ -1,0 +1,1944 @@
+baseUrl: http://pubsdevsql.acs.org/
+pnasURL: http://www.pnas.org/search
+loginUrl: http://master-pubstest.acs.org/action/doLogin
+urlToFetchIP: "http://pubs.acs.org/snoop"
+
+users:
+  acsMember: 
+    username: qait
+    password: qainfotech
+  viewReferences:
+    username: acstest_tomegan
+    password: password
+  pnas:
+    username: twallen
+    password: password
+  addtoACSChemWorx:
+    username: C00527
+    password: Acs2015@
+  viewCitationAlerts:
+    username: tarunk
+    password: password
+  incorrectUserName: tester
+  incorrectPassword: qainfotech
+
+homePage: 
+  navigationBarBackgroundColor: "#006ea9"
+  homeIconUrl: "http://pubs.acs.org/sda/503760/icons-grid-24.png"
+  navAuthorsLink: Authors & Reviewers
+  navLibrariansLink: Librarians & Account Managers
+  navMembersLink: ACS Members
+  navVideoLink: Multimedia
+  navAlertsLink: Alerts
+  navAboutUsLink: About Us
+  pubSelected: Biochemistry
+  overlayLink: Journal of the American Chemical Society
+  overlayLinkAcsPhotonics: ACS Photonics
+  overlayLinkAcsCentralScience: ACS Central Science
+  ebooksNavigation:
+    link: ACS eBooks
+  journals:
+    link1: 
+      label: "- Journal of Chemical Documentation"
+      logo: "Journal of Chemical Information and Modeling"
+    link2: 
+      label: "- Journal of Chemical Information and Computer Sciences"
+      logo: "Journal of Chemical Information and Modeling"
+    link3: 
+      label: "- I&EC Analytical Edition"
+      logo: "Analytical Chemistry"
+  pubSelectedForSynopsis: Inorganic Chemistry
+  searchResultsHeader: Search Results
+  quickSearchBar: 
+    doi:
+      title: Digital Object Identifier
+      defaultFieldValue: 10.1021/
+      fieldValue: 10.1021/nl304602d
+      articleTitle: Single-Cell Photonic Nanocavity Probes
+      fieldValueForMultiplerefernces: 10.1021/acs.biochem.5b00286
+      fieldValueForJournalHavingVolume: 10.1021/je5009334
+      fieldValueForArticleHavingAccessionCode: 10.1021/ja512547g
+      fieldValueForArticleHavingGetBankLink: 10.1021/np500912t
+      fieldValueForPaidArticle: 10.1021/nn403844q
+  subjectSearchTopTab:
+    appliedCategoryTitle: Applied
+    biochemistryCategoryTitle: Biochemistry
+    macromolecularCategoryTitle: Macromolecular
+    organicCategoryTitle: Organic
+    physicalInorganicAndAnalyticalCategoryTitle: Physical, Inorganic, and Analytical
+  subjectSearchTerm:
+    cateogryName: "Biochemistry"
+    subCategory: "Enzymes"
+  searchTerm: "Absorption of Water"
+  advancedSearchHomePage: 
+    searchTips:  
+      header: Search Tips 
+    searchTerm: Biochemistry
+    saveSearchAlert: Saved Search Alert has been updated.
+  RegistrationMsg: "To register on this site, you must create an ACS ID on the ACS Society website (www.acs.org). After completing your registration, you will be returned back to the page you were viewing on the ACS Publications website (pubs.acs.org)."
+  cartPage:
+      noContentMsg: "There are no items in your cart."
+  registrationPage:
+      email: "acsTest"
+      firstName: "qa"
+      lastName: "test"
+      userName: "tester"
+      password: "password"
+      confirmPassword: "password"
+      registrationSuccessMsg: "Thank you for registering for an ACS ID"
+      userNameFieldError: "Duplicate user name, please select different user name"
+      acsOrg: American Chemical Society
+      recoverAccount: Recover your acct
+      login: Log in
+      emailError: "This email address matches an existing account. To continue..."
+      usernameError: "Username already exists! Please enter new username."
+  followACSPage:
+      twitter: 
+         journal: "ACS Catalysis"
+      emailAlertsPage:
+         preferencesUpdatedMsg: "Your e-Alerts preferences have been updated."
+      facebook:
+         journalSelectedForFacebook: "ACS Publications"
+      youtube:
+         videos:
+           title: "American Chemical Society  - YouTube"
+      podCasts:
+         journalSelectedForItunes: "ACS Nano"
+         journalSelectedForFeeds: "Analytical Chemistry"
+         podcastsLink:
+           title: Audio/Podcast (ACS Publications)
+         jacsBetaLink:
+           title: JACS Beta Home Page (ACS Publications)
+  tab:
+   publicationsAToZTab:
+    label: Publication A-Z
+   casSubjectsTab:
+    label: CAS Subjects
+    topicalDivisions:
+     applied: Applied
+     bioChemistry: Biochemistry
+     macromolecular: "Macromolecular"
+     organic: Organic
+     physicalInorganicAnalytical: Physical, Inorganic, and Analytical
+   coverGalleryTab:
+    label: Cover Gallery
+  link:
+   getAccess:
+    label: Get Access
+    pageTitle: Subscribe to ACS Publications (ACS Publications)
+   learnMore:
+    label: Learn More
+    pageTitle: About Us (ACS Publications)
+  footer:
+   productsTab:
+    journalsAZ:
+      label: Journals A-Z
+      title: Journal List (ACS Publications)
+    eBooks:
+      label: eBooks
+      title: eBooks (ACS Publications)
+    cen:
+      label: C&EN
+      title: "Chemical & Engineering News | Serving the chemical, life sciences and laboratory worlds"
+    cenArchives:
+      label: C&EN Archives
+      title: "Chemical & Engineering News Archive (ACS Publications)"
+    acsLegacyArchives:
+      label: ACS Legacy Archives
+      title: "ACS Legacy Archives - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    acsMobile:
+      label: ACS Mobile
+      title: ACS Mobile (ACS Publications)
+    video:
+      label: Video
+      title: ACS Video Hub (ACS Publications)
+   userResourcesTab:
+    aboutUs:
+      label: About Us
+      title: About Us (ACS Publications)
+    acsMembers:
+      label: ACS Members
+      title: Membership (ACS Publications)
+    librarians:
+      label: Librarians
+      title: "Home Page - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    authorsAndReviewers:
+      label: Authors & Reviewers
+      title: "Home Page - Author & Reviewer Resource Center (ACS Publications)"
+    websiteDemos:
+      label: Website Demos
+      title: Website Demonstration (ACS Publications)
+      demoWindow:
+       title: ACS Symposium Series Demo
+    privacyPolicy:
+      label: Privacy Policy
+      title: Privacy Statement - American Chemical Society
+    mobileSite:
+      label: Mobile Site
+      title: ACS Publications Home Page
+   supportTab:
+    getHelp:
+      label: Get Help
+      title: ACS Publications Home Page
+    forAdvertisers:
+      label: For Advertisers
+      title: Media Kit
+    institutionalSales:
+      label: Institutional Sales
+      title: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    liveChat:
+      label: Live Chat
+      title: ACS Publications Home Page
+   partners:
+    atypon:
+      label: Atypon
+      title: Atypon delivery innovation to academic publishers.
+    chorus:
+      label: CHORUS
+      title: CHORUS
+    cope:
+      label: COPE
+      title: "Committee on Publication Ethics: COPE | Raising the Quality of Academic Journals"
+    counter:
+      label: COUNTER
+      title: "COUNTER - Counting Online Usage of Networked Electronic Resources | Home"
+    crossRef:
+      label: CrossRef
+      title: "crossref.org"
+    crossCheckDepositor:
+      label: CrossCheck Depositor
+      title: "crossref.org : : crosscheck"
+    orcid:
+      label: Orcid
+      title: ORCID | Connecting Research and Researchers
+    portico:
+      label: Portico
+      title: Portico - A Digital Preservation and Electronic Archiving Service
+  linksOnLoginPrompt:
+    forgotACSIdOrpassword: Forgot ACS ID or Password?
+    loginViaHomeInstitution: Log In Via Your Home Institution
+    help: Help
+  errorMessageWhileLogin: "Please check your login credentials."
+  blueMemubar:
+    help:
+      label: Help
+      helpPopup:
+        email: test@test.com
+        question: "This is a script generated test message. Please Ignore."
+        acsPublicationFaqs: FAQS
+        acsSupportCenter: Support Center
+        snapPoweredByEngage: SnapEngage Live Chat
+  forgotPassword:
+    emailId: "T_Kumar@hqmail.acs.org"
+    successMessage: "We've sent an email to you at the following email address:"
+    messageForUserName: "Your username has been e-mailed to this address:"
+
+authorsAndReviewsResourceCenterHomePage:
+  navigationBarBackgroundColor: "#006ea9"
+  navArrcHomeLink: Home
+  navArrcJPubLink: Journal Publishing
+  navArrcBookPubLink: Book Publishing
+  navArrcAboutPubLink: Benefits & Services
+  navArrcBookPubPage:
+    title: "Overview of ACS Book Publishing - Author & Reviewer Resource Center (ACS Publications)"
+    setOfHeadings:
+      heading1: "About ACS Books Publishing"
+      heading2: "Publishing Policies"
+      heading3: "Submitting a Book Chapter"
+      heading4: "Information for Authors"
+      heading5: "Submitting a Book Proposal"
+      heading6: "Information for Editors"
+    setOfLinks:
+      link1:
+        label: "Overview of ACS Book Publishing"
+        title: "Overview of ACS Book Publishing - Author & Reviewer Resource Center (ACS Publications)"
+      link2:
+        label: "ACS Books Contact Information"
+        title: "Contact Us (ACS Publications)"
+      link3:
+        label: "Ethical Guidelines"
+        title: "Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)"
+      link4:
+        label: "Copyright Status Form & Instructions"
+        title: "Copyright & Permissions - ACS Books - Author & Reviewer Resource Center (ACS Publications)"
+      link5:
+        label: "Permission Request Form"
+        title: "Permission Requests and Credit LInes (ACS Publications)"
+      link6:
+        label: "Permissions/RightsLink"
+        title: "Permission Requests for ACS Books (ACS Publications)"
+      link7:
+        label: "Author Guidelines [PDF]"
+        title: "PREPARING YOUR MANUSCRIPT - books_authguide.pdf"
+      link8:
+        label: "Editorial Responsibilities and the Peer Review Process"
+        title: "Information for Editors - Author & Reviewer Resource Center (ACS Publications)"
+      link9:
+        label: "Chapter Template [Word]"
+      overView1:
+        title: "Information for Authors - Author & Reviewer Resource Center (ACS Publications)"
+      overView2:
+        title: "Information for Editors - Author & Reviewer Resource Center (ACS Publications)"
+  navArrcHomePage: 
+    title: Home Page - Author & Reviewer Resource Center (ACS Publications)
+    contentHeader: Quick Links for Authors & Reviewers
+  navArrcJPubPage: 
+    title: ACS Journal Publishing - Author & Reviewer Resource Center (ACS Publications)
+    imageHeader: ACS Journal Publishing
+    setOfHeadings:
+      heading1: "About ACS Journals Publishing"
+      heading2: "Publishing Policies"
+      heading3: "Publishing Tools"
+      heading4: "Manuscript Submission"
+    setOfLinks:
+      link1:
+        label: "Overview of ACS Journals Publishing"
+        title: "ACS Publishing Benefits & Services - Author & Reviewer Resource Center (ACS Publications)"
+      link2:
+        label: "Publishing Your Research 101 Video Series"
+        title: "Publishing Your Research 101 (ACS Publications)"
+      link3:
+        label: "Editorial Offices Contact Information"
+        title: "Editorial Offices - Author & Reviewer Resource Center (ACS Publications)"
+      link4:
+        label: "ACS ChemWorx Authoring Services"
+        title: "ACS ChemWorx : Authoring Services"
+      link5:
+        label: "Supporting Information Viewers"
+        title: "Supporting Information Viewers - Author & Reviewer Resource Center (ACS Publications)"
+      link6:
+        label: "CIF Validation"
+        title: "CIF Validation - Author & Reviewer Resource Center (ACS Publications)"
+      link7:
+        label: "Preparing and Submitting using TeX/LaTeX"
+        title: "Preparing and Submitting Manuscripts Using TeX/LaTeX - Author & Reviewer Resource Center (ACS Publications)"
+      link8:
+        label: "The ACS Style Guide"
+        title: "The ACS Style Guide (ACS Publications)"
+      link9:
+        label: "Ethical Guidelines & Plagiarism Screening"
+        title: "Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)"
+      link10:
+        label: "ACS Journal Publishing Agreement"
+        title: "ACS Publications Copyright  & Permissions - Author & Reviewer Resource Center (ACS Publications)"
+      link11:
+        label: "Permissions/Rightslink"
+        title: "Permissions Request Information (ACS Publications)"
+      link12:
+        label: "Open Access Compliance"
+        title: "Funder Specific Options - Open Access - Author & Reviewer Resource Center (ACS Publications)"
+      link13:
+        label: "Quick Guide to Manuscript Submission [PDF]"
+        title: "Quick Guide to Manuscript Submission for ACS Journals - acs_manuscript_submission_quickguide.pdf"
+      link14:
+        label: "How to Submit a Manuscript"
+        title: "How To Submit a Manuscript - Author & Reviewer Resource Center (ACS Publications)"
+      link15:
+        label: "Information for Reviewers"
+        title: "Information for Reviewers - Author & Reviewer Resource Center (ACS Publications)"
+  navArrcBookPubPage: 
+    title: ACS Book Publishing - Author & Reviewer Resource Center (ACS Publications)
+    imageHeader: ACS Book Publishing
+  navArrcAboutPubPage: 
+    title: ACS Publishing Benefits & Services - Author & Reviewer Resource Center (ACS Publications)
+    contentHeader: ACS Publishing Benefits & Services
+  quickLinksBox:
+    label: Quick Links for Authors & Reviewers
+    link:
+      acsChemworxEnglishEditingService:
+        label: "ACS ChemWorx Authoring Services"
+        title: "ACS ChemWorx : Authoring Services"
+      theAcsStyleGuide:
+        label: The ACS Style Guide
+        title: The ACS Style Guide - The ACS Style Guide (ACS Publications)
+      overviewOfAcsPublishing:
+        label: Overview of ACS Publishing
+        title: ACS Publishing Benefits & Services - Author & Reviewer Resource Center (ACS Publications)
+        acsPubsBenefitsAndServices:
+          label: ACS Publishing Benefits & Services
+          contentHeader1: Submit Your Research and Give It the Global Impact It Deserves
+          contentHeader2: Benefits of Publishing with ACS
+          rapidPublication: Rapid Publication
+          justAcceptedManuscripts: Manuscripts
+          highestEditorialStandards: Highest Editorial Standards
+          newOpenAccessInitiatives:
+            label: New Open Access Initiatives
+            title: ACS Open Access (ACS Publications)
+          acsArticlesOnRequest:
+            label: ACS Articles on Request
+            title: ACS Articles on Request Policy (ACS Publications)
+            electronicReprints: 50 Free Electronic Reprints
+            expandedAccess: Expanded Access After One Year
+            articlesOnRequestLink: Retrieving Your ACS Articles on Request Link
+            permanentLinks: Permanent Links to the Article
+            internationalDoiArticle: International DOI Foundation
+            doiUrl: http://www.doi.org/
+          mediaCoverage: Media Coverage
+          acsInTheNews:
+            label: ACS in the News
+            title: ACS in the News
+      publishingTools:
+        label: Publishing Tools
+        title: Publishing Tools - Author & Reviewer Resource Center (ACS Publications)
+        chemworxAuthoring:
+          label: ACS ChemWorx English Editing Service
+          sectionLink:
+            link1:
+             label: ACS ChemWorx English Editing Service
+             title: "ACS ChemWorx : Authoring Services"
+        styleGuide:
+          label: ACS Style Guide
+          sectionLink:
+            link1:
+              label: purchase it online
+              title: "The ACS Style Guide - Anne M. Coghill; Lorrin R. Garson - Oxford University Press"
+            link2:
+              label: ACS Style Guide
+              title: The ACS Style Guide - The ACS Style Guide (ACS Publications)
+            link3:
+              label: "Chapter 14: Reference Guidelines"
+              title: References
+        stylePackage:
+          label: TeX/LaTeX achemso Style Package
+          sectionLink:
+            link1:
+              label: Preparing and Submitting Manuscripts Using TeX/LaTeX
+              title: Preparing and Submitting Manuscripts Using TeX/LaTeX - Author & Reviewer Resource Center (ACS Publications)
+        cifValidation:
+          label: CIF Validation
+          sectionLink:
+            link1:
+              label: CheckCIF Utility
+              title: CIF Validation - Author & Reviewer Resource Center (ACS Publications)
+        guidelinesForAcJournals:
+          label: NMR Guidelines for ACS Journals
+          sectionLink:
+            link1:
+              label: NMR Guidelines
+              title: NMR Guidelines for ACS Journals - acs_nmr_guidelines.pdf
+        informationViewers:
+          label: Supporting Information Viewers
+          sectionLink:
+            link1:
+              label: List of Viewers
+              title: Supporting Information Viewers - Author & Reviewer Resource Center (ACS Publications)
+        plusEnvironment:
+          label: ACS Paragon Plus Environment
+          sectionLink:
+            link1:
+              label: About ACS Paragon Plus
+              title: About ACS Paragon Plus - Author & Reviewer Resource Center (ACS Publications)
+            link2:
+              label: General Instructions
+              title: ACS Journal Publishing - Author & Reviewer Resource Center (ACS Publications)
+            link3:
+              label: Submit a Manuscript or Review
+              title: ScholarOne Manuscripts
+      ethicalGuidelines:
+        label: Ethical Guidelines
+        title: Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)
+      copyrightAndPermissions:
+        label: Copyright & Permissions/RightsLink
+        title: ACS Publications Copyright  & Permissions - Author & Reviewer Resource Center (ACS Publications)
+        permissionRightLinksSection:
+           link1:
+             label: Overview
+             pageTitle: Permissions Request Information (ACS Publications)
+             pageElements:
+              element1: ACS Publications Division Permissions
+              element2: Overview of Permissions and RightsLink
+              element3: Items for Which ACS Does Not Grant Permission
+              element4: Instructions & Forms
+              sublink1:
+               label: RightsLink
+               landingPageTitle: Instructions for Using Rightslink (ACS Publications)
+              sublink2: 
+               label: journal editorial office
+               landingPageTitle: Editorial Offices - Author & Reviewer Resource Center (ACS Publications)
+              sublink3: 
+               label: Solutions for RightsLink Errors
+               landingPageTitle: Solutions for RightsLink Errors (ACS Publications)
+              sublink4: 
+               label: Overview of Permissions and RightsLink
+               landingPageTitle: Permissions Request Information (ACS Publications)
+              sublink5: 
+               label: Instructions for Using RightsLink
+               landingPageTitle: Instructions for Using Rightslink (ACS Publications)
+              sublink6: 
+               label: ACS Journals Permission
+               landingPageTitle: Permission Requests for ACS Journal Material (ACS Publications)
+              sublink7:
+               label: Chemical & Engineering News Permission
+               landingPageTitle: Permission Requests for Chemical & Engineering News (ACS Publications)
+              sublink8: 
+               label: ACS Books Permission
+               landingPageTitle: Permission Requests for ACS Books (ACS Publications)
+              sublink9: 
+               label: Material Published by Other ACS Divisions
+               landingPageTitle: Permission for Material Published by Other ACS Divisions (ACS Publications)
+              sublink10:
+               label: Permission Requests and Credit Lines
+               landingPageTitle: Permission Requests and Credit LInes (ACS Publications)
+           link2:
+             label: Items for Which ACS Does Not Grant Permission
+           link3:
+             label: How to Use RightsLink
+             pageTitle: Instructions for Using Rightslink (ACS Publications)
+             pageElements:
+              element1: Instructions for Using RightsLink
+              sublink1: 
+               label: "pubs.acs.org"
+              sublink2: 
+               label: "customercare@copyright.com"
+              sublink3: 
+               label: "myaccount.copyright.com"
+           link4:
+             label: ACS Journals
+             pageTitle: Permission Requests for ACS Journal Material (ACS Publications)
+             pageElements:
+              element1: Journal of Chemical Education
+              element2: All Other ACS Journals
+              element3: Policy on Theses and Dissertations
+              sublink1:
+               label: RightsLink
+               landingPageTitle: Instructions for Using Rightslink (ACS Publications)
+              sublink2:
+               label: "jce@chem.wisc.edu"
+              sublink3:
+               label: RightsLink instructions
+               landingPageTitle: Instructions for Using Rightslink (ACS Publications)
+              sublink4:
+               label: Policy on Theses and Dissertations
+               landingPageTitle: "dissertation.pdf"
+           link5:
+             label: Chemical & Engineering News
+             pageTitle: Permission Requests for Chemical & Engineering News (ACS Publications)
+             sublink1:
+              label: "m_rouhi@acs.org"
+             sublink2:
+              label: "copyright@acs.org"
+             sublink3:
+              label: "Copyright Permission Request Form A"
+           link6:
+             label: ACS Books
+             pageTitle: Permission Requests for ACS Books (ACS Publications)
+             pageElements:
+              element1: ACS Series Books
+              element2: All Other ACS Publications Division Books
+              sublink1:
+               label: RightsLink service
+               landingPageTitle:  Instructions for Using Rightslink (ACS Publications)
+              sublink2:
+               label: "copyright@acs.org"
+              sublink3:
+               label: "Copyright Permission Request Form B"
+           link7:
+             label: Material Published by Other ACS Divisions
+             pageHeading: Permission Requests for Material from Titles Published by Other ACS Divisions
+             pageTitle: Permission for Material Published by Other ACS Divisions (ACS Publications)
+             pageElements:
+              element1: Journal of Chemical Education
+              element2: Education Division Publications
+              element3: Chemical Health & Safety Committee Material
+              element4: Proceedings (Preprints)
+              element5: ACS Book of Abstracts
+              sublink1:
+               label: Contact the Division 
+               landingPageTitle: ""
+              sublink2:
+               label: RightsLink permission system
+               landingPageTitle: "Permission Requests for ACS Journal Material (ACS Publications)"
+              sublink3:
+               label: "education@acs.org"
+              sublink4:
+               label: "m_gmurczyk@acs.org"
+           link8:
+             label: Permission Requests and Credit Lines 
+             pageHeading: Permission Requests and Credit Lines
+             pageTitle: Permission Requests and Credit LInes (ACS Publications)
+             pageElements:
+              element1: Credit Lines and References
+              element2: Permission for Material Owned by ACS
+              element3: Permission for Material Owned by Publishers Other Than ACS
+              element4: Use in Theses/Dissertations
+              sublink1:
+               label: References
+               landingPageTitle: "References - The ACS Style Guide  - The ACS Style Guide (ACS Publications)"
+              sublink2:
+               label: using RightsLink
+               landingPageTitle: Permissions Request Information (ACS Publications)
+              sublink3:
+               label: Copyright Permission Request Form C
+              sublink4:
+               label: ACS Journal Publishing Agreement
+               landingPageTitle: Forms and Instructions for the ACS Journal Publishing Agreement - Author & Reviewer Resource Center (ACS Publications)
+              sublink5:
+               label: Ethical Guidelines to Publication of Chemical Research
+               landingPageTitle: Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)
+              sublink6:
+               label:  ACS Articles on Request
+               landingPageTitle: ACS Articles on Request Policy (ACS Publications)
+              sublink7:
+               label: ACS website
+               landingPageTitle: ACS Journals Policy Summaries on Prior Publication - Author & Reviewer Resource Center (ACS Publications)
+              sublink8:
+               label: "copyright@acs.org"
+        journalPublishingAgreementSection:
+           link1:
+            label: Forms and Instructions
+            landingPageTitle: Forms and Instructions for the ACS Journal Publishing Agreement - Author & Reviewer Resource Center (ACS Publications)
+            landingPageHeading: ACS Publications Copyright
+            elements:
+             element1: Forms and Instructions for the Journal Publishing Agreement
+             element2: Choosing the Correct Submission Method
+             element3: Choosing the Correct Form
+             element4: "Form A: Authors Who Hold Copyright and Works-for-Hire"
+             element5: "Form B: U.S. Government Employees"
+             element6: "Form C: British, Australian, or Canadian Government Employees (Crown Copyright, formerly called the \"blue form\")"
+           link2:
+            label: About the Journal Publishing Agreement
+            landingPageTitle: JPA Index - Author & Reviewer Resource Center (ACS Publications)
+            landingPageHeading: ACS Journal Publishing Agreement
+            elements:
+             element1: ACS AuthorChoice
+             element2: ACS Articles on Request
+             element3: ACS Author & Reviewer Resource Center
+             element4: FAQs
+             element5: Easy Reference User Guide
+           link3:
+            label: Frequently Asked Questions
+            landingPageTitle: Frequently Asked Questions about the ACS Journal Publishing Agreement - Author & Reviewer Resource Center (ACS Publications
+            landingPageHeading: Journal Publishing Agreement
+            setOflinks:
+             link1: ACS Books staff
+             link2: by fax
+             link3: PDF version of the form
+             pageTitle: Contact Us (ACS Publications)
+           link4:
+            label: Open Access Compliance
+            landingPageTitle: Funder Specific Options - Open Access - Author & Reviewer Resource Center (ACS Publications)
+            landingPageHeading: Funder Reporting and Policies
+            scientificRecord:
+              linkText: scientific record
+              landingPageTitle: "Scientific Record and Benefits for ACS Authors - Author & Reviewer Resource Center (ACS Publications)"
+              landingPageHeading: Open Access Compliance
+            threeStepWorkflow:
+              linkText: "ACS’ 3-step workflow"
+              landingPageTitle: pdf
+            whyThisIsImportant:
+              linkText: "Why Is This Important to Me?"
+            selectedListOfFunders:
+              linkText: Selected List of Funders
+              childLinks:
+                childLink1:
+                  label: Austrian Science Fund (FWF)
+                  landingPageTitle: Austrian Science Fund - Funder Specific Open Access Options - Author & Reviewer Resource Center (ACS Publications)
+                  landingPageHeading: Funder Specific Options - Austrian Science Fund (FWF)
+                childLink2:
+                  label: European Research Council (ERC)
+                  landingPageTitle: European Research Council (ERC) - Funder Specific Open Access Options - Author & Reviewer Resource Center (ACS Publications)
+                  landingPageHeading: Funder Specific Options - European Research Council (ERC)
+                childLink3:
+                  label: Research Councils of the United Kingdom (RCUK)
+                  landingPageTitle: Research Councils of the United Kingdom (RCUK) - Funder Specific Open Access Options - Author & Reviewer Resource Center (ACS Publications)
+                  landingPageHeading: Funder Specific Options - Research Councils of the UK
+                childLink4:
+                  label: "U.S. Department of Energy (DOE)"
+                  landingPageTitle: "U.S. Department of Energy  (DOE) - Funder Specific Options - Author & Reviewer Resource Center (ACS Publications)"
+                  landingPageHeading: "Funder Specific Options - U.S. Department of Energy (DOE)"
+                childLink5:
+                  label: "U.S. National Institutes of Health (NIH)"
+                  landingPageTitle: NIH- Open Access Compliance - Author & Reviewer Resource Center (ACS Publications)
+                  landingPageHeading: "Funder Specific Options - U.S. National Institutes of Health"
+                childLink6:
+                  label: "Wellcome Trust, UK"
+                  landingPageTitle: "Wellcome Trust - Funder Specific Open Access Options - Author & Reviewer Resource Center (ACS Publications)"
+                  landingPageHeading: "Funder Specific Options - Wellcome Trust"
+            instructionsForReportingFunders:
+              linkText: Instructions for Reporting Funders
+        booksCopyrightStatusFormSection:
+          link1:
+            label: Forms and Instructions
+            landingPageTitle: Copyright & Permissions - ACS Books - Author & Reviewer Resource Center (ACS Publications)
+            landingPageHeading: ACS Books Copyright
+        learnMoreSection:
+         heading: "Learning Module: What Chemists Need to Know about Copyright"
+         link1: 
+          label: "Learning Module: What Chemists Need to Know about Copyright"
+          landingPageTitle: Learning Module Disclaimer (ACS Publications)
+          pageElements:
+           element1: Disclaimer
+           element2: NOTE
+           element3: DISCLAIMER
+           subLink1:
+            label: CONTINUE
+            pageElements:
+             element1: Table of Contents
+             element2: Learning Module
+             element3: Guidelines for Classroom Use
+             element4: Copyright Law of the United States
+             subLink1:
+              label: "www.loc.gov/copyright/faq.html"
+              landingPageTitle: "Error Page"
+      publishingPolicies:
+        label: Publishing Policies
+        title: ACS Publishing Policies (ACS Publications)
+        setOfLinks:
+          link1:
+            label: "Ethical Guidelines"
+            landingPageTitle: "Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)"
+          link2:
+            label: "ACS Journal Policy Summaries on Prior Publication"
+            landingPageTitle: "ACS Journals Policy Summaries on Prior Publication - Author & Reviewer Resource Center (ACS Publications)"
+          link3:
+            label: "ACS Copyright and the Journal Publishing Agreement"
+            landingPageTitle: "ACS Publications Copyright  & Permissions - Author & Reviewer Resource Center (ACS Publications)"
+          link4:
+            label: "ACS AuthorChoice"
+            landingPageTitle: "ACS AuthorChoice (ACS Publications)"
+          link5:
+            label: "Permissions/RightsLink"
+            landingPageTitle: "Permissions Request Information (ACS Publications)"
+          link6: 
+            label: "Open Access Compliance"
+            landingPageTitle: "Funder Specific Options - Open Access - Author & Reviewer Resource Center (ACS Publications)"
+          link7:
+            label: "ACS Articles on Request"
+            landingPageTitle: "ACS Articles on Request Policy (ACS Publications)"
+      acsExcellence:
+        label: ACS Excellence
+        title: "ACS Excellence -"
+    acsPublishInfo:
+      acsAuthorBenefits: ACS Author Benefits
+      publishingWithAcs: Publishing with ACS
+  acsAuthorBenefits:
+    label: ACS Author Benefits
+    sections:
+      section1:
+        label: 4 New Ways ACS Is Open
+        link1:
+          linkText: "Open access publishing options—a new open access journal, more licensing choices for authors, a stimulus program to support authors who select ACS journals when seeking to publish their work open access."
+          landingPageTitle: "ACS Open Access (ACS Publications) | Open access publishing options—a new open access journal, more licensing choices for authors, a stimulus program to support authors who select ACS journals when seeking to publish their work open access."
+      section2:
+        label: Author-Facilitated Open Access
+        link1:
+          linkText: offers unrestricted Web access for a low, one-time fee.
+          landingPageTitle: "ACS Open Access - ACS AuthorChoice - Author & Reviewer Resource Center (ACS Publications)"
+        link2:
+          linkText: Information about Funder Open Access Policies
+          landingPageTitle: Funder Specific Options - Open Access - Author & Reviewer Resource Center (ACS Publications)
+        link3:
+          linkText: ACS Author Rewards
+          landingPageTitle: Author Rewards - ACS Open Access Program - Author & Reviewer Resource Center (ACS Publications)
+      section3:
+        label: ACS Articles on Request
+        link1:
+          linkText: ACS Articles on Request provides for 50 free e-prints of your journal article.
+          landingPageTitle: ACS Articles on Request Policy (ACS Publications)
+      section4:
+        label: Thank You from ACS Editors
+        link1:
+          linkText: Thank you from ACS Editors for your exceptional service as an author and reviewer. 
+          landingPageTitle: Thank You from ACS Journal Editors (ACS Publications)
+      section5:
+        label: ACS in the News
+        link1:
+          linkText: highlights the latest ACS journal articles featured in high profile news media outlets.
+          landingPageTitle: ACS in the News
+  publishingWithAcs:
+    label: Publishing with
+    sections:
+      section1:
+        label: How to Publish in ACS Journals
+        link1:
+          linkText: Mastering the Art of Scientific Publication Virtual Issue and Webinars
+          landingPageTitle: Mastering the Art of Scientific Publication (ACS Publications)
+        link2:
+          linkText: "Quick Guide to Manuscript Submission for ACS Journals [PDF]"
+          landingPageTitle: pdf
+        link3:
+          linkText: How to Submit a Manuscript
+          landingPageTitle: How To Submit a Manuscript - Author & Reviewer Resource Center (ACS Publications)
+        link4:
+          linkText: Publishing Your Research 101 Video Series
+          landingPageTitle: ACS on Campus
+      section2:
+        label: ACS on Campus
+        link1:
+          linkText: Seminars to help new authors navigate manuscript submission and peer review. 
+          landingPageTitle: ACS on Campus
+      section3:
+        label: ACS Journal Publishing Agreement and ACS Books Copyright
+        link1: 
+          linkText: Forms and instructions for the ACS Journal Publishing Agreement, ACS Books Copyright, and permission for material published by ACS. 
+          landingPageTitle: ACS Publications Copyright & Permissions - Author & Reviewer Resource Center (ACS Publications)
+  acsChemWorx:
+    description1: "ACS ChemWorx offers reference management, streamlined citation tools, and editing services."
+    description2: "ACS ChemWorx offers reference management, streamlined citation tools, and editing services."
+    tutorials:
+      label: Tutorials
+      url: "acschemworx.acs.org"
+  acsOpenAccess:
+    label: ACS Open Access Options
+    description: Learn more about your publishing options for complying with your funder requirements.
+    acsAuthorRewards:
+      label: ACS Author Rewards
+      landingPageTitle: Author Rewards - ACS Open Access Program - Author & Reviewer Resource Center (ACS Publications)
+    acsAuthorChoice:
+      label: ACS AuthorChoice
+      landingPageTitle: ACS Open Access - ACS AuthorChoice - Author & Reviewer Resource Center (ACS Publications)
+  journalInstruction:
+    label: Journal Instructions & Templates
+    list:
+      option1:
+        label: Select a Journal
+      option2:
+        label: Biochemistry
+        landingPageTitle: Manuscript Submission and Peer Review (ACS Publications)
+  acsChemWorxEnglishEditingService:
+    label: "ACS ChemWorx Authoring Services"
+    description: Everyone needs a good editor. Ensure the ideas in your manuscript are written clearly with ACS ChemWorx English Editing Service.
+    learnMore:
+      landingPageTitle: "ACS ChemWorx : Authoring Services"
+  submitAndreviewJournalScripts:
+    label: Submit & Review Journal Manuscripts
+    description: Ready to submit your manuscript or review? Log in or register for online submission.
+    login:
+      popUpLabel: Log in to ACS Paragon Plus
+      landingPageTitle: ScholarOne Manuscripts
+  submitBookChaptersAndProposals:
+    label: Submit Book Chapters & Proposals
+    description: Ready to submit a book proposal or chapter? Log in or register for online submission.
+    login:
+      popUpLabel: Log in to ACS Books
+      landingPageTitle: ScholarOne Manuscripts
+
+librariansAndAccountManagersHomePage:
+  navigationBarBackgroundColor: "#006ea9"
+  navLrcHomeLink: Home
+  navLrcProdLink: Learn about ACS Publications Products
+  navLrcSubsLink: Purchase ACS Publications
+  navLrcSubsLinkTab:
+    label: Purchase ACS Publications
+  navLrcSupportLink: Need Help
+  navLrcSupportLinkTab:
+    labelMain: Need Help
+    contentData:
+      heading:
+        label: Frequently Asked Questions
+        contentQuestion1: "Where can I find journal, magazine, ebook, and/or archive pricing?"
+        contentAnswer1: "Pricing for ACS products will come from your regional account manager. Contact your representative directly."
+        contentQuestion2: "Where do I find a complete list of ACS journals?"
+        contentAnswer2: "Download the 2014 ISSN and Service Code information or view our complete list of titles."
+        contentQuestion3: "Where can I find licensing information?"
+        contentAnswer3: "You'll find links to our licensing information in the Quick Links box on our homepage."
+        contentQuestion4: "Who do I contact for questions about usage reports, contact information, IP addresses, subscriptions and license information?"
+        contentAnswer4: "Sales Operations and Support can assist you with the following areas:"
+        contentQuestion5: "and license information?"
+        contentAnswer5: "Please contact Sales Operations & Support acs_pubs_assist@acs.org or"
+        contentQuestion6: "My access seems to be blocked. How do I fix this?"
+        contentAnswer6: "You may lose access to ACS content if a user on your campus accidentally triggers an IP block due to excessive"
+        contentQuestion7: "Where can I find information about your open access policies?"
+        contentAnswer7: "On the InfoCentral homepage you'll find the Quick Links box. The Publishing Tools linkwill take you to a page for "
+        contentQuestion8: "What titles do I need to become ACS accredited?"
+        contentAnswer8: "is managed by the ACS Committee on Professional"
+      heading1:
+        label: Resources
+      heading2:
+        label: ACS and Open Access
+        contentLinkText1: ACS AuthorChoice – Author Pays Open Access Option
+        contentLinkText2: ACS Articles on Request – Institutional Repository Link
+        landingPageHeading2: ACS Articles on Request
+        landingPageTitle2: ACS Articles on Request Policy (ACS Publications)
+      heading3:
+        label: ACS and Copyright Transfer
+        contentLinkText1: Journal Publishing Agreement
+        landingPageHeading1: ACS Journal Publishing Agreement
+        landingPageTitle1: JPA Index - Author & Reviewer Resource Center (ACS Publications)
+        contentLinkText2: Journal Publishing Agreement FAQs
+        landingPageHeading2: Journal Publishing Agreement
+        landingPageTitle2: Frequently Asked Questions about the ACS Journal Publishing Agreement - Author & Reviewer Resource Center (ACS Publications)
+        contentLinkText3: Prior Publication Policies
+        landingPageHeading3: Publishing Policies
+        landingPageTitle3: ACS Journals Policy Summaries on Prior Publication - Author & Reviewer Resource Center (ACS Publications)
+        contentLinkText4: ACS Author Benefits 
+        landingPageHeading4: ACS Publishing Benefits & Services
+        landingPageTitle4: ACS Publishing Benefits & Services - Author & Reviewer Resource Center (ACS Publications)
+      heading4: 
+        label: ACS in your Community
+        contentLinkText1: ACS Conferences Schedule
+        landingTitle1: ACS and Library Conferences - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+        contentLinkText2: ACS on Campus
+        landingTitle2: ACS on Campus
+        contentLinkText3: Sponsorships
+        landingTitle3: ACS and Library Conferences - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)       
+        urlParameter3: sponsor
+      heading5:
+        label: ACS Approval & Certification Program
+        contentLinkText1: website
+        contentLinkText2: Committee on Professional Training
+        landingTitle2: Committee on Professional Training - American Chemical Society
+        contentLinkText3: ACS Degree Program Guidelines
+        landingTitle3: ACS Approval Program for Bachelor’s Degree Programs - American Chemical Society
+  navLrcContactLink: Contact Us
+  navLrcHomePage: 
+    title: Home Page - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+    mainContentHeader: Quick Links for Librarians and Account Administrators
+  navLrcProdPage: 
+    title: Products - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+    contentHeader: ACS Publications Products
+  navLrcSubsPage: 
+    title: Institutional Subscriptions & Pricing - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+    contentHeader: Purchasing ACS Publications
+  navLrcSupportPage: 
+    title: Help Center - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+    contentHeader: Help Center & Resources
+  navLrcContactPage: 
+    title: Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+    contentHeader: Contact Us
+    headings:
+      heading1: Contact Sales Representatives
+      heading2: "Contact Library Relations to:"
+      heading3: "Contact Sales Operations for customer service assistance including:"
+    descriptionTags:
+      dt1: Phone
+      dt2: Hours
+      dt3: E-mail
+    contentLinks:
+      contentLinkText1: U.S.A. and Canada
+      landingPageHeading1: U.S.A. and Canada
+      landingPageTitle1: "Representative for U.S.A. and Canada - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      contentLinkText2: Europe
+      landingPageHeading2: Europe
+      landingPageTitle2: "Representative for Europe - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      contentLinkText3: Africa
+      landingPageHeading3: Africa
+      landingPageTitle3: "Representative for Africa - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      contentLinkText4: Contact Representative for Middle East
+      landingPageHeading4: Representatives for Middle East
+      landingPageTitle4: "Representative for Middle East - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      contentLinkText5: Contact Representative for Asia and Oceania
+      landingPageHeading5: Regional Representative Offices
+      landingPageTitle5: "Representative for Asia and Oceania - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      urlLandingPage5: asia-oceania
+      contentLinkText6: Latin America and Caribbean
+      landingPageHeading6: Representatives for Latin America and the Caribbean
+      landingPageTitle6: "Representative for Latin America and Caribbean - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      contentLinkText7: ACS on Campus Program
+      landingPageHeading7: ACS on Campus
+      urlLandingPage7: acsoncampus
+      contentLinkText8: ACS Publications
+      contentLinkText9: acs_pubs_assist@acs.org
+  quickLinksBox:
+    label: Quick Links for Librarians and Account Administrators
+    link:
+      licensingInformation:
+        label: Licensing Information
+        landingPageTitle: Purchase ACS Publications - Subscription and Licensing Information - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+      managingIpBlocks:
+        label: Managing IP Blocks
+        landingPageTitle: Tools to Curb Abuse - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+      acsPublicationsCatlogs:
+        label: ACS Publications 2015 Catalog
+        landingPageTitle: pdf
+      acsStyleGuide:
+        label: The ACS Style Guide
+        landingPageTitle: The ACS Style Guide (ACS Publications)
+      publishingToolsForAuthors:
+        label: Publishing Tools for Authors
+        landingPageTitle: ACS Journal Publishing - Author & Reviewer Resource Center (ACS Publications)
+      publishingYourResearch:
+        label: Publishing Your Research 101 Videos
+        landingPageTitle: ACS on Campus | Publishing Your Research 101
+      pdf:
+        label: "[PDF]"
+        landingPageTitle: pdf
+      excel:
+        label: "[Excel]"
+        landingPageTitle: 
+  whatsNew:
+    label: What's New
+    link:
+      learnMoreAboutAcsGo:
+        label: Learn more about ACS2Go
+        landingPageTitle: "ACS2Go (ACS Publications)"
+      newTitles:
+        label: New Titles in 2015
+        landingPageTitle: "Journal List (ACS Publications)"
+        subLink:
+          link1:
+            label: ACS Biomaterials Science & Engineering
+            landingPageTitle: "ACS Biomaterials Science & Engineering (ACS Publications)"
+          link2:
+            label: ACS Infectious Diseases
+            landingPageTitle: "ACS Infectious Diseases: Unique chemistry journal names editor - American Chemical Society"
+      informationAboutAcsAuthorChoice:
+        label: Information about ACS AuthorChoice
+        landingPageTitle: "ACS Open Access - ACS AuthorChoice - Author & Reviewer Resource Center (ACS Publications)"
+      informationAboutAcsAuthorRewards:
+        label: Information about ACS Author Rewards
+        landingPageTitle: "Author Rewards - ACS Open Access Program - Author & Reviewer Resource Center (ACS Publications)"
+      moreWhatsNew:
+        label: More
+        subLink:
+          link1:
+            label: ACS implements COUNTER 4
+            landingPageTitle: pdf
+          link2:
+            label: ACS Excellence - Spring 2015
+            landingPageTitle: ACS Excellence - Spring 2015
+          link3:
+            label: ACS Legacy Archives Supporting Information Update
+            landingPageTitle: "Products - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+  manageYourAccount:
+    label: Manage Your Account
+    descriptionText1: Registered librarians can sign in and
+    descriptionText2: View usage reports
+    descriptionText3: View current subscriptions
+    descriptionText4: Update co-branding
+    descriptionText5: Update link resolver
+    descriptionText6: Obtain personalized sales manager contact information
+  needHelp:
+    email:
+      label: "ACSPubsSales@acs.org"
+    contactYourSalesRep:
+      label: Contact Your Sales Rep
+      landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+  acsOnCampus:
+    label: ACS on Campus 2015 Events
+    links:
+      link1:
+        label: "acsoncampus.acs.org."
+        landingPageTitle: "ACS on Campus"
+  bookReviews:
+    label: Book Reviews
+    links:
+      link1:
+        label: View more recent Book Reviews
+        landingPageTitle: "Advanced Search (ACS Publications)"
+      link2:
+        label: Sign up for RSS feed of Book Reviews
+        landingPageTitle: "Librarian Resource Center Book Reviews - powered by FeedBurner"
+  acsPublicationProducts:
+    setOfLinks:
+      link1:
+        label: "ACS Journals in Print and Online"
+      link2:
+        label: "ACS eBooks"
+      link3:
+        label: "Chemical & Engineering News Online and Archives"
+      link4:
+        label: "ACS Legacy Archives (Journal Archive)"
+      link5:
+        label: "Reagent Chemicals"
+      link6:
+        label: "The ACS Style Guide"
+      aboutJournalArchives: "About ACS Journals, Archives, eBooks, and C&EN Products"
+      acsJournalPrintOnline: "ACS Journals Print and Online"
+      eBooks: "ACS eBooks"
+      cenOnline: "Chemical & Engineering News Online and Archives"
+      legacyArchives: "ACS Legacy Archives (Journal Archives)"
+      regeantChemicals: "Reagent Chemicals"
+      acsStyleGuide: "The ACS Style Guide"
+    journalprintsAndOnline:
+      setOfLinks:
+        link1:
+          label: "impact factor and citation rankings"
+          title: "The Most Reliable and Influential Journals are ACS Journals (ACS Publications)"
+        link2:
+          label: "flexible online access options"
+          title: "Resource for Institutional Subscribers"
+        link3:
+          label: "2015 Journal Title List with ISSN & Service Codes"
+        link4:
+          label: "2015 Print Pricing"
+          title: "institutional_print_subscription_rates2015.pdf"
+        link5:
+          label: "Print Claims Policy"
+          title: "print-claims-2014.pdf"
+        link6:
+          label: "ACS Condensed Print Format"
+          title: "ACS Condensed Print (ACS Publications)"
+    eBooks:
+      setOfLinks:
+        link1:
+          label: "pubs.acs.org/ebooks"
+          title: "eBooks (ACS Publications)"
+        link2:
+          label: "ACS eBooks Frontfiles"
+          title: "eBooks (ACS Publications)"
+        link3:
+          label: "ACS eBooks Archives"
+          title: "Advances in Chemistry (ACS Publications)"
+        link4:
+          label: "access and purchase options"
+          title: "Resource for Institutional Subscribers"
+        link5:
+          label: "2015 Planned Title List"
+          title: "eBooks-symposium_list.pdf"
+        link6:
+          label: "Obtain"
+          title: "ACS Symposium Series MARC Records - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    cenOnlineAndArchives:
+      setOfLinks:
+        link1:
+          label: "C&EN Archives"
+          title: "Chemical & Engineering News Archive (ACS Publications)"
+        link2:
+          label: "access options"
+          title: "Resource for Institutional Subscribers"
+        link3:
+          label: "FAQ on C&EN products"
+          title: "faq_cen.pdf"
+    acsLegacyArchives:
+      setOfLinks:
+        link1:
+          label: "access options"
+          title: "Resource for Institutional Subscribers"
+        link2:
+          label: "ACS Legacy Archives"
+          title: "ACS Legacy Archives - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+        link3:
+          label: "Read about ACS Publications digitizing Supporting Information"
+        link4:
+          label: "ACS Legacy Archives Title List"
+        link5:
+          label: "ACS Legacy Archive Brochure"
+          title: "legacy-archives-brochure.pdf"
+    reagentChemicals:
+      setOfLinks:
+        link1:
+          label: "access and purchase options"
+          title: "Resource for Institutional Subscribers"
+        link2:
+          label: "ACS Committee on Analytical Reagents"
+          title: "American Chemical Society Publications: Reagent Chemicals, 10th Edition"
+        link3:
+          label: "Reagent Chemicals"
+          title: "Reagent Chemicals  - ACS Committee on Analytical Reagents - Oxford University Press"
+    acsStyleGuide:
+      setOfLinks:
+        link1:
+          label: "freely available online"
+          title: "The ACS Style Guide - The ACS Style Guide (ACS Publications)"
+        link2:
+          label: "ACS ChemWorx"
+          title: "ACS ChemWorx - Free PDF Reference Manager and Collaboration Tool"
+        link3:
+          label: "The ACS Style Guide"
+          title: "The ACS Style Guide"
+  purchaseAcsPublications:
+    sections:
+      header1: "ACS Journals, Archives, e-Books, and C&EN: Access Options and Licensing Information for Institutions"
+      header2: "Subscription Journal Access Options for Academic Institutions"
+      header3: "Subscription Journal Access Options for Corporate and Non-Profit Organizations"
+      header4: "Online Access Options for ACS Archives: Journals, e-Books, C&EN"
+      header5: "Accessing/purchasing ACS Symposium Series Books"
+      header6: "Ancillary ACS Products and Services"
+      header7: "Bank and License Information"
+    accessOptionsAndLicensingInformationForInstitutions:
+      link1:
+        label: "Academics"
+      link2:
+        label: "Corporate/Non-profits"
+      link3:
+        label: "Journals, e-Books, and C&EN"
+      link4:
+        label: "e-Books and print"
+      link5:
+        label: "C&EN, Reagent Chemicals,"
+      link6:
+        label: "ACS Bank Information and Payment Instructions"
+      link7:
+        label: "Licensing Information"
+      link8:
+        label: "ACS Style Guide"
+    subscriptionJournalAccessOptionsForAcademicInstitutions:
+      link1:
+        label: "ACS Value Based Pricing"
+        landingPageTitle: "Value-Based Pricing - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      link2:
+        label: "ACS All Publications Pack"
+        landingPageTitle: "all_publications.pdf"
+      link3:
+        label: "ACS Academic Core Plus Pack"
+        landingPageTitle: "academic_core_plus.pdf"
+      link4:
+        label: "ACS Science Essentials Pack"
+        landingPageTitle: "science_essentials.pdf"
+      link5:
+        label: "ACS Individual Journal Online Subscriptions"
+        landingPageTitle: "InfoCentral - Request a Quote or Information Form - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      link6:
+        label: "ACS Individual Journal Print Subscriptions"
+        landingPageTitle: "institutional_print_subscription_rates2015.pdf"
+      link7:
+        label: "ACS Metered Access Options"
+        landingPageTitle: "metered_access.pdf"
+      link8:
+        label: "sales representative"
+        landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      link9:
+        label: "acspubssales@acs.org"
+    accessOptionsForCorporateAndNonProfitOrganizations:
+      link1:
+        label: "ACS Electronics Lab Pack"
+        landingPageTitle: "electronics_lab_pack.pdf"
+      link2:
+        label: "ACS Energy Lab Pack"
+        landingPageTitle: "energy_lab_pack.pdf"
+      link3:
+        label: "ACS Environmental Engineering Lab Pack"
+        landingPageTitle: "environmental_engineering_lab_pack.pdf"
+      link4:
+        label: "ACS Food Chemistry Lab Pack"
+        landingPageTitle: "food_chemistry_lab_pack.pdf"
+      link5:
+        label: "ACS Materials Science Lab Pack"
+        landingPageTitle: "materials_science_lab_pack.pdf"
+      link6:
+        label: "ACS Personal Care Products Lab Pack"
+        landingPageTitle: "personal_care_products_lab_pack_print.pdf"
+      link7:
+        label: "ACS Pharmaceutical Lab Pack"
+        landingPageTitle: "pharmaceutical_lab_pack.pdf"
+      link8:
+        label: "acspubssales@acs.org"
+    onlineAccessOptionsForArchives:
+      link1:
+        label: "ACS Legacy Archives"
+        landingPageTitle: "legacy-archives-brochure.pdf"
+      link2:
+        label: "sales representative"
+        landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      link3:
+        label: "ACS Legacy Archives (Journals)"
+        landingPageTitle: "legacy-archives-brochure.pdf"
+      link4:
+        label: "ACS Symposium Series Archives (e-Books)"
+        landingPageTitle: "symposium_series.pdf"
+      link5:
+        label: "C&EN Archive (News)"
+        landingPageTitle: "faq_cen.pdf"
+    accessingACSSymposiumSeriesBooksSection:
+      link1:
+        label: "Frontfile titles"
+        landingPageTitle: " eBooks (ACS Publications)"
+      link2:
+        label: "Backfile/Archive titles"
+        landingPageTitle: "eBooks (ACS Publications)"
+      link3:
+        label: "ACS Symposium Series Titles"
+        landingPageTitle: "ACS Symposium Series-Chemistry Series-Series-Academic, Professional, & General-Oxford University Press"
+      link4:
+        label: "sales representative"
+        landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    ancillaryProductsAndServices:
+      link1:
+        label: "sales representative"
+        landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+      link2:
+        label: "Chemical & Engineering News in print or online"
+        landingPageTitle: "Chemical & Engineering News | Serving the chemical, life sciences and laboratory worlds"
+      link3:
+        label: "The ACS Style Guide"
+        landingPageTitle: "The ACS Style Guide - The ACS Style Guide (ACS Publications)"
+      link4:
+        label: "Reagent Chemicals"
+        landingPageTitle: "American Chemical Society Publications: Reagent Chemicals, 10th Edition"
+      link5:
+        label: "ACS ChemWorx"
+        landingPageTitle: "ACS ChemWorx - Free PDF Reference Manager and Collaboration Tool"
+    
+  productAndServicesPdfPage:
+    title: "products_services.pdf"
+  proceedingsPdfPage:
+    title: "proceedings_discontinuation_notice.pdf"
+  highlightImage:
+    landingPageTitle: ACS Open Access (ACS Publications)
+    acsCentralScience: ACS Central Science
+    acsEditorsChoice: "ACS Editors’ Choice"
+    acsAuthorRewards: ACS Author Rewards
+    acsAuthorChoice: ACS AuthorChoice
+    acsAccessMiddleNavLink: "ACS Editors’ Choice is now available, view freely available research articles."
+
+multimediaHomePage:
+  imageSrcFeatureVideo: /userimages/ContentEditor/1311957854459/video-hub-bar.jpg
+  additionalVideosHeader: Additional Videos
+  newFeaturedVideo: "New Featured Video from ACS Breakthrough Science"
+  acsBreakthroughSciencepage:
+    title: "Breakthrough Science Videos (ACS Publications)"
+  podcastArchivesImg: /userimages/ContentEditor/1311959811421/podcast-archive.gif
+  podcastArchivesLink: ACS Nano
+  podcastArchivesPage:
+    title: Audio/Podcast (ACS Publications)
+  shareArchives: 
+    label: Share the Archive
+    link1: ACS Network
+    link2: Share on Twitter
+    communitiesSitePage:
+      title: Login | ACS Network
+    twitterPage:
+      title: Share a link on Twitter
+  infoForAdvertisers:
+    title: Advertising | ACS C&EN Media Kit
+
+alertHomePage: 
+  e-alertsLink: e-Alerts
+  rssFeedsLink: RSS Feeds
+  facebookLink: Facebook
+  twitterLink: Twitter
+  youtubeLink: YouTube
+  podcastsLink: Podcasts
+  communitiesLink: Communities
+  mobilesLink: Mobile
+
+CenArchivesPage:
+  searchTerm: "chemical"
+  searchTitle: "chemical"
+  searchAuthor: "Sharon"
+
+journalHomepage:
+  currentIssuePage: 
+    heading: Publications A–Z
+    biochemistryTitle: "Biochemistry: Volume 54, Issue 13 (ACS Publications)"
+    contentHeader: Table of Contents
+    supportingInfoPageHeader: Supporting Information
+    referenceQuickViewHeader: Reference QuickView
+    header: Current Issue
+    tableOfContents:
+      textLink1: Editorial
+      textLink2: Letters
+      textLink3: Articles
+      textLink4: Spotlights
+      textLink5: Communications
+    sciFinder: 
+      articleLink1: Retrieve Detailed Record of this Article
+      articleLink2: Retrieve All References Cited for this Article
+      articleLink3: Retrieve All References Citing this Article
+  articleAsapPage: 
+    biochemistryTitle: "Biochemistry: Articles ASAP (ACS Publications)"
+    contentHeader: Articles ASAP (As Soon As Publishable)
+    selectedArticleTitle: Electrostatic Occlusion and Quaternary Structural Ion Pairing
+    viewAbstractPage: 
+      authorName: Julia E. Martin
+      authorInstitution: Indiana University
+      citation: Biochemistry, Article ASAP
+      doi: 10.1021/acs.biochem.5b00154
+      publicationDate: March 23, 2015
+      copyrightInfo: 2015 American Chemical Society
+    articleOptionsBox:
+      title: Article Options
+      acsActiveViewPdfLink: ACS ActiveView PDF
+      pdfLink: PDF
+      pdfWithLinks: PDF w/ Links
+      fullTextHtmlLink: Full Text HTML
+      abstractLink: Abstract
+      supportingInfoLink: Supporting Info
+      figuresLink: Figures
+      referencesLink: References
+  browseTheJournal: 
+    coverArtGallery: 
+      pageTitle: "Cover Art Gallery: 2015 (Vol. 137) - Journal of the American Chemical Society (ACS Publications)"
+      contentHeader: "Cover Art Gallery: 2015 (Vol. 137)"
+      coverDescription: 
+        pageTitle: "Cover Description: Vol."
+        contentHeader: About the Cover
+      tableOfContents: 
+        pageTitle: "Journal of the American Chemical Society: Volume"
+        contentHeader: Table of Contents
+    authorIndex: 
+      pageTitle: "Author Index: 2015 (Vol. 137): Journal of the American Chemical Society (ACS Publications)"
+      contentHeader: "Author Index: 2015 (Volume 137)"
+      authorFilter: Am - Az
+  currentIssueInfoLink: Current Issue
+  viewArticlesAsapInfoLink: View Articles ASAP
+  editorBoardInfoLink: Editors & Editorial Board
+  aboutJournalInfoLink: About the Journal
+  recommendJournalInfoLink: Recommend This Journal
+  authorIndexInfoLink: Author Index
+  justAcceptedHeaderTab: Just Accepted
+  justPublishedHeaderTab: Just Published
+  currentIssueHeaderTab: Current Issue
+  mostReadHeaderTab: Most Read
+  articleListHeaderOptions:
+   viewAbstract: View Abstracts
+   addToChemworx: Add Citations to ACS ChemWorx
+   downloadCitations: Download Citations
+  articleSideLink:
+   firstPage: First Page
+   abstract: "» Abstract"
+   supportingInfo: Supporting Info
+   activeViewPdf: ACS ActiveView PDF
+   pdf: PDF
+   pdfWithLinks: PDF w/ Links
+   fullTextHtml: Full Text HTML
+   addToChemworx: Add to ACS ChemWorx   
+   sponsoredAccess: Sponsored Access
+   acsEditorsChoice: ACS Editors' Choice
+   acsAuthorsChoice: ACS Authors' Choice
+  aboutTheJournal:
+    editorBoard: 
+      pageTitle: Editors (ACS Publications)
+      contentHeader: Editors
+    editorProfile: 
+      pageTitle: Editor Profile (ACS Publications)
+      contentHeader: Editor Profile
+    mastheadPdf: 
+      pageTitle: bichaw-masthead.pdf
+      contentHeader: Biochemistry
+    editorialAdvisoryBoardPdf: 
+      pageTitle: bichaw-eab.pdf
+      contentHeader: Biochemistry
+  searchTerm: "Proc. Natl. Acad. Sci."
+  errorMessageWhileLogin: Invalid username or password
+  promptMessageWhleAddingCitationToChemworx: "Please select at least one article."
+  blueNavigationPanel:
+    home:
+      label: "Home"
+    browseJournal:
+      label: "Browse the Journal"
+      landingPageTitle: "List of Issues"
+      link1:
+        label: List of Issues
+      link2:
+        label: Current Issue
+        title: Issue
+      link3:
+        label: Just Accepted Manuscripts
+      link4:
+        label: Most Read Articles 
+      link5:
+        label: Author Index  
+      link6:
+        label: Cover Art Gallery 
+      link7:
+        label: Editorials
+      link8:
+        label: JACS Perspectives
+        title: Perspectives
+      link9:
+        label: JACS Facts [PDF]
+        title: facts.pdf
+      link10:
+        label: JACS
+        title: JACS Beta Home Page
+      link11:
+        label: JACS Spotlights
+    justPublished:
+      label: "Just Published"
+      landingPageTitle: "Articles ASAP"
+    currentIssue:
+      label: "Current Issue"
+      landingPageTitle: "Issue"
+    submissionAndReview:
+      label: "Submission & Review"
+      landingPageTitle: "Manuscript Submission and Peer Review (ACS Publications)"
+      link1:
+        label: Information for Authors and Reviewers
+        title: Manuscript Submission and Peer Review (ACS Publications)
+      link2:
+        label: Author Guidelines [PDF]
+        title: pdf
+      link3:
+        label: Submit a Manuscript or Review
+        title: ScholarOne Manuscripts
+      link4:
+        label: Ethical Guidelines
+        title: Ethical Guidelines - Author & Reviewer Resource Center (ACS Publications)
+      link5:
+        label: Copyright & Permissions/RightsLink
+        title: ACS Publications Copyright & Permissions - Author & Reviewer Resource Center (ACS Publications)
+      link6:
+        label: ACS Author & Reviewer Resource Center
+        title: Home Page - Author & Reviewer Resource Center (ACS Publications)
+    openAccess:
+      label: "Open Access"
+      landingPageTitle: "ACS Open Access - ACS AuthorChoice - Author & Reviewer Resource Center (ACS Publications)"
+      link1:
+        label: Publish Open Access
+        title: "ACS Open Access - ACS AuthorChoice - Author & Reviewer Resource Center (ACS Publications)"
+      link2:
+        label: "ACS Editors’ Choice"
+        title: "ACS Publications - Editors’ Choice"
+      link3:
+        label: ACS Author Rewards
+        title: "Author Rewards - ACS Open Access Program - Author & Reviewer Resource Center (ACS Publications)"
+    subscribe:
+      label: "Subscribe"
+      landingPageTitle: "Subscribe to ACS Publications (ACS Publications)"
+    aboutTheJournal:
+      label: "About the Journal"
+      landingPageTitle: "About the Journal (ACS Publications)"
+      link1:
+        label: About the Journal
+        title: About the Journal (ACS Publications)
+      link2:
+        label: Editorial Board
+        title: Editors (ACS Publications)
+      link3:
+        label: Editor Profile
+        title: Editor Profile (ACS Publications)
+      link4:
+        label: Masthead [PDF]
+        title: pdf
+      link5:
+        label: Editorial Advisory Board [PDF]
+        title: pdf
+      link6:
+        label: Advertising
+        title: Advertising
+
+  editorInChief:
+    link1: Editors & Editorial Board
+    link2: About the Journal
+    link3: Recommend This Journal
+    link4: Author Index    
+advertisementHomePage:
+  pageTitle: Advertising
+  contentHeader: "American Chemical Society"
+  url: "http://acsmediakit.org/"
+
+cenArchivesHomePage:
+  navJournalHome: Home
+  navBrowse: Browse the Archives
+  navAboutArchives: About the Archives
+  quickSearchBarBackgroundColor: "#fffab4"
+  linksUnderBrowseArchives:
+    browseIssuesInCoverGallery: "Browse Issues in Cover Gallery"
+    listOfIssues: "List of Issues"
+    researchCaseStudies: "Research Case Studies"
+    frequentlyAskedQue: "Frequently Asked Questions"
+  faqHeader: "Frequently Asked Questions about C&EN Archives and C&EN Online"
+
+advancedSearchPage:
+  searchWithinTerm: "Chemical & Engineering News Archive"
+  savingSearchMessage: "Saving search ..."
+  successfulSaveMessage: "Your Saved Search Alert has been updated"
+  searchWithinTerm: "Chemical & Engineering News Archive"
+  anywhereTextFiledValue: "Microscope"
+  enabledStemming:
+   searchTerm: "Microscope"
+   rootTerm: "Micro"
+  title: "imaging"
+  errorOnBlankSubmit: "Enter search criteria."
+  figureCaption: Molecule
+  booleanSearchTerm1: "Cell"
+  booleanSearchTerm2: "Molecule"
+  authorName1: "Joshua"
+  authorName2: "Kyle"
+  authorName: Smith
+  searchCriteria: 
+    author: Chen, X
+    contentType: 
+      pubFilter:
+        source: "Search within sources:"
+        sourceFilter: ACS Nano   
+        section: "Search within section:"
+        sectionFilter: Electrochemical, Radiational, and Thermal Energy Technology
+    pubDateRange: Web Pub. Date
+  searchToSave: "abc1234"
+  citationAddedMessage: "Adding 1 Citation to Your ACS ChemWorx Library"
+  searchTerm: "Crystal"
+  searchTitle: "Cell"
+  searchAuthor: "Sharon"
+  noResultMsg: "No result found for your search."
+
+search:
+   errorMessageForBlankSearch: "Please enter search terms before running your search"
+   errorMessageForCitation: "Please select a Journal or Book Series before running your search"
+   errorMessageForDOI: "Please enter a valid ACS Publications DOI before running your search"
+
+email:
+    send: yes
+    recepients:
+     recepient1: anshulmathur@qainfotech.net
+
+referenceQuickViewBox:
+    resultFoDrReferenceWithoutAssociatedText: "There is no expanded citation for this reference."
+    resultForReferenceWithoutReferenceMatch: "There is no corresponding record for this reference."
+
+tollFreeLinkingWithPNAS:
+    textAbstractTitleKeyword: "J Am Chem Soc"
+
+userProfile:
+    membershipBenefitsLinkAssociatedText: "View your current publication access balance and history."
+    eMailAlertsLinkAssociatedText: "Sign up for and manage your Journal TOC, article, and Citation E-Mail Alerts."
+    savedSearchesLinkAssociatedText: "Access and manage the searches you have saved on the ACS Publications website."
+    favoriteContentLinkAssociatedText: "View and modify your list of favorite content."
+    recommendedContentLinkAssociatedText: "View recommended content based on the content you have read on ACS Publications."
+    accessTokensLinkAssociatedText: "Activate access tokens for sponsored access to content."
+    editProfileLinkAssociatedText: "Edit your personal profile information, including your e-mail and password."
+    editProfile:
+        workPhoneNumber: "01223456789"
+        label: "Edit Profile"
+
+membershipBenefits:
+    accessTypes:
+        noContentMessage: "No products available at this time."
+    accessHistory:
+        noContentMessage: "No content accessed."
+
+activateToken:
+    instructionMessage: "Access tokens allow you to activate and access content online. If you have been issued with an Access Token, please enter it here and click"
+
+savedSearchPage:
+    search: "Cell"
+    noSavedSearchMessage: "You do not have any saved searches."
+
+recommendedContent:
+    noRecommendedArticlesMsg: "No Content could be recommended based on your current content viewing history."
+
+emailAlertsPage:
+    alertsInstructionMessage: "On this page you can sign up for Journal E-Mail Alerts or modify your existing alerts. You can also view and modify the Citation Alerts that you are currently receiving."
+    alertsPreferencesUpdatedMsg: "Your email alert settings have been updated."
+    citationAlertInstructionMsg: "You are currently receiving e-mail alerts whenever the following articles are cited by newly published content:"
+    noCitationsMsg: "You are not yet tracking any articles."
+
+favoriteContentsPage:
+    instructionMessage: View the list of your favorite articles, book chapters, and books below. To add to this list, click on the "Add to Favorites" link under the Tools section of an Abstract or Full Text HTML page.
+    noContentMessage: "You do not have any favorite articles."
+
+toolsAndSharing:
+ addToFavorites:
+  label: "Add to Favorites"
+ downloadCitation:
+  label: "Download Citation"
+ emailToColleague:
+  label: "Email a Colleague"
+  defaultSubject: "Interesting content that I wanted to share with you"
+  defaultMessage: "I thought you might be interested in the following content I found on the ACS Publications website."
+  validEmail1: testOne@test.com
+  validEmail2: testTwo@test.com
+  invalidEmail: test
+  fromAddressError: You have to enter a valid email address here
+  toAddressError: Please enter a valid e-mail address. You can only enter one e-mail address. 
+  captchaError: Sorry - the words you entered did not match.
+ orderReprints :
+  label: "Order Reprints"
+  landingPageTitle: Ordering Commercial Reprints for ACS Articles
+ rightsAndPermissions:
+  label: "Rights & Permissions"
+  landingPageAuthorsChoice: Help (ACS Publications)
+  landingPageEditorsChoice: Help (ACS Publications)
+  landingPageRightsLink:
+   part1: "Rightslink"
+   part2: "Copyright Clearance Center"
+ citationAlerts:
+  label: "Citation Alerts"
+  landingPageTitle: "My Profile: Email Alerts (ACS Publications)"
+ shareThisArticle:
+  label: "Share this Article"
+  acsNet:
+   label: Acs Net
+   title: Login | ACS Network
+  twitter:
+   label: Twitter
+   title: "Login on Twitter"
+  facebook:
+   label: Facebook
+   title: Facebook
+  googlePlus:
+   label: Google Plus
+   title: "Google+"
+  citeULike:
+   label: Add to CiteULike
+   title: "CiteULike: Everyone's library"
+ toolTipTitle: "Hide this"
+
+activeViewPDFPage:
+  MessageUnderACSChemworxLogo: "Add this article to your ACS ChemWorx library"
+  syncTime:
+   fewSecsAgo: Few secs ago
+   fewMinsAgo: Few mins ago
+   inTheHour: In the hour
+   anHourAgo: An hour ago
+   hoursAgo: Hours ago
+   longAgo: Long ago
+  referencesTab:
+   referenceLinks:
+    crossRef:
+      label: CrossRef
+      url: www.sciencemag.org
+    cas:
+      label: CAS
+      url: chemport.cas.org
+    pubMed:
+      label: PubMed
+      url: www.ncbi.nlm.nih.gov
+    acsFullText:
+      label: ACS Full Text
+      url: acs.org
+   viewReferencesBackgroundColor: "rgb(173, 214, 255)"
+   bottomBorderColor: "rgb(0, 140, 186)"
+   referenceWithMultipleAssociations: 21
+  annotationsTab:
+   annotationMessage: This is a test
+  pagesTab:
+   currenPageBorderColor: "rgb(52, 103, 154)"
+   highlightedPageBorderColor: "3px solid rgb(173, 214, 255)"
+
+articleOptions:
+ activeViewPdf:
+  doi: "10.1021/jacs.5b00335"
+  chapterPDF:
+   DOIURL: "/doi/pdf/10.1021/bk-2015-1187.ch001"
+   title: "Controlled Radical Polymerization: State-of-the-Art in 2014 - bk-2015-1187.ch001"
+   stampTitleValue: "Controlled Radical Polymerization"
+  articlePDF:
+   DOIURL: "/doi/pdf/10.1021/acs.biochem.5b00620"
+   title: "bi5b00620 1..4 - acs.biochem.5b00620"
+   stampTitleValue: "bi5b00620 1..4 - acs.biochem.5b00620"
+  tab:
+   references: References
+   pages: Pages
+   illustrations: Illustrations
+   annotations: Annotations
+   search: Search
+
+chemworx:
+  registration:
+     firstname: "Test"
+     lastname: "QA"
+     newEmailid: "qaAutomation_"
+     emailDomain: "@gmail.com "
+     existingEmailid: "T_Kumar@acs.org"
+     username: "newUser_"
+     password: "qainfotech"
+     erroMessage: "Error creating account. Duplicate Email"
+     correctMessage: "Registration completed successfully."
+
+help:
+  searchTerm: "Support"
+  incorrectSearchTerm: "dsfgsdfs"
+  errorOnIncorrectSearch: "We are sorry, the article you requested does not exist."
+
+acsStyleGuide:
+  label: ACS Style Guide  
+  tab:
+    aboutTheAcsStyleGuide:
+      label: About The ACS Style Guide
+      title: The ACS Style Guide (ACS Publications)
+      oxfordUniversityPress: Oxford University Press
+      rightSectionLink:
+        allPublicationsPackage: ACS All Publications Package
+        academicCorePackage: ACS Academic Core+ Package
+        acsPubsPackagePage: "ACS All Publications Package and Academic Core + - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+    tableOfContents:
+      label: Table of Contents
+      title: The ACS Style Guide - The ACS Style Guide (ACS Publications)
+    authoringAndReviewing:
+      label: Authoring and Reviewing
+      title: Home Page - Author & Reviewer Resource Center (ACS Publications)
+    aboutAcsBooks:
+      label: About ACS Books
+      title: eBooks (ACS Publications)
+  limitedAccessErrorMessage: "Your current credentials do not allow retrieval of the full text."
+
+acsEBooks:
+   label1: "Other Books from ACS"
+   label2: "ACS Style Guide"
+   label3: "Browse and Search the ACS Symposium Series eBooks"
+   linksUnderAcsSymposiumSeries:
+     link1:
+       label: Subscription Information for Librarians
+       title: Resource for Institutional Subscribers
+     link2:
+       label: Recommend to your library
+       title: Recommend ACS Publications to Your Librarian/Information Specialist
+   otherBooksSection:
+     label: Other Books from ACS
+     link1:
+       label: Reagent Chemicals
+       landingPageTitle: Reagent Chemicals
+     link2:
+       label: ACS Divisional Proceedings
+       landingPageTitle: ACS Division Proceedings Online
+     link3:
+       label: ACS Style Guide
+       landingPageTitle: The ACS Style Guide
+
+cenArchivesPage:
+  searchTerm: "cell"
+  searchTitle: "chemical"
+  searchAuthor: "ANDERSON"
+  RecommendAcsPublicationsPage:
+    title: "'Recommend ACS Publications to Your Librarian/Information Specialist"
+  acsPublicationsBenefitsPage:
+    title: "Publications Benefits"
+  aboutCenArchivesPage:
+    title: "About C&EN Archives"
+
+listOfIssuesPage:
+  label: "View this volume's issues"
+
+viewAbstractsPage:
+  header: "The abstracts of the content you selected appear below."
+
+aboutUsPage:
+  leftNavigation:
+    heading: About Us
+    tab1: 
+      label: About ACS Publications
+      contentLinkText1: ACS journals
+      contentLinkText2: Chemical & Engineering News
+    tab2: 
+      label: History
+      contentLinkText1: 40 peer-reviewed journals
+      contentLinkText2: C&EN
+      contentLinkText3: ACS Symposium Series Online
+      contentLinkText4: American Chemical Society’s mission and history
+      landingTitle1: About ACS - American Chemical Society
+    tab3: 
+      label: Publications
+      contentLinkText1: comprehensive collection of the most-cited
+      contentLinkText2: 40 peer-reviewed journals
+      contentLinkText3: Chemical & Engineering News
+      contentLinkText4: ACS Journal Archives
+      landingTitle4: ACS Legacy Archives - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)
+      contentLinkText5: ACS Symposium Series
+      contentLinkText6: ACS Excellence
+      landingTitle6: Excellence Newsletter - Author & Reviewer Resource Center (ACS Publications)
+      contentLinkText7: "The ACS Style Guide: Effective Communication of Scientific Information"
+      landingTitle7: The ACS Style Guide - The ACS Style Guide (ACS Publications)
+
+editorProfilePage:
+  title: Editor Profile
+  header: Editor Profile
+  
+acsEBooksHomePage:
+  heading1: ACS eBooks
+  textLink1:
+    textValue: View the 2015 Planned eBook Titles
+  textLink2:  
+    textValue: Information for Authors and Editors
+    landingPageTitle: "ACS Book Publishing - Author & Reviewer Resource Center (ACS Publications)"       
+  textLink3:  
+    textValue: ACS eBooks Online Submission
+    landingPageTitle: "ScholarOne Manuscripts"
+  textLink4:  
+    textValue: ACS eBooks Staff
+    landingPageTitle: "Contact Us (ACS Publications)"
+  textLink5:  
+    textValue: Accessing MARC records
+    landingPageTitle: "ACS Symposium Series MARC Records - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+  textLink6:  
+    textValue: ACS Publications Help Desk
+    landingPageTitle: Support Center
+  textLink7:  
+    textValue: Subscription Information
+    landingPageTitle: "Contact Us - InfoCentral - Resource for Institutional Subscribers. (ACS Publications)"
+  textLink8:  
+    textValue: Subscription Information for Librarians
+
+manuscriptSubmissionAndPeerReviewPage:
+  link1:
+    label: Information for Authors
+    title: Information for Authors 
+  link2:
+    label: Information for Reviewers
+    title: Information for Reviewers 
+  link3:
+    label: Copyright & Permissions/RightsLink
+    title: Copyright & Permissions - Author & Reviewer Resource Center 
+  link4:
+    label: Ethical Guidelines
+    title: Ethical Guidelines
+  link5:
+    label: Journal Policy on Prior Publication
+    title: Policy Summary on Prior Publication
+  link6:
+    label: ACS ChemWorx English Editing Service
+    title: ACS ChemWorx
+  link7:
+    label: Publishing Tools
+    title: Publishing Tools - Author & Reviewer Resource Center
+  link8:
+    label: Funder Reporting and Policies
+    title: Funder Specific Options - Open Access
+  link9:
+    label: ACS AuthorChoice
+    title: ACS Open Access - ACS AuthorChoice
+    
+symposiumSeriesPage:
+  title: "ACS Symposium Series (ACS Publications)"
+  searchPage:
+    searchTerm1: Chemistry
+    selectedTextColor: "rgba(1, 86, 129, 1)"
+    textStrong: "Search for Book Title:"
+    bookYearFormSpan: "Select a year:"
+    startYear: 1974
+    endYear: 2015
+    advChemEndYear: 1998
+    advChemStartYear: 1949
+    searchParticularYear: 2010
+    sponsorDropdownDefault: acs sustainability theme committee
+    sponsorDropDownSelection: acs division of chemical education
+  searchResultPage:
+    textStrong1: "You searched for:"
+    backLink: Return to ACS Symposium Series Home
+  contactInfoPage:
+    name: Bob Hauserman
+    designation: Senior Acquisitions Editor
+    organization: American Chemical Society
+    division: Publications/Books Division
+    address1: "1155 Sixteenth Street, N.W."
+    address2: "Washington, DC 20036"
+    telephone: "Telephone: (202) 452-2120"
+    fax: "Fax: (202) 513-8819"
+    email: "E-mail: b_hauserman@acs.org"
+  ebooksPage:
+    sponsorLink: Sponsoring Divisions
+    urlNavigation: "http://www.acs.org/content/acs/en/membership-and-networks/td/websites.html"
+  symposiumLinkForEbook: "http://pubs.acs.org/series/symposium"
+  linksUnderAboutAcsSymposiumSeriesSection:
+    label1: eISSN
+    label2: ISSN
+    button1:
+      label: Subscription information for librarians
+    button2:
+      label: Recommend this series to your library
+    link1:
+      label: ACS eBooks
+    link2:
+      label: Planned eBook Titles
+      landingPageTitle: eBooks-symposium_list.pdf
+      
+editorChoicePage:
+  usefulLinks:
+    aboutLink:
+      contentHeader: About ACS Editors' Choice®
+    faqLink:
+      contentHeader: ACS Editors' Choice Frequently Asked Questions
+    manageAlert:
+      alert: Are you interested in receiving ACS Editors’ Choice email alerts?
+    twitter:
+      title: Login on Twitter
+  journalLogo:
+    srcValue: jacsat
+  icon1:
+    label: Add to ACS ChemWorx
+    toolTip: Add Citations to ACS ChemWorx
+  icon2:
+    label: Download Citations
+    toolTip: Download Citations
+  icon3:
+    label: toggle-thumbnails
+    toolTip: Toggle Thumbnails
+  icon4:
+    label: print-view
+    toolTip: Print View
+  icon5:
+    label: rss-feed
+    toolTip: RSS Feed
+  editorChoiceDate:
+    month: Sep
+    year: 2014
+advancesInChem:
+  title : "Advances in Chemistry (ACS Publications)"
+  label1: "Browse & Search the Advances in Chemistry Series"
+
+  searchResultTitle: "Advances in Chemistry Title Search Results (ACS Publications)"
+  searchResultBackLink: "Return to Advances in Chemistry Home"
+  dropDownDefault: american chemical society
+  choiceDropDown: acs louisiana section

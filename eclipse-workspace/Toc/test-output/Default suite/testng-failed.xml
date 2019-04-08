@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.qait.acs.tests.issue">
+        <methods>
+          <include name="Step29_AJ_29_Verify_Functionality_Of_Elements_On_Article_Landing_Page"/>
+          <include name="lau"/>
+          <include name="close_Test_Session"/>
+        </methods>
+      </class> <!-- com.qait.acs.tests.issue -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

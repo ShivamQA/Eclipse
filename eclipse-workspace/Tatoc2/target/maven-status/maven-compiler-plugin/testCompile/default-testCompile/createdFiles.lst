@@ -1,0 +1,8 @@
+Pages/DragDropPage.class
+Pages/Utilities/ElementSearch.class
+Pages/FramePage.class
+Test/TestTatoc.class
+Pages/GridGatePage.class
+Test/TatocPages.class
+Pages/CookieHandlingPage.class
+Pages/WindowPopupPage.class

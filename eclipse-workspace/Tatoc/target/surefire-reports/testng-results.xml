@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+    </line>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="1686" started-at="2019-03-13T11:50:25Z" finished-at="2019-03-13T11:50:27Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="1686" started-at="2019-03-13T11:50:25Z" finished-at="2019-03-13T11:50:27Z">
+      <class name="JavaScript.Test.TestTatoc">
+        <test-method status="PASS" signature="setup()[pri:0, instance:JavaScript.Test.TestTatoc@71238fc2]" name="setup" is-config="true" duration-ms="254" started-at="2019-03-13T11:50:27Z" finished-at="2019-03-13T11:50:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Grid()[pri:0, instance:JavaScript.Test.TestTatoc@71238fc2]" name="Grid" duration-ms="177" started-at="2019-03-13T11:50:27Z" finished-at="2019-03-13T11:50:27Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Grid -->
+      </class> <!-- JavaScript.Test.TestTatoc -->
+      <class name="Test.TestTatoc">
+        <test-method status="PASS" signature="setup()[pri:0, instance:Test.TestTatoc@fa49800]" name="setup" is-config="true" duration-ms="996" started-at="2019-03-13T11:50:25Z" finished-at="2019-03-13T11:50:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Grid()[pri:0, instance:Test.TestTatoc@fa49800]" name="Grid" duration-ms="243" started-at="2019-03-13T11:50:26Z" finished-at="2019-03-13T11:50:27Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+            </line>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Grid -->
+      </class> <!-- Test.TestTatoc -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

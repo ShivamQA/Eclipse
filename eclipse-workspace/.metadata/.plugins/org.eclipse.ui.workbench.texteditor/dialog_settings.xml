@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="driver"/>
+			<item value="assertTrue"/>
+			<item value="assert"/>
+			<item value="imgs_partners"/>
+			<item value="container"/>
+			<item value="slides"/>
+			<item value="hrefComponent"/>
+			<item value="title_selectedSlide"/>
+			<item value="links_PubsContent"/>
+			<item value="ClickOnAnyLinkAndVerifyNavigationToCorrectPage"/>
+			<item value="45"/>
+			<item value="43"/>
+			<item value="links_ListView"/>
+			<item value="step45"/>
+			<item value="content_below_editor_choice"/>
+		</list>
+		<list key="replacehistory">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="342" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="629" key="DIALOG_HEIGHT"/>
+		<item value="959" key="DIALOG_X_ORIGIN"/>
+		<item value="87" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

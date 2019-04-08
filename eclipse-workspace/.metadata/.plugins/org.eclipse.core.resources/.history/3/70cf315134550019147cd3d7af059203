@@ -1,0 +1,153 @@
+Home Page 
+
+# Object Definitions
+==================================================================================================================
+
+Text_LoggedInfo		           0        css	         .institution+.user-login-bar
+links_loggedIn				   0	    css			 .user-login-bar>a	
+link_LogIn					   0	    xpath		 //a[text()="Log In"]
+btn_MyActivity				   0        xpath	     //span[text()="My Activity"]/parent::a 
+btn_publication                0  	    xpath       //span[text()='Publications']//ancestor::a[@class='pubModal_button']
+lnk_pubmodal                   0        xpath       //div[@class='pub-modal' and contains(@style,"block")]//ul[@class='pub-modal_types-list']//a[text()='${link}']
+lnk_topLeftCornerLinks         0        xpath		//div[@class='header_mainmenu']//a[text()='${link}']
+click_anywhere				   0		xpath 		//div[@class = "hero-text"]
+txt_toprightcorner 			   0		xpath		//span[@class = "institution-info-wrapper"]
+logo_acs					   0		css			.menu__logo>img
+Img_homePage                   0        css         .header_content_left img
+logo_C&EN                      0        css			.logo-link>img[src*='cen-logo']
+txt_Heading					   0		xpath		//h1[@class = 'h1 a-title']
+librarian_img				   0		css			.content img[src*='InfoCentral']
+members_Heading				   0		xpath		//div[@class = "containerPar parsys"]//h1
+mobile_logo					   0		css			.mobile-image a img[src*= 'mobile']
+logo_CAS                       0        css         .cas-logo
+link_LogIn					   0		xpath		//a[text()="Log In"]
+box_search					   0		css			.quick-search_default
+Icon_Hamburger				   0		css			.header_burger-menu>a
+Menu_Hamburger				   0        css			.header_burger-menu_opened .header_burger-menu_content
+PubButton_Hamburger			   0		css			.header_burger-menu_opened .header_burger-menu_content .pubModal_button
+MenuHeadings_Hamburger		   0		xpath        //div[@class="header_burger-menu_content"]/ul[2]/li[not(contains(@class,"hidden"))]/a
+subLinks_Hamburger			   0        xpath		(//a[text()='${heading}']/parent::li)//li[not(contains(@class, "hidden-sm"))]/a[not(contains(@style, "display: none;"))]
+input_SearchBox				   0		css			.quick-search_default>input
+iconSearch_SearchBox		   0		css			.quick-search_default>button[class='icon-search']
+Searchbox_Citations            0        css			.quick-search_citation
+header_Citations               0        css         .quick-search_content p
+dropdown_JournalsSearchBox     0        css 		span[class*='quick-search_journals']
+input_OptionsSearchBox		   0        css			.quick-search_citation input[placeholder='${option}']
+iconSearch_Citation            0        css         .quick-search_citation .icon-search
+modal_Publications			   0        css			[style*='block;'] .pub-modal_content
+ContentTypes_Modal			   0        xpath		//h6[text()="CONTENT TYPES"]/ancestor::div[@class='pub-modal' and contains(@style,"block")]//ul[@class='pub-modal_types-list']/li/a
+ContentType_Selected		   0        xpath		//div[@class='pub-modal' and contains(@style,"block")]//ul[@class='pub-modal_types-list']//a[text()='${Type}']/parent::li		
+links_PubsContent			   0        xpath		(//div[@class="pub-content"])[1]//a[not(@style="display: none;")]
+links_PubsContent_subjects	   0		xpath		(//div[@class="pub-content"])[1]/a[not(@style="display: none;")]
+Section_Subjects			   0        css			.pub-modal_subjects
+header_Subjects				   0        css 		.pub-modal_subjects>h6
+CheckBoxes_Subjects			   0        css		    div[style*='block'] .pub-modal_subjects li label
+text_Subjects				   0		css			div[style*='block'] .pub-modal_subjects li span
+headings_Alphabets			   0        css			div[style*='block'] .pub-modal_right--inner span[class='pub_char']:not([style*='none']) >span
+select_JournalDropdownSearch   0        css			.quick-search_citation select
+selectedJournal_Search		   0        css			.jcf-select-text>span	
+hP_selectedJournal_Search      0		css			#hp-secondary-search .jcf-select-text>span
+heading_EditorsChoice		   0        css 		.slider-multi-search h2
+text_EditorsChoice		   	   0        css 		.slider-multi-search p
+url_EditorsChoice		   	   0        css 		.slider-multi-search p a
+Page_EditorsChoice			   0	    xpath		//div[@class = "ajcHeader_left pull-left"]/h1
+slides_EditorsChoice		   0        css			#carousel>div
+images_EditorsChoice		   0		xpath		//div[@class = "teaser_image"]/a/img 
+JounalNames_EditorsChoice	   0        css			.carousel-caption>span[class*='jour-name']
+Titles_EditorsChoice		   0        xpath		//h4[@class = "teaser_title min-height"]/a
+elements_EditorsChoice		   0		css			.owl-item
+authors_EditorsChoice		   0        xpath		//div[@class = "teaser_contribs"]/ul 
+text_above_search_box		   0		xpath		//img[@class = "hp_title_svg"]
+img_link					   0		xpath		//a[@id = "hp-hero-cite"]
+logo_url					   0		css			a[href*='journal']>img[src*='title']
+radioButton_Slides			   0		xpath		//div[@class = "owl-dots"]/button
+buttons_SlideNavigation		   0        xpath		//div[@class = "owl-nav"]/button
+advertisement_editorsChoice	   0		xpath		(//div[contains(@class,"owl-item")])[2]//a
+ad_img_editorsChoice		   0		css			#google_image_div a amp-img img
+slide_selected				   0        xpath		//button[@class = "owl-dot active"]
+title_selectedSlide			   0        xpath		//div[@class = "owl-item active first"]//h4[@class = "teaser_title min-height"]/a
+h2_Section          		   0        xpath		//h2[text()='Information For']
+slide_displayed				   0		xpath		//div[contains(@class,"owl-item active")]
+links_InformationSection	   0		xpath		//h2[text()='Information For']/following-sibling::ul//a
+h1_AuthorReviewerPage		   0        xpath		//h1[contains(text(),'ACS Publishing Center')]
+browse_section 				   0		xpath		//div[@class = "tab"]
+img_LibrariansPage			   0        css 		img[src*="InfoCentral"]
+login_LibrariansPage		   0        css			.loginWidget
+tab_MembersPage				   0		css			.active>a[title='Member Benefits']
+description_Section 		   0        xpath		//h2[text()='${link}']/following-sibling::p[1]
+btn_eAlerts					   0        xpath		//h2[text()='Sign Up for Email']/following-sibling::a[contains(@class,'EAlerts')]
+h1_LoginPromptPage			   0		xpath		//h1[contains(text(),"log in")]		
+btn_LoginOrRegister			   0		xpath		//a[text()="Log In or Register"]	
+tabs_BrowsePublications		   0        xpath		//ul[@role='tablist']//span[text()='${tabName}']/parent::a		
+imgs_JournalCoverArt		   0        css			.tab__content .pub-grid a
+ListHeadings_Alphabets		   0        css			 .pub-modal_layout-not-fixed .pub-modal_right--inner span[class='pub_char']:not([style*='none']) >span
+links_ListView				   0		xpath		 (//div[@class="pub-content"])[2]//a[not(@style="display: none;")]
+links_partners				   0        css			 .footer_first-row_logos a
+imgs_partners				   0        css			 .footer_first-row_logos img
+link_Copyright				   0        css			 .footer_menu_copyright>a
+h1_Copyright				   0		css			 h1>span		
+link_PrivacyPolicy			   0		xpath		 //div[contains(@class,"footer_second-row_resources col-xs-5")]//a[contains(text(),"Privacy Policy")]
+h1_PrivacyPolicy			   0        xpath		 //h1/span[text()='Privacy Policy']
+icons_Follow				   0		css          .footer_social a[class*='${tabName}']
+PublicationsLink			   0        xpath		 (//div[@class="pub-content"])[1]//a[not(@style="display: none;") and text()='${Content}']	
+DD_SearchJournals			   0		xpath		//span[@class="jcf-list-content"]/ul/li/span[text()='${JournalName}']
+popup_AdCEN					   0		css			#sb-title-inner
+icon_CloseAdCEN				   0		css			#sb-nav-close
+pubmodelContent                0        xpath       (//a[text()='${link}'])[1]
+knowledge_heading 			   0		xpath		//h2[@class='widget-title']
+advertiser_img			       0		css			.logo a img
+device_pairing_heading		   0		css			.device-pairing-submit-label h1
+overview_img				   0		xpath		(//div[@class = 'sideBox w250 alignH2 noBorder']/img)[1]
+open_access_img				   0		css			.site-logo img
+events_img					   0		css			.brand img[alt*= "Campus"]
+show_btn					   0		xpath		//a[@id = "expand-btn"]
+browse_links				   0		css			.pub-grid li
+heading_Section				   0		xpath		(//div[@class = 'col-xs-12'])[1]
+Img_SiteHeaderLogo			   0        css			img[alt='logo']
+trending_section			   0		xpath		//div[@id = "trending-container"]
+trending_heading			   0		xpath		//div[@id = "trending-container"]/div/h2
+trending_links				   0		xpath		//div[@class = "trend-elem__inner reduce"]
+trending_links_date			   0		xpath		//div[@class = "trend-elem__date"]
+trending_links_title		   0		xpath		//div[@class = "trend-elem__title"]
+trending_links_journal		   0		xpath		//div[@class = "trend-elem__journal"]
+trending_links_metric		   0		xpath		//div[@class = "trend-elem__metric altmetric-embed"]
+trending_links_hover		   0		xpath		//div[@class = "altmetric-embed altmetric-popover altmetric-right"]
+trending_links_URL			   0		xpath		//a[@class = "trend-elem__title-link"]
+video_section				   0		xpath		//div[@class = "most-read-left col-md-8"]
+axial_img					   0		css			.axial-video-text-area > a img
+text_below_video			   0		css			.axial-video-text-area p
+video_change_poster			   0		xpath		//video[@id = "hp-axial-vid_html5_api"]
+other_video_links			   0		css			.post-card img
+homePage_box_search			   0		css			#hp-secondary-search form[name*='default']
+homePage_input_SearchBox	   0		css			#hp-secondary-search form[name*='default']>input
+homePage_searchBox_citation	   0		css			#hp-secondary-search form[class ='quick-search_citation']
+homePage_header_Citations	   0		css			#hp-secondary-search div[class ='quick-search_content'] p
+hP_dropdown_JournalsSearchBox  0        css			#hp-secondary-search span[class*='quick-search_journals']
+hP_input_OptionsSearchBox	   0        css			#hp-secondary-search form[class ='quick-search_citation'] input[placeholder='${option}']
+homePage_iconSearch_Citation   0        css         #hp-secondary-search form[class ='quick-search_citation'] .icon-search
+hP_iconSearch_SearchBox		   0		css			#hp-secondary-search form[name*='default']>button[class='icon-search']
+live_chat_box				   0		xpath		//iframe[@name= "designstudio-frame"]
+live_chat_close				   0		xpath		//div[@id = "icon-close"]
+live_chat_text				   0		xpath		//div[@id = "header-text"]
+section_below_editor_choice    0		xpath		//div[@class= "about-us-area col-xs-12"]
+content_below_editor_choice	   0		xpath		//div[@class = "about-us-area-para col-md-8"]/p
+journal_info_display		   0		xpath		//div[@class = "hp_numbers"]
+journal_info				   0		xpath		//div[@class = "hp_numbers"]/ul/li
+browse_publication_height	   0		xpath		//div[@class = "hp-jlist-wrap"] 
+search_box_innertext		   0		css			#hp-secondary-search div form input[name*= '${boxname}']
+journal_name_below_header	   0		css			.hero-image a span> cite
+journal_below_header		   0		css			.hero-image a span
+txt_StayConnected              0        css         .connect-header h2
+txt_connectMessage             0        css         .connect-message
+txt_connectSocialLink          0        css         .connect-social .item img
+lnk_connectSocialLink          0        xpath       //div[contains(@class,"connect-social")]//div[@class="item"]//img[@alt="${link}"]/ancestor::a 
+txt_connectAppLink             0        css         .connect-apps .item img
+lnk_connectAppLink             0        xpath       //div[contains(@class,"connect-apps")]//div[@class="item"]//img[@alt="${link}"]/ancestor::a 
+img_resourceACSJoin            0        css         .resources-content .join-acs img
+txt_resourceACSJoin            0        css         .resources-content .join-acs .description
+btn_resourceACSJoin            0        css         .resources-content .join-acs a
+header_resourcesItem           0        css         .resources-items .item h3
+txt_resourceItem               0        xpath       //div[contains(@class,"resources-items")]//a[@title="${link}"]/ancestor::div[@class="item"]//div[@class="description"]
+lnk_resourceItem               0        css         .resources-items .item a
+
+

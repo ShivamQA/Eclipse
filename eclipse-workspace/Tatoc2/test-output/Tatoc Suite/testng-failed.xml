@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="50" guice-stage="DEVELOPMENT" verbose="10" name="Failed suite [Tatoc Suite]" parallel="tests">
+  <test thread-count="50" verbose="10" name="TATOC Driver(failed)" parallel="methods">
+    <classes>
+      <class name="Test.TestTatoc">
+        <methods>
+          <include name="closeSetup"/>
+          <include name="setup"/>
+          <include name="DragDrop"/>
+          <include name="DragDrop"/>
+          <include name="WindowPopup"/>
+          <include name="WindowPopup"/>
+          <include name="CookieHandling"/>
+          <include name="CookieHandling"/>
+        </methods>
+      </class> <!-- Test.TestTatoc -->
+    </classes>
+  </test> <!-- TATOC Driver(failed) -->
+</suite> <!-- Failed suite [Tatoc Suite] -->

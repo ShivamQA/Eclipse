@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+    </line>
+    <line>
+      <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+    </line>
+  </reporter-output>
+  <suite name="com.test.Example.AppTest" duration-ms="2216" started-at="2019-03-13T09:15:41Z" finished-at="2019-03-13T09:15:43Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="2216" started-at="2019-03-13T09:15:41Z" finished-at="2019-03-13T09:15:43Z">
+      <class name="com.test.Example.AppTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.test.Example.AppTest@60f82f98]" name="setup" is-config="true" duration-ms="1835" started-at="2019-03-13T09:15:41Z" finished-at="2019-03-13T09:15:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="GridErrorTest()[pri:0, instance:com.test.Example.AppTest@60f82f98]" name="GridErrorTest" duration-ms="91" started-at="2019-03-13T09:15:43Z" finished-at="2019-03-13T09:15:43Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to error page after clicking Red Box]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GridErrorTest -->
+        <test-method status="PASS" signature="GridPassTest()[pri:0, instance:com.test.Example.AppTest@60f82f98]" name="GridPassTest" duration-ms="170" started-at="2019-03-13T09:15:43Z" finished-at="2019-03-13T09:15:43Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Assertion Passed: Page redirects to next page after clicking Green Box]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- GridPassTest -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.test.Example.AppTest@60f82f98]" name="close" is-config="true" duration-ms="105" started-at="2019-03-13T09:15:43Z" finished-at="2019-03-13T09:15:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.test.Example.AppTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.test.Example.AppTest -->
+</testng-results>
